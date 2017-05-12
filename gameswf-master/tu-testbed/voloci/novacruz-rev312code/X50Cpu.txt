@@ -1,0 +1,15 @@
+// Port A
+PORTA=0x00;
+DDRA=0x00;
+
+// Port B
+PORTB=0x00;
+DDRB=0x00;
+
+// Port C
+PORTC=0x00;
+DDRC=0xFF;
+
+// Port D
+PORTD=0x00;
+DDRD=0x38;

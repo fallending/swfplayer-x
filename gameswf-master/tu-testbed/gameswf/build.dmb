@@ -1,0 +1,117 @@
+// gameswf build file
+[
+  { "name": "default",
+    "type": "generic",
+    "dep": [
+      "gameswf_test_ogl"
+    ]
+  },
+
+  { "name": "gameswf",
+    "type": "lib",
+    "src": [
+      "gameswf_3ds.cpp",
+      "gameswf_abc.cpp",
+      "gameswf_action.cpp",
+      "gameswf_as_sprite.cpp",
+      "gameswf_avm2.cpp",
+      "gameswf_avm2_jit.cpp",
+      "gameswf_button.cpp",
+      "gameswf_canvas.cpp",
+      "gameswf_character.cpp",
+      "gameswf_disasm.cpp",
+      "gameswf_dlist.cpp",
+      "gameswf_environment.cpp",
+      "gameswf_filters.cpp",
+      "gameswf_font.cpp",
+      "gameswf_fontlib.cpp",
+      "gameswf_freetype.cpp",
+      "gameswf_function.cpp",
+      "gameswf_impl.cpp",
+      "gameswf_jit.cpp",
+      "gameswf_jit_opcode.cpp",
+      "gameswf_listener.cpp",
+      "gameswf_log.cpp",
+      "gameswf_morph2.cpp",
+      "gameswf_movie_def.cpp",
+      "gameswf_mutex.cpp",
+      "gameswf_object.cpp",
+      "gameswf_player.cpp",
+      "gameswf_render.cpp",
+      "gameswf_render_handler_ogl.cpp",
+      "gameswf_root.cpp",
+      "gameswf_shape.cpp",
+      "gameswf_sound.cpp",
+      "gameswf_sound_handler_sdl.cpp",
+      "gameswf_sprite.cpp",
+      "gameswf_sprite_def.cpp",
+      "gameswf_stream.cpp",
+      "gameswf_styles.cpp",
+      "gameswf_tesselate.cpp",
+      "gameswf_text.cpp",
+      "gameswf_tools.cpp",
+      "gameswf_types.cpp",
+      "gameswf_value.cpp",
+      "gameswf_video_impl.cpp",
+      "gameswf_as_classes/as_array.cpp",
+      "gameswf_as_classes/as_boolean.cpp",
+      "gameswf_as_classes/as_broadcaster.cpp",
+      "gameswf_as_classes/as_class.cpp",
+      "gameswf_as_classes/as_color.cpp",
+      "gameswf_as_classes/as_color_transform.cpp",
+      "gameswf_as_classes/as_date.cpp",
+      "gameswf_as_classes/as_event.cpp",
+      "gameswf_as_classes/as_flash.cpp",
+      "gameswf_as_classes/as_geom.cpp",
+      "gameswf_as_classes/as_global.cpp",
+      "gameswf_as_classes/as_key.cpp",
+      "gameswf_as_classes/as_loadvars.cpp",
+      "gameswf_as_classes/as_math.cpp",
+      "gameswf_as_classes/as_matrix.cpp",
+      "gameswf_as_classes/as_mcloader.cpp",
+      "gameswf_as_classes/as_mouse.cpp",
+      "gameswf_as_classes/as_mouse_event.cpp",
+      "gameswf_as_classes/as_netconnection.cpp",
+      "gameswf_as_classes/as_netstream.cpp",
+      "gameswf_as_classes/as_number.cpp",
+      "gameswf_as_classes/as_point.cpp",
+      "gameswf_as_classes/as_selection.cpp",
+      "gameswf_as_classes/as_sharedobject.cpp",
+      "gameswf_as_classes/as_sound.cpp",
+      "gameswf_as_classes/as_string.cpp",
+      "gameswf_as_classes/as_textformat.cpp",
+      "gameswf_as_classes/as_transform.cpp",
+      "gameswf_as_classes/as_xml.cpp",
+      "gameswf_as_classes/as_xmlsocket.cpp"
+    ],
+    "dep": [
+      "#base/base",
+      "#net/net",
+      "#advapi32",
+      "#freetype",
+      "#zlib",
+      "#sdl",
+      "#ogl"
+    ],
+    "inc_dirs": [
+      "#"
+    ]
+  },
+
+  { "name": "gameswf_test_ogl",
+    "type": "exe",
+    "src": [
+      "gameswf_test_ogl.cpp"
+    ],
+    "dep": [
+      "#freetype",
+      "#sdl",
+      "#sdlmain",
+      "#ogl",
+      "gameswf"
+    ],
+    "inc_dirs": [
+      "#"
+    ]
+  }
+]

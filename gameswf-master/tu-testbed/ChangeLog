@@ -1,0 +1,2863 @@
+2007-11-05  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* base/demo.cpp
+		* base/ogl.cpp
+		* base/tu_file_SDL.cpp
+		* config
+		* gameswf/Makefile
+		Applied patch from Markus Sinner (patch for compiling with gcc-3.4)
+
+2007-10-21  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf.h
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_action.h
+		* gameswf/gameswf_character.h
+		* gameswf/gameswf_impl.cpp
+		* gameswf/gameswf_root.cpp
+		* gameswf/gameswf_root.h
+		* gameswf/gameswf_sprite.cpp
+		* gameswf/gameswf_sprite.h
+		* gameswf/gameswf_test_ogl.cpp
+		* gameswf/gameswf_value.cpp
+		added getVersion() global function,
+		removed the deprecated call_method(), call_method0(),
+		call_method_args(), call_method_parsed()
+		better to use the user defined gameswf plugin
+
+2007-10-20  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_action.h
+		* gameswf/gameswf_as_classes/as_mcloader.cpp
+		* gameswf/gameswf_as_classes/as_mcloader.h
+		* gameswf/gameswf_character.h
+		* gameswf/gameswf_dlist.cpp
+		* gameswf/gameswf_environment.cpp
+		* gameswf/gameswf_environment.h
+		* gameswf/gameswf_object.cpp
+		* gameswf/gameswf_player.cpp: added struct player (uncompleted)
+		* gameswf/gameswf_player.h: added struct player (uncompleted)
+		* gameswf/gameswf_sound_handler_mp3.cpp : removed(outdated)
+		* gameswf/gameswf_sprite.cpp
+		* gameswf/gameswf_sprite.h
+		* gameswf/gameswf_test_ogl.cpp
+		* gameswf/samples/test_moviecliploader.fla: testcase
+		* gameswf/samples/test_moviecliploader.swf: testcase
+		* gameswf/win32/VC8/libgameswf.vcproj
+		rewritten mcLoader to provide the loading single frame movie
+
+2007-10-20  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_as_classes/as_broadcaster.h
+		* gameswf/gameswf_as_classes/as_key.cpp
+		* gameswf/gameswf_as_classes/as_mcloader.h
+		* gameswf/gameswf_as_classes/as_xmlsocket.cpp
+		* gameswf/gameswf_dlist.cpp
+		* gameswf/gameswf_freetype.cpp:
+		* gameswf/gameswf_listener.cpp: added new file
+		* gameswf/gameswf_listener.h: added new file
+		* gameswf/gameswf_root.cpp
+		* gameswf/gameswf_root.h
+		* gameswf/gameswf_text.cpp
+		* gameswf/gameswf_timers.cpp
+		* gameswf/win32/VC8/libgameswf.vcproj
+		Fixed & optimized listener
+		the listener may affects m_listeners using addListener & removeListener
+		
+2007-10-13  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* base/tu_loadlib.cpp: added "lib" before path to shared library
+		* gameswf/gameswf_as_classes/as_broadcaster.cpp: listener should be once in the queue
+		* gameswf/gameswf_as_classes/as_db.cpp
+		* gameswf/gameswf_as_classes/as_db.h : added socket parameter
+		* gameswf/samples/test_mysql.fla
+		* gameswf/samples/test_mysql.swf
+
+2007-10-13  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_action.h
+		* gameswf/gameswf_test_ogl.cpp
+		Added gameSWF extension that 
+		allow pass the user bootup options to Flash (through _global._bootup)
+
+2007-10-13  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* base/tu_loadlib.cpp
+		* base/tu_loadlib.h
+		* gameswf/gameswf_freetype.cpp
+		Ported to Linux
+
+2007-10-07  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf.h
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_action.h
+		* gameswf/gameswf_function.cpp
+		* gameswf/gameswf_object.cpp
+		* gameswf/gameswf_object.h
+		* gameswf/gameswf_sprite.cpp
+		* gameswf/samples/test_superclass/box.as
+		* gameswf/samples/test_superclass/circle.as
+		* gameswf/samples/test_superclass/shape.as
+		* gameswf/samples/test_superclass/test.fla
+		* gameswf/samples/test_superclass/test.swf
+		Added the supporting of 'super' object
+		
+2007-10-04  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_as_classes/as_broadcaster.cpp
+		* gameswf/gameswf_as_classes/as_broadcaster.h
+		First we should process completely one event then another
+		
+2007-10-02  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf.h
+		* gameswf/gameswf_function.cpp
+		* gameswf/gameswf_function.h
+		* gameswf/gameswf_object.h
+		* gameswf/gameswf_test_ogl.cpp
+		* gameswf/win32/VC8/libgameswf.vcproj
+		Added function.call() method implementation that 
+		invokes the function represented by a Function object.
+
+2007-09-29  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf.h
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_environment.h
+		* gameswf/gameswf_function.cpp
+		* gameswf/gameswf_object.cpp
+		* gameswf/gameswf_object.h
+		The next attempt to fixed 'this' bug in
+		as_as_function::operator()
+
+2007-09-27  Vitaly Alexeev <tishka92@yahoo.com>
+		* gameswf/gameswf_object.*
+		Fixed as_object::watch()
+
+2007-09-26  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf.h
+		* gameswf/gameswf_as_sprite.cpp
+		* gameswf/gameswf_as_sprite.h
+		* gameswf/gameswf_sprite.cpp
+		* gameswf/gameswf_sprite.h
+		* gameswf/gameswf_sprite_def.h
+		* gameswf/samples/test_attachMovie.fla
+		* gameswf/samples/test_attachMovie.swf
+		Added attachMovie() method
+		
+2007-09-25  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf.h
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_dlist.cpp
+		* gameswf/gameswf_dlist.h
+		* gameswf/gameswf_environment.cpp
+		* gameswf/gameswf_environment.h
+		* gameswf/gameswf_impl.cpp
+		* gameswf/gameswf_object.cpp
+		* gameswf/gameswf_object.h
+		* gameswf/gameswf_root.cpp
+		* gameswf/gameswf_root.h
+		* gameswf/gameswf_sprite.cpp
+		* gameswf/gameswf_sprite.h
+		Optimized garbage collector, removed collect_garbage() interface,
+		garbage collector is combined with advance(). It does not cover all cases,
+		but is sufficient for real games.
+
+2007-09-22  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* base/tu_file.h
+		* gameswf/gameswf.h
+		* gameswf/gameswf_movie_def.cpp
+		* gameswf/gameswf_processor.cpp
+		* gameswf/gameswf_test_ogl.cpp
+		* gameswf/win32/VC8/gameswf.sln
+		* gameswf/win32/VC8/gameswf_processor.vcproj
+		Reanimeted gameswf_processor
+
+2007-09-22  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_as_classes/as_mcloader.cpp
+		* gameswf/gameswf_root.cpp
+		* gameswf/gameswf_root.h
+		A bit cleanup
+		
+2007-09-22  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf.h
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_function.cpp
+		* gameswf/gameswf_sprite.h
+		Fixed ASSetPropFlags,
+		as_as_function should use the environment of 'this_ptr' if it is
+
+2007-09-21  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_dlist.cpp
+		* gameswf/gameswf_dlist.h
+		* gameswf/gameswf_sprite.cpp
+		* gameswf/gameswf_sprite.h
+		added dump() stuff for debugging
+
+2007-09-21  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf.h
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_action.h
+		* gameswf/gameswf_as_classes/as_mcloader.cpp
+		* gameswf/gameswf_as_classes/as_netstream.cpp
+		* gameswf/gameswf_as_classes/as_xmlsocket.cpp
+		* gameswf/gameswf_environment.cpp
+		* gameswf/gameswf_function.cpp
+		* gameswf/gameswf_function.h
+		* gameswf/gameswf_impl.cpp
+		* gameswf/gameswf_object.cpp
+		* gameswf/gameswf_test_ogl.cpp
+		* gameswf/gameswf_timers.cpp
+		Pointer to as_environment is removed from struct as_as_function(),
+		as_as_function should not be binded with the execution environment constantly.
+		Flash places user-defined classes into _global and they can be called for
+		different environments. For the same reason struct action_buffer() instead of
+		references to dict & opcodes buffers hould contain data:
+		action_buffer* ==> action_buffer,
+		array<const char*> m_dictionary ==>array<tu_string> m_dictionary
+
+2007-09-21  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_as_classes/as_broadcaster.*
+		applied weak_ptr, listener maybe is deleted
+
+2007-09-18  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_environment.cpp: target maybe NULL
+
+2007-09-18  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_movie_def.cpp
+		* gameswf/gameswf_movie_def.h
+		* gameswf/gameswf_shape.cpp
+		* gameswf/gameswf_sprite_def.cpp
+		* gameswf/gameswf_test_ogl.cpp
+		Fixed bug concerned with nonexpendable calls of create_movie()
+		(thanks Francois Guibert for bug report)
+		removed useless show_logo() stuff (it is better to use progress bar),
+		USE_NEW_TESSELATOR is switched off (there are some bugs)
+
+2007-09-16  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* base/grid_index.h
+		* gameswf/gameswf_shape.cpp
+		Fixed memory leaks, USE_NEW_TESSELATOR is switched on
+		
+2007-09-13  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_value.cpp
+		the result of env->get_target() can be NULL
+		
+2007-09-13  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_object.cpp: fixed memory leak
+
+2007-09-12  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_environment.cpp
+		* gameswf/gameswf_environment.h
+		Flash 8 can have local zero register
+		
+2007-09-12  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* base/tu_timer.cpp
+		* base/tu_timer.h
+		* gameswf/gameswf.h
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_as_classes/as_date.cpp
+		* gameswf/gameswf_as_classes/as_date.h
+		* gameswf/samples/test_date.fla
+		* gameswf/samples/test_date.swf
+		* gameswf/win32/VC8/libgameswf.vcproj
+		Added the part of 'Date' Action Script Class implementation
+
+2007-09-11  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_movie_def.cpp: fixed m_loaded_length,
+		it should be increased on 8 (file start position(4) + file header length(4))
+		
+2007-09-11  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_impl.*: added SetTabIndex tag reader
+
+2007-09-11  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_shape.cpp: commented out 
+		#define DEBUG_DISPLAY_SHAPE_PATH
+		it is used for debugging only
+		* gameswf/gameswf_object.cpp: fixed the target of property
+		* gameswf/gameswf_value.cpp: removed assert(..), target of property can be NULL
+		
+2007-09-09  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_sprite.cpp: fixed typo
+		(sprite_get_bytes_loaded ==> sprite_get_bytes_total)
+
+2007-09-01  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_value.cpp
+		A bit cleanup
+
+2007-09-01  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_as_classes/as_broadcaster.cpp
+		* gameswf/gameswf_object.cpp
+		* gameswf/gameswf_value.cpp
+		* gameswf/gameswf_value.h
+		Fixed as_value::operator=
+		We should set m_property_target also.
+
+2007-09-01  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf.h
+		* gameswf/gameswf_sound_handler_sdl.cpp
+		* gameswf/gameswf_sound_handler_sdl.h
+		* gameswf/gameswf_sprite.cpp
+		Fixed the sound bug (thanks to David Ruzicka).
+		When the movie playback is paused, currently played sample
+		continues to play even then. Added pause(..) method to sound_handler
+
+2007-08-31  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_as_classes/as_mcloader.cpp
+		* gameswf/gameswf_as_classes/as_netstream.cpp
+		* gameswf/gameswf_as_classes/as_xmlsocket.cpp
+		* gameswf/gameswf_environment.h
+		* gameswf/gameswf_function.cpp
+		* gameswf/gameswf_function.h
+		* gameswf/gameswf_impl.cpp
+		* gameswf/gameswf_object.cpp
+		* gameswf/gameswf_timers.cpp
+		* gameswf/gameswf_value.cpp
+		as_environment* ==> weak_ptr<as_environment>	m_env
+		We need to watch m_env, testcase:
+		the movie executes the following opcodes
+		_global.x = new Object();
+		loadMovie("another.swf", _root);
+		the result of this:
+		current movie will be deleted and it environment too
+
+2007-08-30  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* base/container.h
+		* base/tu_loadlib.cpp
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_as_classes/as_string.cpp
+		* gameswf/gameswf_log.cpp
+		* gameswf/gameswf_movie_def.cpp
+		* gameswf/gameswf_object.cpp
+		* gameswf/gameswf_object.h
+		* gameswf/gameswf_value.cpp
+		* gameswf/gameswf_value.h
+		* gameswf/win32/VC8/gameswf.vcproj
+		Added the supporting of C_FUNCTION getter/setter
+
+2007-08-27  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* base/container.h
+		* base/image.h
+		* base/logger.h
+		* base/ogl.h
+		* base/tu_file.h
+		* base/tu_loadlib.h
+		* base/tu_types.h
+		* gameswf/gameswf.h
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_action.h
+		* gameswf/gameswf_freetype.cpp
+		* gameswf/gameswf_impl.cpp
+		* gameswf/gameswf_impl.h
+		* gameswf/gameswf_log.h
+		* gameswf/gameswf_object.cpp
+		* gameswf/gameswf_object.h
+		* gameswf/gameswf_plugin.h
+		* gameswf/gameswf_test_ogl.cpp
+		* gameswf/gameswf_types.h
+		* gameswf/gameswf_value.cpp
+		* gameswf/gameswf_value.h
+		* gameswf/plugins/sample/sample.cpp
+		* gameswf/plugins/sample/sample.h
+		* gameswf/plugins/sample/test.fla
+		* gameswf/plugins/sample/test.swf
+		* gameswf/plugins/sample/win32/sample.vcproj
+		* gameswf/win32/VC8/gameswf.sln
+		* gameswf/win32/VC8/gameswf.vcproj
+		* gameswf/win32/VC8/libgameswf.vcproj
+		* net/tu_net_file.h
+		Simplified plugin interface(removed plugin_value, 
+		as_object & as_value is exposed to plugin). Added gameswf.sln that 
+		contains libgameswf.dll project & gameswf.exe project.
+		gameswf.exe and plugins uses libgameswf.lib & libgameswf.dll
+		
+2007-08-27  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_object.*: removed useless code
+		
+2007-08-26  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_impl.cpp: fixed memory leak
+		
+2007-08-24  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf.h
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_environment.cpp
+		* gameswf/gameswf_font.cpp
+		* gameswf/gameswf_function.cpp
+		* gameswf/gameswf_function.h
+		* gameswf/gameswf_impl.cpp
+		* gameswf/gameswf_impl.h
+		* gameswf/gameswf_movie_def.cpp
+		* gameswf/gameswf_movie_def.h
+		* gameswf/gameswf_test_ogl.cpp
+		* gameswf/gameswf_text.cpp
+		Simplified user interface(removed create_library_... stuff),
+		the using of cached movie is controlled by s_use cached_movie
+		fixed some memory leaks, removed useless save_extern_movie()
+
+2007-08-24  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_impl.cpp: fixed movie_def_impl::create_instance()
+		broken earlier
+		
+2007-08-21  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf_action.cpp,
+		* gameswf/gameswf_sprite.cpp:
+		a bit cleanup		
+
+2007-08-04  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf.h
+		* gameswf/gameswf_button.cpp
+		* gameswf/gameswf_character.cpp
+		* gameswf/gameswf_character.h
+		* gameswf/gameswf_environment.cpp
+		* gameswf/gameswf_object.cpp
+		* gameswf/gameswf_root.cpp
+		* gameswf/gameswf_sprite.cpp
+		* gameswf/gameswf_text.cpp
+		* gameswf/gameswf_text.h
+		Mainly the implementation of garbage collector is completed.
+		It does not worsen performance of gameswf since it is executing
+		in downtime of gameswf.
+
+2007-08-03  Vitaly Alexeev <tishka92@yahoo.com>
+
+		* gameswf/gameswf.h
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_action.h
+		* gameswf/gameswf_button.cpp
+		* gameswf/gameswf_character.cpp
+		* gameswf/gameswf_character.h
+		* gameswf/gameswf_dlist.cpp
+		* gameswf/gameswf_dlist.h
+		* gameswf/gameswf_environment.cpp
+		* gameswf/gameswf_environment.h
+		* gameswf/gameswf_impl.cpp
+		* gameswf/gameswf_object.cpp
+		* gameswf/gameswf_object.h
+		* gameswf/gameswf_root.cpp
+		* gameswf/gameswf_sprite.cpp
+		* gameswf/gameswf_sprite.h
+		* gameswf/gameswf_text.cpp
+		* gameswf/gameswf_text.h
+		One more optimization of the garbage collector is done
+
+2007-08-03  Vitaly Alexeev <tishka92@yahoo.com>
+	
+		* gameswf/gameswf.h
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_action.h
+		* gameswf/gameswf_dlist.cpp
+		* gameswf/gameswf_dlist.h
+		* gameswf/gameswf_environment.cpp
+		* gameswf/gameswf_environment.h
+		* gameswf/gameswf_impl.cpp
+		* gameswf/gameswf_object.cpp
+		* gameswf/gameswf_object.h
+		* gameswf/gameswf_root.cpp
+		* gameswf/gameswf_root.h
+		* gameswf/gameswf_sprite.cpp
+		* gameswf/gameswf_sprite.h
+		Optimization of the garbage collector is done
+		
+2007-08-03  Vitaly Alexeev <tishka92@yahoo.com>
+	
+		* gameswf/gameswf_impl.cpp: garbage collector is switched 
+		temporarily off
+
+2007-08-02  Vitaly Alexeev <tishka92@yahoo.com>
+	
+		* gameswf/gameswf_impl.cpp: a bit cleanup
+
+2007-08-02  Vitaly Alexeev <tishka92@yahoo.com>
+	
+		* gameswf/gameswf_as_classes/as_broadcaster.cpp:
+		has forgotten to clear the debug stuff
+
+2007-08-02  Vitaly Alexeev <tishka92@yahoo.com>
+	
+		* base/container.h: fixed tu_string::operator=
+		* gameswf/gameswf.h
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_as_classes/as_broadcaster.cpp
+		* gameswf/gameswf_button.cpp
+		* gameswf/gameswf_character.h
+		* gameswf/gameswf_dlist.cpp
+		* gameswf/gameswf_dlist.h
+		* gameswf/gameswf_environment.cpp
+		* gameswf/gameswf_environment.h
+		* gameswf/gameswf_font.cpp
+		* gameswf/gameswf_impl.cpp
+		* gameswf/gameswf_impl.h
+		* gameswf/gameswf_object.cpp
+		* gameswf/gameswf_object.h
+		* gameswf/gameswf_root.cpp
+		* gameswf/gameswf_root.h
+		* gameswf/gameswf_sprite.cpp
+		* gameswf/gameswf_sprite.h
+		* gameswf/gameswf_text.cpp
+		* gameswf/gameswf_text.h
+		* gameswf/gameswf_video_impl.cpp
+		* gameswf/gameswf_video_impl.h
+		* gameswf/plugins/lib3ds/gameswf_3ds.cpp
+		* gameswf/plugins/lib3ds/gameswf_3ds.h
+		Implemented garbage collector, some tests may be fault,
+		we should not use operators like
+		as_object* x = new as_object()
+		we should use smart_ptr like
+		smart_ptr<as_object> x = new as_object()
+
+2007-07-31  Vitaly Alexeev <tishka92@yahoo.com>
+	
+		* gameswf/gameswf.h
+		* gameswf/gameswf_action.cpp
+		* gameswf/gameswf_object.cpp
+		* gameswf/gameswf_object.h: Added
+		__resolve, hasOwnProperty(), watch(), unwatch() implementation
+		
+2007-07-30  Vitaly Alexeev <tishka92@yahoo.com>
+	
+		* gameswf/gameswf_as_classes/as_broadcaster.cpp: fixed sendmessage()
+
+2007-07-30  Vitaly Alexeev <tishka92@yahoo.com>
+	
+		* gameswf/gameswf_dlist.cpp: reverted to prev version,
+		some tests are broken, this requires more deep analize
+
+2007-07-30  Vitaly Alexeev <tishka92@yahoo.com>
+	
+		* gameswf/gameswf_dlist.cpp: Fixed cross-link memory leak bug
+		that is the effect of code like
+		clip.myvar = clip;
+
+2007-07-29  Thatcher Ulrich <tu@tulrich.com>
+	* gameswf/gameswf_action.cpp: Fix delete operator.  Should only
+	clear the specified object member; it should not affect the object
+	pointed to by that member.
+
+	* gameswf/gameswf_batch_test.py: Add
+	tests/test_delete_references.txt to the list of passing tests.
+
+2007-07-29  Thatcher Ulrich <tu@tulrich.com>
+	* gameswf/samples/test_delete_references.as
+	* gameswf/samples/test_delete_references.swf
+	* gameswf/tests/test_delete_references.txt
+	Added a test to demonstrate that 'delete' operator is wrong -- it
+	should only clear the reference; it should not clear the objects
+	pointed to by the deleted reference.  Will fix in a subsequent
+	change.
+
+	* gameswf/gameswf_action.cpp: Fixed call_method opcode; method
+	calls should work on functions.
+
+	* gameswf/gameswf_function.h: Fixed memory bug with as_as_function
+	-- m_properties cannot be of type as_object, it must be a pointer
+	to as_object.  Otherwise, the as_object ref_counted destructor
+	tries to delete itself, which is invalid.
+
+	* base/Makefile: compile fix, add tu_loadlib.cpp
+
+2007-07-29  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	Continuation of struggle against memory leaks
+	* gameswf/gameswf.h
+	* gameswf/gameswf_action.cpp
+	* gameswf/gameswf_button.cpp
+	* gameswf/gameswf_character.h
+	* gameswf/gameswf_environment.cpp
+	* gameswf/gameswf_environment.h
+	* gameswf/gameswf_impl.cpp
+	* gameswf/gameswf_impl.h
+	* gameswf/gameswf_object.cpp
+	* gameswf/gameswf_object.h
+	* gameswf/gameswf_root.cpp
+	* gameswf/gameswf_root.h
+	* gameswf/gameswf_sprite.cpp
+	* gameswf/gameswf_sprite.h
+	* gameswf/gameswf_test_ogl.cpp
+	* gameswf/gameswf_text.cpp
+	* gameswf/gameswf_text.h
+	* gameswf/gameswf_value.cpp
+	* gameswf/gameswf_video_impl.cpp
+	* gameswf/gameswf_video_impl.h
+	* gameswf/plugins/lib3ds/gameswf_3ds.cpp
+	* gameswf/plugins/lib3ds/gameswf_3ds.h
+
+2007-07-29  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	a bit cleanup
+	* gameswf/gameswf_object.cpp
+
+2007-07-29  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	getter/setter requires the target
+	* gameswf/gameswf_object.cpp
+	* gameswf/gameswf_value.cpp
+	* gameswf/gameswf_value.h
+
+2007-07-28  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/gameswf_value.h: a bit cleanup
+
+2007-07-28  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/gameswf_action.cpp: null out object's members before deleting
+
+2007-07-26  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* base/smart_ptr.h: applied 'mutable'
+
+2007-07-22  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	A bit cleanup
+	* gameswf/gameswf.h
+	* gameswf/gameswf_button.cpp
+	* gameswf/gameswf_dlist.cpp
+	* gameswf/gameswf_object.h
+
+2007-07-22  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Struggle against memory leak that is become apparent from code like
+	myclip.my_var = myclip,
+	added misc struct listener()
+	* gameswf/gameswf_as_classes/as_key.cpp
+	* gameswf/gameswf_as_classes/as_xmlsocket.cpp
+	* gameswf/gameswf_button.cpp
+	* gameswf/gameswf_character.h
+	* gameswf/gameswf_dlist.cpp
+	* gameswf/gameswf_environment.h
+	* gameswf/gameswf_impl.h
+	* gameswf/gameswf_root.cpp
+	* gameswf/gameswf_root.h
+	* gameswf/gameswf_sprite.cpp
+	* gameswf/gameswf_sprite.h
+	* gameswf/gameswf_text.cpp
+	* gameswf/gameswf_text.h
+	* gameswf/gameswf_timers.cpp
+	* gameswf/gameswf_video_impl.cpp
+	* gameswf/gameswf_video_impl.h
+	* gameswf/plugins/lib3ds/gameswf_3ds.cpp
+	* gameswf/plugins/lib3ds/gameswf_3ds.h
+
+2007-07-21  Vitaly Alexeev <tishka92@yahoo.com>
+
+	The idea with hash<weak_ptr<..>, ...> has appeared bad. 
+	weak_ptr may be updated outside and therefore we'll have lost hash key
+	tweak_ptr ==> smart_ptr in listener
+	* gameswf/gameswf_root.cpp: reverted
+	* gameswf/gameswf_root.h: reverted
+
+2007-07-21  Vitaly Alexeev <tishka92@yahoo.com>
+
+	character* m_parent ==> weak_ptr<character> m_parent
+	the parent of character may be dead because of Action Script
+	* base/smart_ptr.h
+	* gameswf/gameswf_button.cpp
+	* gameswf/gameswf_character.cpp
+	* gameswf/gameswf_character.h
+	* gameswf/gameswf_impl.cpp
+	* gameswf/gameswf_sprite.cpp
+
+2007-07-21  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Fixed some bugs:
+	any as_object should have addProperty member,
+	broadcastMessage can have parameters,
+	properly to pass this_ptr to event handler,
+	text fields can serve as container 
+	* gameswf/gameswf_action.cpp
+	* gameswf/gameswf_as_classes/as_broadcaster.cpp
+	* gameswf/gameswf_object.cpp
+	* gameswf/gameswf_object.h
+	* gameswf/gameswf_text.cpp
+	* gameswf/gameswf_text.h
+
+2007-07-19  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Plugin handling
+	* gameswf/gameswf.h
+	* gameswf/gameswf_action.cpp
+	* gameswf/gameswf_action.h
+	* gameswf/gameswf_object.cpp
+	* gameswf/gameswf_object.h
+	* gameswf/gameswf_plugin.h
+	* gameswf/plugins/sample/sample.cpp
+	* gameswf/plugins/sample/sample.h
+	* gameswf/plugins/sample/test.fla
+	* gameswf/plugins/sample/test.swf
+	* gameswf/plugins/sample/win32/sample.vcproj
+
+2007-07-19  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Added missing gameswf_plugin.h,
+	added struct plugin_object that is the bridge between core of gameswf
+	and the plugin,
+	added plugin_value that is common for gameswf & plugin and is used to
+	pass data to/from plugin
+	* gameswf/gameswf_action.cpp
+	* gameswf/gameswf_as_classes/as_color.cpp
+	* gameswf/gameswf_as_classes/as_table.cpp
+	* gameswf/gameswf_object.cpp
+	* gameswf/gameswf_object.h
+	* gameswf/gameswf_plugin.h
+	* gameswf/gameswf_value.cpp
+	* gameswf/gameswf_value.h
+	* gameswf/plugins/sample/sample.cpp
+	* gameswf/plugins/sample/test.fla
+	* gameswf/plugins/sample/test.swf
+	* gameswf/plugins/sample/win32/sample.vcproj
+	* gameswf/win32/VC8/gameswf.vcproj
+
+2007-07-17  Vitaly Alexeev <tishka92@yahoo.com>
+
+	tweak_ptr ==> smart_ptr, we should protect active entity from deleting,
+	on_event() may delete it
+	* gameswf/gameswf_root.h
+
+2007-07-17  Vitaly Alexeev <tishka92@yahoo.com>
+
+	The supporting of loadable plugins is added (unimplemented for now)
+	* base/tu_loadlib.cpp
+	* base/tu_loadlib.h
+	* gameswf/gameswf_action.cpp
+	* gameswf/gameswf_action.h
+	* gameswf/gameswf_as_sprite.cpp
+	* gameswf/gameswf_character.cpp
+	* gameswf/gameswf_environment.cpp
+	* gameswf/gameswf_environment.h
+	* gameswf/gameswf_font.cpp
+	* gameswf/gameswf_sprite.cpp
+	* gameswf/gameswf_value.cpp
+	* gameswf/gameswf_value.h
+	* gameswf/plugins/sample
+	* gameswf/plugins/sample/sample.cpp
+	* gameswf/plugins/sample/test.fla
+	* gameswf/plugins/sample/test.swf
+	* gameswf/plugins/sample/win32
+	* gameswf/plugins/sample/win32/sample.vcproj
+	* gameswf/win32/VC8/gameswf.vcproj
+
+2007-07-14  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Fixed bug that shows one's worth in Flash8 dynamic text fields,
+	updated superclass test
+	* gameswf/gameswf_font.cpp
+	* gameswf/samples/test_superclass/circle.as
+	* gameswf/samples/test_superclass/shape.as
+	* gameswf/samples/test_superclass/test.fla
+	* gameswf/samples/test_superclass/test.swf
+
+2007-07-14  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Oops, fixed compilation error
+	* gameswf/gameswf_environment.cpp
+	* gameswf/gameswf_environment.h
+
+2007-07-14  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Added get_register() & set_register(), 
+	local_register_ptr is private now,
+	unified log messages
+	* gameswf/gameswf_action.cpp
+	* gameswf/gameswf_button.cpp
+	* gameswf/gameswf_environment.cpp
+	* gameswf/gameswf_environment.h
+	* gameswf/gameswf_function.cpp
+	* gameswf/gameswf_impl.cpp
+	* gameswf/gameswf_movie_def.cpp
+	* gameswf/gameswf_object.cpp
+	* gameswf/gameswf_sprite.cpp
+
+2007-07-14  Vitaly Alexeev <tishka92@yahoo.com>
+
+	The semantic of Flash class differs from semantic of C++.
+	Flash instance variables is not private but public,
+	all variables of new created object is therein,
+	'private' keyword is meaningless
+	* gameswf/gameswf_action.cpp
+	* gameswf/gameswf_environment.h
+	* gameswf/samples/test_superclass/circle.as
+	* gameswf/samples/test_superclass/shape.as
+	* gameswf/samples/test_superclass/test.fla
+	* gameswf/samples/test_superclass/test.swf
+
+2007-07-14  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/win32/VC8/gameswf.vcproj: removed unused linker input
+
+2007-07-12  Vitaly Alexeev <tishka92@yahoo.com>
+
+	The first attempt to implement the supporting of Subclass/Superclass
+	* gameswf/gameswf.h
+	* gameswf/gameswf_action.cpp
+	* gameswf/gameswf_environment.cpp
+	* gameswf/gameswf_environment.h
+	* gameswf/gameswf_function.cpp
+	* gameswf/gameswf_function.h
+	* gameswf/gameswf_object.cpp
+	* gameswf/gameswf_object.h
+	* gameswf/gameswf_value.cpp
+	* gameswf/samples/test_superclass
+	* gameswf/samples/test_superclass/circle.as
+	* gameswf/samples/test_superclass/shape.as
+	* gameswf/samples/test_superclass/test.fla
+	* gameswf/samples/test_superclass/test.swf
+
+2007-07-12  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Static & dynamic text bug is fixed. The reason of this bug is the fact that 
+	all the EMSquare coordinates in Flas8 are multiplied by 20 at export.
+	* gameswf/gameswf_font.cpp
+	* gameswf/gameswf_font.h
+	* gameswf/gameswf_text.cpp
+
+2007-07-08  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action.cpp: simplified delete opcode(0x3A),
+	added 'extends' opcode(0x69) implementation
+	* gameswf/gameswf_as_classes/as_array.cpp,
+	* gameswf/gameswf_object.h,
+	* gameswf/gameswf_value.h:
+	as_prop_flags: numeric const ==> symbolic const
+
+2007-07-08  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_button.cpp,
+	* gameswf/gameswf_sprite.cpp: fixed one more _width & _heigth bug
+	* gameswf/plugins/lib3ds/gameswf_3ds.cpp: typo
+	* gameswf/samples/test_bound.fla,
+	* gameswf/samples/test_bound.swf: added testcase for _width & _heigth
+	* gameswf/samples/test_delete.fla,
+	* gameswf/samples/test_delete.swf: a bit cleanup
+
+2007-07-07  Thatcher Ulrich <tu@tulrich.com>
+	We don't use non-const references --> fix character::get_bound(),
+	matrix::transform(rect*), matrix::transform_by_inverse(rect*)
+	Added some convenience methods to rect.
+	A few whitespace edits.
+	* gameswf/*
+	* gameswf/Makefile: add as_broadcaster to the build
+
+2007-07-05  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Fixed the hack, added erase(), push_back() & size() methods
+	* gameswf/gameswf_as_classes/as_array.h,
+	* gameswf/gameswf_as_classes/as_array.cpp
+	Implemented AsBroadcaster
+	* gameswf/gameswf_action.cpp
+	* gameswf/gameswf_as_classes/as_broadcaster.cpp: new
+	* gameswf/gameswf_as_classes/as_broadcaster.h: new
+	* gameswf/gameswf_object.h: protected addProperty method
+	* gameswf/gameswf_value.cpp: fixed operator== of as_value() for OBJECT
+	Testcase for AsBroadcaster
+	* gameswf/samples/test_broadcaster.fla
+	* gameswf/samples/test_broadcaster.swf
+	* gameswf/win32/VC8/gameswf.vcproj: updated
+	* NEWS: updated
+
+2007-07-04  Thatcher Ulrich <tu@tulrich.com>
+	* gameswf/gameswf_sound_handler_sdl.h: Small compile fix.
+
+2007-07-04  Thatcher Ulrich <tu@tulrich.com>
+	Implemented the remaining String methods.  Fixed the String method
+	dispatch.  Made test_string much more comprehensive and fixed a
+	bunch of corner cases.
+
+2007-07-03  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Fixed a some sound bugs that show one's worth
+	when sound driver is not installed
+	* gameswf/gameswf.h
+	* gameswf/gameswf_impl.cpp
+	* gameswf/gameswf_sound.cpp
+	* gameswf/gameswf_sound_handler_sdl.cpp
+	* gameswf/gameswf_sound_handler_sdl.h
+
+2007-07-03  Vitaly Alexeev <tishka92@yahoo.com>
+
+	A bit cleanup 
+	* gameswf/gameswf_types.cpp
+
+2007-07-03  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Fixed get_bound() bug that show one's worth during rotation
+	* gameswf/gameswf_types.cpp
+
+2007-07-03  Vitaly Alexeev <tishka92@yahoo.com>
+		
+	Cleanup of get_bound() stuff
+	* gameswf/gameswf.h
+	* gameswf/gameswf_button.cpp
+	* gameswf/gameswf_button.h
+	* gameswf/gameswf_character.cpp
+	* gameswf/gameswf_character.h
+	* gameswf/gameswf_freetype.cpp
+	* gameswf/gameswf_impl.cpp
+	* gameswf/gameswf_impl.h
+	* gameswf/gameswf_sprite.h
+	* gameswf/gameswf_sprite_def.h
+	* gameswf/gameswf_text.cpp
+	* gameswf/gameswf_text.h
+	* gameswf/gameswf_types.cpp
+	* gameswf/gameswf_video_impl.cpp
+	* gameswf/gameswf_video_impl.h
+	* gameswf/plugins/lib3ds/gameswf_3ds.h
+	* gameswf/win32/VC7/gameswf.vcproj
+	* gameswf/win32/VC8/gameswf.vcproj
+
+2007-07-02  Thatcher Ulrich <tu@tulrich.com>
+	* gameswf/gameswf_sprite.cpp: move on_event(ENTER_FRAME) to after
+	the update of m_current_frame.  Based on tests, this seems to be
+	correct.  If this breaks other movies, then we need to devise more
+	automated tests and fix them.
+	* gameswf/*/test_motion_exec_order.*: a new test to verify that
+	objects are moved after onEnterFrame() is called.
+	* gameswf/gameswf_batch_test.py: we now pass tests frame1, frame2,
+	and test_motion_exec_order.
+	* gameswf/tests/frame*.txt: tweak the tests and add comments
+
+2007-07-02  Thatcher Ulrich <tu@tulrich.com>
+	* gameswf/gameswf_batch_test.py: ignore comment lines (starting
+	with '#') in test files.  Add test_currentframe.txt to the list
+	of passing tests.
+	* gameswf/samples/test_currentframe.fla,swf: very simple test of
+	_currentFrame.
+	* gameswf/tests/test_currentframe.txt: new test to verify
+	_currentFrame
+
+2007-07-02  Thatcher Ulrich <tu@tulrich.com>
+	* Makefile: add libpng files to win32_dependencies.zip
+	* gameswf/gameswf_batch_test.py: update the automated test suite.
+	Move the tests to separate files under tests/, and define a list
+	of known passing tests.
+	* gameswf/gameswf_test_ogl.cpp: Remove some extra output that cause
+	tests to fail.
+	* gameswf/tests/*.txt: new test definition files.  First line is
+	the .swf to load, and the rest of the file is the expected trace
+	output.
+
+2007-07-01  Thatcher Ulrich <tu@tulrich.com>
+	* Makefile: initial rule for win32_dependencies.zip.  Needs to be
+	tested, also add freetype, etc.
+
+2007-07-01  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Snapshot of movieclip of any nesting level is done properly
+ 	* gameswf/gameswf_video_ogl.cpp
+ 	* gameswf/plugins/lib3ds/gameswf_3ds.cpp
+
+2007-06-28  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Snapshot of movieclip is used as texture for 3D model !
+	(see /gameswf/plugins/lib3ds/test.fla)
+ 	* gameswf/gameswf_as_classes/as_netstream.cpp
+ 	* gameswf/gameswf_text.cpp
+ 	* gameswf/gameswf_text.h
+ 	* gameswf/gameswf_video_impl.cpp
+ 	* gameswf/gameswf_video_impl.h
+ 	* gameswf/plugins/lib3ds/gameswf_3ds.cpp
+ 	* gameswf/plugins/lib3ds/gameswf_3ds.h
+ 	* gameswf/plugins/lib3ds/test.fla
+ 	* gameswf/plugins/lib3ds/test.swf
+
+2007-06-28  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Added misc transform_by_inverse(rect), added twips_to_pixels() & pixels_to_twips() methods
+	to rect & point struct, added find_target(as_value) to struct character, fixed 3DS file loader:
+	new instance replaces target now, optimized _width & _height stuff
+ 	* gameswf/gameswf.h:
+	* gameswf/gameswf_button.cpp
+	* gameswf/gameswf_character.cpp
+	* gameswf/gameswf_character.h
+	* gameswf/gameswf_environment.cpp
+	* gameswf/gameswf_environment.h
+	* gameswf/gameswf_sprite.cpp
+	* gameswf/gameswf_sprite_def.h
+	* gameswf/gameswf_types.cpp
+
+2007-06-28  Vitaly Alexeev <tishka92@yahoo.com>
+
+	_width & _height property of characters. A bit cleanup
+	* gameswf/gameswf_button.cpp
+	* gameswf/gameswf_character.cpp
+	* gameswf/gameswf_character.h
+	* gameswf/gameswf_sprite.cpp
+	* gameswf/gameswf_types.cpp
+
+2007-06-28  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Fixed _width & _height property of characters. For calculation of the width & height is used
+	the bound that covers this character. 
+	* gameswf/gameswf.h
+	* gameswf/gameswf_button.cpp
+	* gameswf/gameswf_character.cpp
+	* gameswf/gameswf_character.h
+	* gameswf/gameswf_impl.cpp
+	* gameswf/gameswf_impl.h
+	* gameswf/gameswf_morph2.cpp
+	* gameswf/gameswf_shape.cpp
+	* gameswf/gameswf_shape.h
+	* gameswf/gameswf_sprite.cpp
+	* gameswf/gameswf_sprite.h
+	* gameswf/gameswf_text.cpp
+	* gameswf/gameswf_text.h
+	* gameswf/gameswf_types.cpp
+
+2007-06-23  Thatcher Ulrich <tu@tulrich.com>
+	* base/tu_random.*: fixed determinism, added comments for
+	4096-seed version of CMWC
+
+2007-06-21  Vitaly Alexeev <tishka92@yahoo.com>
+
+	smart_ptr() ==> tweak_ptr() in listeners.
+	3DS plugin implementation moved from x3ds_definition to x3ds_instance
+	(I plan to use moviclip as texture for 3D model).
+	Implemented leftMargin, rightMargin, indent & leading properties of TextFormat Action Script class
+	* base/smart_ptr.h
+	* gameswf/gameswf_as_classes/as_key.h
+	* gameswf/gameswf_as_classes/as_mcloader.cpp
+	* gameswf/gameswf_as_classes/as_mcloader.h
+	* gameswf/gameswf_impl.cpp
+	* gameswf/gameswf_root.cpp
+	* gameswf/gameswf_root.h
+	* gameswf/gameswf_text.cpp
+	* gameswf/gameswf_text.h
+	* gameswf/plugins/lib3ds/gameswf_3ds.cpp
+	* gameswf/plugins/lib3ds/gameswf_3ds.h
+
+2007-06-19  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Implemented font, bold, italic, size, align & color properties of
+	TextFormat Action Script class
+	* gameswf/gameswf.h
+	* gameswf/gameswf_action.cpp
+	* gameswf/gameswf_as_classes/as_textformat.cpp: rewritten
+	* gameswf/gameswf_as_classes/as_textformat.h: rewritten
+	* gameswf/gameswf_font.h
+	* gameswf/gameswf_text.cpp
+	* gameswf/gameswf_text.h
+
+2007-06-17  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Fixed _framesloaded property
+	* gameswf/gameswf_as_classes/as_mcloader.cpp
+	* gameswf/gameswf_character.cpp
+	* gameswf/gameswf_character.h
+	* gameswf/gameswf_movie_def.h
+	* gameswf/gameswf_root.h
+	* gameswf/gameswf_sprite.cpp
+	* gameswf/gameswf_sprite.h
+	
+2007-06-11  Vitaly Alexeev <tishka92@yahoo.com>
+
+	SDL mutex & thread are removed from core of gameswf
+	* base/tu_config.h: added #define TU_CONFIG_LINK_TO_THREAD
+	* gameswf/gameswf_freetype.h: cleanup
+	* gameswf/gameswf_mutex.cpp: removed
+	* gameswf/gameswf_mutex.h: rewritten
+	* gameswf/gameswf_movie_def.cpp,
+	* gameswf/gameswf_as_classes/as_netstream.cpp,
+	* gameswf/gameswf_as_classes/as_netstream.h,
+	* gameswf/gameswf_root.cpp,
+	* gameswf/gameswf_root.h,
+	* gameswf/gameswf_sound_handler_sdl.cpp,
+	* gameswf/gameswf_sound_handler_sdl.h: tu_mutex is used
+	* gameswf/win32/VC8/gameswf.vcproj: gameswf_mutex.cpp is removed
+
+2007-06-09  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_as_classes/as_netstream.*,
+	* gameswf/gameswf_movie_def.cpp,
+	* gameswf/gameswf_mutex.h:
+	* gameswf/gameswf_root.cpp:
+	cleanup
+
+2007-06-07  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_font.*, 
+	* gameswf/gameswf_freetype.cpp:
+	The basic work with dynamic fonts is completed
+
+2007-06-07  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_font.cpp: 
+	* gameswf/gameswf_freetype.*: added handler of bold & italic styles (dynamic fonts)
+	* gameswf/plugins/lib3ds/gameswf_3ds.cpp: fixed compiler warning
+
+2007-06-07  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf.h,
+	* gameswf/gameswf_font.*,
+	* gameswf/gameswf_text.*,
+	* gameswf/gameswf_freetype.*:
+	Work with dynamic fonts
+	
+2007-06-03  Thatcher Ulrich <tu@tulrich.com>
+	* fix some minor spelling & indents
+
+2007-06-03  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_font.cpp,
+	* gameswf/gameswf_freetype.*: added BearingX & BearingY
+	
+2007-06-03  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_freetype.cpp: added get_fontfile(...) function,
+	this function gets font file name by font name (for Win32 only)
+
+2007-06-02  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_text.cpp: applied patch from Francois Guibert,
+	fixed bug about the "Var" thing of text fields.
+
+2007-05-29  Vitaly Alexeev <tishka92@yahoo.com>
+
+	fixed bug #1727294 
+	* gameswf/gameswf_environment.*: parse_path() is static now,
+	it's useful outside of class too
+	* gameswf/gameswf_character.*: added find_target()
+	* gameswf/gameswf_sprite.cpp: removed set_text_value from set_member(),
+	first: reduces performance, second: VAR from text field is a link to 
+	variable in sprite_instance therefore we need to get it value in advance() time
+	* gameswf/gameswf_text.*: if VAR is set then 
+	- set_text_value() assigns text value to new text & call VAR->set_member()
+	- get_text_value() gets text value from VAR->get_member()
+	if VAR is changed outside of text_field then text_field gets new text value in
+	advance()
+
+2007-05-29  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* base/tu_config.h,
+	* gameswf/gameswf.h,
+	* gameswf/gameswf_font.*,
+	* gameswf/gameswf_fontlib.cpp,
+	* gameswf/gameswf_sprite.cpp,
+	* gameswf/gameswf_text.cpp,
+	* gameswf/gameswf_freetype.*,
+	* gameswf/win32/VC7/gameswf.vcproj: 
+	the support of dynamic(not embedded) fonts is added (not completed yet).
+	It is based on freetype library
+	
+2007-05-24  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_as_sprite.cpp,
+	* gameswf/gameswf_sprite.*: added goto_frame(const as_value& target_frame)
+	
+2007-05-24  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_as_sprite.cpp: applied the patch from Francois Guibert,
+	fixed gotoAndPlay & gotoAndStop bug, Flash tries to convert STRING to NUMBER,
+	if the conversion is OK then Flash uses this NUMBER as target_frame,
+	else uses STRING as label of target_frame
+
+2007-05-24  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_text.cpp: divided into .cpp & .h files
+	* gameswf/gameswf_as_classes/(a lot of files): assert(fn.this_ptr) is added
+	* gameswf/gameswf_sprite.*,
+	* gameswf/gameswf_as_sprite.*: added createTextField() method
+
+2007-05-22  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/(a lot of files): cast_to_...() are applied
+
+2007-05-22  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_as_sprite.cpp: fixed get_depth()
+	* gameswf/gameswf_test_ogl.cll: added printf("Playing ..., version ...")
+	
+2007-05-22  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/win32/VC7/gameswf.vcproj: updated
+	* gameswf/plugins/lib3ds/gameswf_3ds.cpp: ported to VC7
+
+2007-05-22  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action.cpp:  fixed ASSetPropFlags,
+	the NULL second parameter means that assetpropflags is applied to all children
+
+2007-05-22  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_impl.*: added tag 64 reader
+	* gameswf/gameswf.h,
+	* gameswf/gameswf_action.*,
+	* gameswf/gameswf_object.*,
+	* gameswf/gameswf_sprite.*:
+	fixed enumerate opcodes (0x46 & 0x55)
+
+2007-05-17  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf.h: added cast_to_as_mcloader()
+	* gameswf/gameswf_as_classes/as_mcloader.*: mc_loader is added to gameswf listener 
+	in add_listener() but not in constructor
+	* gameswf/gameswf_sprite.*: added unloadMovie()
+	* gameswf/gameswf_dlist.*: added remove_display_object(character* ch) that is used 
+	to unload movie
+	* gameswf/gameswf_environment.* rewritten load_file().
+	During loadMovie(".jpg", ...), loadMovie(".3ds", ...) & unloadMovie() new empty 
+	sprite_instance	is't created and target is used as new sprite_instance. 
+	* gameswf/gameswf_impl.*: added MetaData tag reader
+
+2007-05-15  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_styles.cpp: SWF 8 and later supports up to 15 gradient control points
+	* docs/AUTHORS: misc updates
+
+2007-05-15  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_test_ogl.cpp:	removed warning at the start
+	* gameswf/gameswf_text.cpp:	fixed edit_text bug for Flash 8
+
+2007-05-15  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* base/jpeg.cpp: fixed bug that is shown at playing Flash 8 files
+	* gameswf/gameswf_font.*,
+	* gameswf/gameswf_impl.*,
+	* gameswf/gameswf_action.cpp,
+	* gameswf/gameswf_styles.cpp,
+	* gameswf/gameswf_text.cpp,
+	* gameswf/gameswf.h:
+	Work on maintenance of compatibility with Flash 8
+
+2007-05-13  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/plugins/lib3ds/gameswf_3ds.*: inhibited till the best times
+	* gameswf/gameswf_font.*
+	* gameswf/gameswf_impl.*
+	* gameswf/gameswf_stream.*
+	* gameswf/gameswf_styles.*
+	* gameswf/gameswf_shape.cpp:
+	added readers of DefineFont3, DefineShape4, DefineFileAttribute & DefineFontAlignZones tags
+
+2007-05-06  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/plugins/lib3ds/gameswf_3ds.*: more readable, fixed memory leak & cleanup
+	* gameswf/gameswf_render_handler_ogl.cpp: 
+	added m_texture=0 operator after glDeleteTexture() for debuging memory leaks
+
+2007-05-03  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_environment.cpp: in load_file() function strncmp() ==> strnicmp()
+	* gameswf/gameswf_3ds.*: added texturing of 3D model
+	* gameswf/plugins/lib3ds/test.(fla,swf): updated
+	* gameswf/plugins/lib3ds/cup.3ds: removed (since does not contains texture)
+	* gameswf/plugins/lib3ds/books.3ds: added 3D model that contains texture
+	
+2007-05-02  Thatcher Ulrich <tu@tulrich.com>
+
+	Misc build fixes & cleanup.
+	
+	* base/tu_config.h: by default, don't link to MySQL, LIB3DS,
+	FFMPEG
+	* gameswf/Makefile: update filelist with newer files
+	* gameswf/*: normalize include file paths -- no relative paths;
+	path is always relative to project root.
+
+2007-05-01  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_3ds.*: moved to gameswf/plugins/lib3ds/ directory
+	* gameswf/plugins/lib3ds/test.(fla,swf): added testcase 
+	* gameswf/plugins/lib3ds/cup.3ds: added 3D model that is used in test.swf
+
+2007-04-30  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_3ds.*: work is go on
+	
+2007-04-28  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_3ds.*: added camera
+
+2007-04-28  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* base/tu_config.h,
+	* gameswf/gameswf_sound_handler_sdl.*: 
+	* gameswf/gameswf_as_classes/as_db.*,
+	* gameswf/gameswf_as_classes/as_netstream.*,
+	* gameswf/gameswf_as_classes/as_table.*,
+	USE_MYSQL ==> TU_CONFIG_LINK_TO_MYSQL
+	USE_FFMPEG ==> TU_CONFIG_LINK_TO_FFMPEG
+	* gameswf/gameswf_environment.h,
+	* gameswf/gameswf_3ds.*: 
+	The work on 3DS files has begun
+
+2007-04-26  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf.h,
+	* gameswf/gameswf_action.cpp,
+	* gameswf/gameswf_as_classes/as_sound.cpp,
+	fixed stopAllSounds() & setVolume()
+	* gameswf/gameswf_environment.*
+	* gameswf/gameswf_impl.*: added loadMovie("my.jpg", ...)
+	
+2007-04-24  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_as_classes/as_color.cpp: added getTransform() & setTransform()
+	* gameswf/gameswf_cursor.cpp: updated a bit
+
+2007-04-24  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action.cpp,
+	* gameswf/gameswf_cursor.*: added clear_cursor()
+
+2007-04-24  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_cursor.cpp: updated cursor (arrow ==> hand)
+
+2007-04-24  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action.cpp,
+	* gameswf/gameswf_root.cpp,
+	* gameswf/gameswf_sprite.cpp,
+	* gameswf/gameswf_cursor.* added the mouse cursor that is changed when points to 
+	the active object
+
+2007-04-22  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_value.*,
+	* gameswf/gameswf_action.cpp: a bit cleanup
+
+2007-04-21  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/a lot of files:
+	as_value, as_as_function, as_environment & as_object moved to own files
+
+2007-04-21  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action.*: added addProperty() method to as_object()
+	added PROPERTY type to as_value()
+
+2007-04-21  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action.cpp: fixed action_buffer::execute(), 
+	Flash keeps local variables after executing of frame actions therefore we should not delete them
+	* gameswf/gameswf_sprite.*,
+	* gameswf/gameswf_dlist.*,
+	* gameswf/gameswf_as_sprite.*: added getNextHighestDepth() sprite method
+
+2007-04-19  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_button.cpp: button on_event() must protect parent
+	from deleting just as 'this'
+
+2007-04-19  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action.*: fixed local var bug,
+	Semantics Flash Action Script differs from semantics C++,
+	get_variables() & set_variables() search for local vars in all environment
+	declare_local() & set_local() search for local vars up to barrier of environment
+	* gameswf/samples/test_local_var.*: added testcase
+	* gameswf/gameswf_as_classes/as_mcloader.cpp: cleanup
+
+2007-04-17  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action.cpp: fixed one of the memory leaks bug
+
+2007-04-17  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_impl.cpp,
+	* gameswf/gameswf_sprite.cpp,
+	* gameswf/as_classes/as_mcloader.cpp: cleanup
+
+2007-04-17  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_text.cpp: applied the patch from Francois Guibert
+	(fixed the cursor position with centered texts)
+
+2007-04-17  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/a lot of files: removed struct movie()
+	it's just an artifact of the code's history.
+
+2007-04-15  Thatcher Ulrich <tu@tulrich.com>
+
+	Make things more straightforward for embedders who don't want http
+	support linked into gameswf.
+	
+	* base/tu_file.cpp: remove http support -- moved to net/
+	* net/tu_net_file.*, net/Makefile: a tu_file that supports
+	HTTP (factored out of tu_file)
+	* gameswf/gameswf_test_ogl.cpp: add '-n' flag to control whether to allow
+	network access or not.  Support http files explicitly via
+	file_opener().
+	* gameswf/Makefile: misc fixes
+
+2007-04-15  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* net/http_client.h: HTTP_TIMEOUT is increased up to 10 sec
+	* gameswf/as_classes/as_mcloader.cpp: cleanup
+	(for slow connections)
+	* gameswf/gameswf_sprite.*,
+	* gameswf/gameswf_root.*,
+	* gameswf/gameswf_movie_def.h,
+	* gameswf/gameswf.h:
+	get_file_bytes() & get_loaded_bytes() are moved from movie_root to sprite_instance
+	because of child movieclip may be created from root movie def (loadMovie() stuff)
+
+2007-04-15  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action.*,
+	* gameswf/gameswf_as_sprite.cpp,
+	* gameswf/as_classes/as_mcloader.*:
+	Has recollected that target may be both string and pointer.
+	load_file() function moved to struct as_environment(), so is more correct.
+	Something has simplified.
+
+2007-04-15  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_impl.cpp,
+	* gameswf/gameswf_test_ogl.cpp:
+	fixed one of the memory leaks bug
+
+2007-04-14  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/as_classes/as_mcloader.*: implemented MovieClipLoader.unloadClip() method
+	* gameswf/gameswf_button.cpp: fixed bug arising during loadMovie()
+	* gameswf/gameswf_impl.cpp: added memory leaks debuging code
+	* gameswf/gameswf_sprite.cpp,
+	* gameswf/gameswf_movie_def.cpp: added misc printf
+	* gameswf/gameswf_movie.: character id may be -1 (case of loadMovie())
+	* base/tu_opengl_includes.h: PROC_NAME_PREFIX is missing for WIN32
+	there are memory leaks bug arising after loadMovie(), will be fixed later
+
+2007-04-14  Thatcher Ulrich <tu@tulrich.com>
+
+	* demos/posterize/*: a small program for posterizing
+	images (i.e. reducing to a small number of output colors, for a
+	graphic effect or to prepare for silkscreening)
+	
+2007-04-14  Thatcher Ulrich <tu@tulrich.com>
+
+	* gameswf_test_ogl.h, gameswf.h, gameswf/Makefile, as_xml.cpp,
+	  config:
+	misc compile fixes for msvc + Makefiles.
+	* tu_opengl_includes.h:
+	compile fix -- just include <windows.h>.  It's too hard to keep
+	faking the windows headers.
+	* base/png_helper.*:
+	added write_rgba() helper function
+	* base/ear_clip_triangulate_impl.h:
+	catch and work around a degenerate case
+
+2007-04-14  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* a lot of files:
+	implemented unloadMovie() function
+	removed useless delete_unused_root() stuff
+
+2007-04-14  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_button.cpp: fixed bug
+	(a button may be the sprite's parent therefore it should call execute_frame_tags(0))
+
+2007-04-12  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/samples/: cleanup
+
+2007-04-12  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_button.cpp,
+	* gameswf/gameswf_root.cpp,
+	* gameswf/gameswf_movie.h:
+	removed useless on_button_event()
+
+2007-04-12  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action.h: fixed the bug in struct event_id
+	I add m_unused because of problem with hash<event_id, ...>
+	the reason: sizeof(unsigned char+unsigned char+movie*)  == 8 
+	and	 sizeof(unsigned char+unsigned char+Uint16+movie*)  == 8
+	I think that compiler do aligment
+	
+2007-04-12  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* a lot of files: implemented MovieClipLoader, there are some bugs yet
+
+2007-04-10  Thatcher Ulrich <tu@tulrich.com>
+
+	* misc files: minimal changes to get gcc-4.0 compile working.  I
+	haven't fixed warnings or bugs yet.
+
+2007-04-10  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_xml.*: moved to 
+	* gameswf/as_classes/as_xml.*
+	* gameswf/as_classes/as_MovieClipLoader.*: removed
+	(obsoletly, the new version - as_mcloader.*, now is not finished)
+	* gameswf/gameswf_as_sprite.*,
+	* gameswf/gameswf_sprite.cpp: added loadMovie method
+	* gameswf/gameswf_timer.cpp: cleanup
+
+2007-04-10  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/as_classes/as_array.cpp: processing of the following case is added
+	new Array("ab", "cd", "ef", "gh", ...);
+	* gameswf/gameswf_timer.*: processing of the multiparam setInterval
+	function is added
+	* gameswf/gameswf_root.cpp: protection of listener object against removal
+	is added
+
+2007-04-10  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* a lot of files:
+	rewritten gameswf_timer.* (listener was used),
+	removed gameswf_xmlsocket.* (obsoletly, the new version - as_xmlsocket.*),
+	added test_xmlsocket.(fla,swf),
+	cleaning useless code
+
+2007-04-08  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* base/tu_file.cpp: netfile stuff moved from http_client.cpp
+	* net/a lot files,
+	* gameswf/a lot of files: completely rewritten  XMLSocket stuff,
+	using net/net_interface_tcp.*
+	* gameswf/as_classes/as_xmlsocket.*: added new files
+
+2007-04-05  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_xmlsocket.cpp
+	* gameswf/gameswf_xml.*
+	* gameswf/gameswf_test_ogl.cpp
+	* gameswf/as_classes/as_MovieClipLoader.cpp
+	fixed bug #1404428 [LIBXML2 support no longer compiles]
+
+2007-04-05  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_impl.cpp,
+	* gameswf/gameswf_font.*: added tag 62 implementation (DefineFontInfo2)
+
+2007-04-05  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_sound_handler.cpp: fixed one more stream sound bug
+
+2007-04-05  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* base/tu_file.cpp: new tu_file("http://...") returns
+	m_data=NULL if there was a failure
+	* gameswf/a lot of files: removed useless restart(),
+	fixed stream sound bug that have been showing up 
+	at movie with one frame, the operations that are executed at removing
+	dlist object moved to remove() function
+	* net/http_client.*
+	* net/net_interface_tcp.cpp: porting to Linux
+
+2007-04-03  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* net/http_client.cpp,
+	* net/net_interface_tcp.cpp: porting to Linux
+
+2007-04-03  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* a lot of files: removed useless progress_bar stuff &
+	the calling of useless get_movie_info().
+	The movie file is opened only once. It is important for network
+
+2007-04-03  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* net/http_client.cpp: sprintf() ==> snprintf()
+
+2007-04-03  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* net/http_client.cpp: forgot to cleanup
+
+2007-04-03  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_test_ogl.cpp: s_total_tags is commented out
+	to not read two times *.swf from network
+	* net/http_client.*,
+	* net/net_inetrface_tcp.cpp,
+	* net/net_interface.h: Stabilization of http-tu_file
+
+2007-04-01  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* net/http_client.*: fixed eof()
+	some http server not send the Content-Length headers
+
+2007-04-01  Vitaly Alexeev <tishka92@yahoo.com>
+
+	The implementation of tu_file that support HTTP is finished
+	* gameswf/gameswf_impl.cpp: use_cache_files = false (because of net files)
+	* net/http_client.*,
+	* net/net_inetrface_tcp.cpp,
+	* net/net_interface.h:
+	implementation of tu_file that support HTTP is done
+	* net/test_client.cpp: added HTTP file gruber
+	* net/win32/VC8/test_client.vcproj: added VC8 project file
+	that grub HTTP files
+
+2007-03-29  Vitaly Alexeev <tishka92@yahoo.com>
+
+	The beginning of works on HTTP implementation of tu_file()
+	* base/tu_file.cpp: added parsing filename on "http://"
+	* net/http_client.*: added new files, its will contain 
+	http implementation of tu_file
+	* net/http_server.cpp: added VLOG("send response ...")
+	* net/net_test.cpp,
+	* net/net_interface.h:
+	* net/net_interface_tcp.cpp: added url to
+	tu_create_network_interface_tcp()
+
+2007-03-29  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* added NEWS file
+
+2007-03-27  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* net/net_test.cpp: fixed typo
+	* net/win32/VC8/net_test.vcproj: added VC8 project file
+
+2007-03-27  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/gameswf_spite.cpp: cleanup
+
+2007-03-27  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/gameswf_root.h: removed useless commented code
+	* gameswf/gameswf_sprite.cpp: fixed get_topmost_mouse_enity() broken before
+	* gameswf/gameswf_action.(cpp,h),
+	* gameswf/gameswf.h: as_object() may have events()
+
+2007-03-25  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/gameswf_sound_handler.h: fixed memory leaks
+	in ffmpeg sound mixer
+	
+2007-03-25  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/gameswf_sound_handler.h: fixed bug
+
+2007-03-25  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* base/utility.h: added assert() for SVN_RELEASE which
+	will help users to send messages about bugs
+	* base/postscipt.(cpp,h): removed from projects because it is't used
+
+2007-03-24  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/win32/VC7/gameswf.vcproj: added Visual Studio 2003 
+	project file. Release will be done on VC7
+
+2007-03-24  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/gameswf_sound_handler.h: optimization & cleanup
+
+2007-03-24  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/gameswf_action.cpp: added \n in log_msg()
+	* gameswf/gameswf_sound_handler.(cpp,h): fixed bug leading to
+	infinite playing of sound
+	* gameswf/gameswf_shape.cpp: there are problems with NEW TESSELATOR:
+	therefore "#define USE_NEW_TESSELATOR" is commented
+	* gameswf/gameswf_movie_def.cpp: removed ifdef USE_SEPARATE_THREAD
+	
+
+2007-03-22  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/gameswf_movie_def.cpp: added ifdef USE_SEPARATE_THREAD,
+	there is problem while loading movies in separate thread
+	assert(vi2 != vi0) in line 982, file ear_clip_triangulate_impl.h;
+	during displaying static text, new release will be put
+	after fixing this problem
+
+2007-03-22  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/gameswf_sound_handler.(cpp,h): rewrited mixer,
+	It is decoded only so much samples how much to be located in 
+	the handler buffer (required for stream sound)
+
+2007-03-20  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* a lot of files: 
+	added sound stream tag loaders & sound stream handler
+
+2007-03-18  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/gameswf_sprite.cpp: fixed hitTest(),
+	It was necessary to use get_world_matrix() to find screen coordinates
+
+2007-03-17  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/gameswf_sprite.(cpp,h),
+	* gameswf/gameswf_as_sprite.(cpp,h): added hitTest() method
+	* gameswf/gameswf_as_classes/as_color.(cpp,h): added comments
+
+2007-03-17  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/gameswf.h,
+	* gameswf/gameswf_movie.h,
+	* gameswf/gameswf_action.cpp,
+	* gameswf/gameswf_as_classes/as_color.(cpp,h),
+	* gameswf/win32/VC8/gameswf.vcproj:
+	added the part of Color() Action Script class
+	
+2007-03-17  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/TODO: some bugs are fixed
+
+
+2007-03-17  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/gameswf_sprite.(cpp,h): cleanup
+	* base/tu_memdebug.h: cleanup
+
+2007-03-17  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* a lot of files: gameswf_impl is divided into 4 parts:
+	gameswf_impl,
+	gameswf_sprite_def (sprite definition) ,
+	gameswf_sprite (sprite instance) & 
+	gameswf_as_sprite (sprite built-in ActionScript methods)
+
+2007-03-15  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/gameswf_movie_def.(cpp,h),
+	* gameswf/gameswf_mutex.h,
+	* gameswf/gameswf_impl.cpp,
+	* gameswf/gameswf_root.cpp:
+	The job on the runing create_library_movie() & 
+	create_library_movie_inst in separate threads is finished.
+	Now .swf files are loaded much more quickly. I am assured that
+	there are a bugs. It is not terrible :-). We shall work & fix bugs
+	* gameswf/gameswf_test_ogl.cpp: progress bar is switched off (useless now)
+
+2007-03-15  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* base/tu_memdebug.h: added simplified API for using Stackwalker
+	* base/Stackwalker.(cpp,h): Stackwalker body
+	* gameswf/gameswf_test_ogl.cpp: Stackwalker is used for memory leaks
+	testing (WIN32 only)
+	Thanks Thatcher Ulrich for valuable advice
+
+2007-03-15  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* gameswf/gameswf_test_ogl.cpp: optimized progress bar perfomance
+	* gameswf/gameswf_impl.cpp,
+	* gameswf/gameswf_movie_def.(cpp,h): fixed progress bar broken before
+
+2007-03-15  Vitaly Alexeev <tishka92@yahoo.com>
+	
+	* a lot of files: gameswf_impl is divided into 2 parts:
+	gameswf_impl & gameswf_movie_def
+
+2007-03-15  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* base/image.(cpp,h): added ~image_base(),
+	moved ~rgb(), ~rgba() and ~alpha() code to ~image_base()
+	* gameswf/gameswf.h,
+	* gameswf/gameswf_render.h: 
+	* gameswf/gameswf_render_handler_ogl.h: 
+	added ~bitmap_info() that memory did not leak,
+	removed useless delete_bitmap_info() & delete_YUV_video(),
+	layout_row() ==> layout_alpha()
+	* gameswf/gameswf_as_classes/as_netstream.cpp: fixed memory leaks
+
+2007-03-13  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf.h,
+	* gameswf/gameswf_render.(cpp,h),
+	* gameswf/gameswf_render_handler_ogl.cpp:
+	The beginning of job on the runing create_library_movie() & 
+	create_library_movie_inst in separate threads. Advance thread is
+	the main thread therefore in the create_library_movie thread opengl
+	is not accessible and we can't use opengl functions for creating
+	textures. We save image in system memory and then layout it to video
+	memory when it's required.
+	* base/image.(cpp,h): added image type to image_base (rgb, rgba, ...)
+	* base/tu_opengl_includes.h: added wglGetCurrentContext() declaration,
+	it is used to find out if opengl is accessible
+	
+2007-03-13  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* base/tu_queue.h: added destructor which pops elements from queue
+	* gameswf/gameswf_as_classes/as_netstream.(cpp,h): fixed memory leaks
+	& simplified netstream
+
+2007-03-13  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Porting to Linux (gcc 3.2.2)
+	* base/ear_clip_triangulate_impl.h: fixed gcc compilation error
+	* gameswf/gameswf_action.(cpp,h):  fixed gcc compilation warning
+	* gameswf/gameswf_impl.h: cleanup
+	* gameswf/gameswf_test_ogl.cpp: SDL_VIDEORESIZE ==> todo
+	* gameswf/gameswf_mutex.(cpp,h): updated includes
+	* gameswf/gameswf_video_base.cpp: reordered initializations of vars
+	in struct declaration
+	* gameswf/gameswf_as_classes/as_netstream.(cpp,h): simplified & 
+	made more readable read_frame() function
+
+2007-03-11  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_test_ogl.cpp: added printf for debugging
+	* gameswf/gameswf.h,
+	* gameswf/gameswf_render_handler_ogl.cpp,
+	* gameswf/gameswf_video_base.(cpp,h),
+	* gameswf/gameswf_render.(cpp,h),
+	* gameswf/gameswf_video_ogl.(cpp,h),
+	* gameswf/gameswf_video_impl.cpp,
+	* gameswf/gameswf_as_classes/as_netstream.(cpp,h):
+	OpenGL is accessible only from one thread,
+	therefore we are forced to move OpenGL calls to the main thread
+	
+2007-03-11  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_video_impl.cpp,
+	* gameswf/gameswf_as_classes/as_netstream.cpp: added
+	mutex for working with video frame
+	
+2007-03-11  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_test_ogl.cpp: delay=31 ==> delay=10
+	* gameswf/gameswf_as_classes/as_netstream.cpp: fixed a bit bug
+	* gameswf/samples/video.(fla,swf): updated, 
+	It is possible to start simultaneously 4 video and Flash animation
+
+2007-03-11  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_as_classes/as_netstream.(cpp,h):
+	video queue is running in decoder thread therefore 
+	mutex is not needed. Added comments.
+
+2007-03-10  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_sound_handler.(cpp,h): reverted
+	hash< as_object_interface*, .. <== hash< smart_ptr<as_object_interface>, 
+	* gameswf/gameswf_video_base.(cpp,h),
+	* gameswf/gameswf_video_impl.cpp,
+	* gameswf/gameswf_mutex.h,
+	* gameswf/gameswf_as_classes/as_netstream.(cpp,h):
+	The beginnings of job on stabilization video
+
+2007-03-10  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_mutex.(cpp,h): added tu_mutex type,
+	We have redefined SDL mutex functions that
+	there was an opportunity to use other libraries (pthread, ...)
+	* gameswf/gameswf_sound_handler.(cpp,h):
+	* gameswf/gameswf_as_classes/as_netstream.(cpp,h):
+	SDL_Mutex ==> tu_mutex
+
+2007-03-10  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_sound_handler.(cpp,h):
+	hash< as_object_interface*, .. ==> hash< smart_ptr<as_object_interface>, ..
+	to prevent premature deleting of object
+
+2007-03-10  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/win32/VC8/gameswf.vcproj: dlmalloc.(c,h) are removed from project
+	because there are enough VC8++ toolkit
+	* gameswf/gameswf_netstream.(cpp,h): removed useless struct netstream
+	* gameswf/gameswf.h,
+	* gameswf/gameswf_video_impl.cpp,
+	* gameswf/gameswf_sound_handler.(cpp,h): void* ==> as_object_interface
+
+2007-03-04  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf.h: class video_stream_instance ==> struct ...
+	* gameswf/gameswf_video_impl.(cpp,h): pointers ==> smart_ptr<>
+	* gameswf/gameswf_as_classes/as_netconnection.(cpp,h): updated comments
+
+2007-03-04  Vitaly Alexeev <tishka92@yahoo.com>
+
+	added the processing of events from video thread (onStatus)
+	* gameswf/gameswf_mutex.(cpp,h):
+	* gameswf/gameswf_sound_handler_sdl.(cpp,h): struct locker
+	moved from sound_handler files into gameswf_mutex files
+	* gameswf/gameswf_action.h: commented the unused call_method1..3
+	* gameswf/gameswf_action.cpp: added as_netconnection include
+	* gameswf/gameswf_root.cpp: added the locking of gameswf engine into advance()
+	* gameswf/samples/video.(fla,swf): updated, added onStatus function
+	* gameswf/win32/VC8/gameswf.vcproj: added new files
+	* gameswf/gameswf_as_classes/as_netstream.(cpp,h): added on_status handler
+	* gameswf/gameswf_as_classes/as_netconnection.(cpp,h): added 
+	NetConnection class for local file system
+	
+2007-03-03  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action.cpp: fixed #1229756 bug
+
+2007-03-03  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_movie.h: added get_member("_target") &
+	set_member("_name")
+	* gameswf/gameswf_impl.cpp: commented set_name("_root"),
+	by default root has no name
+	* gameswf/gameswf_action.cpp: removed assert from trace when object==null
+	because it's not error but warning
+
+2007-03-01  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Re-structuring
+	* gameswf/gameswf_as_classes/as_netstream.(cpp,h):
+	as_global_netstream_ctor moved from action.cpp
+	* gameswf/gameswf_as_classes/as_string.(cpp,h),
+	* gameswf/gameswf_as_classes/as_textformat.(cpp,h):
+	added new files, moved from gameswf_textformat & gameswf_string
+	* gameswf/gameswf_string.(cpp,h),
+	* gameswf/gameswf_textformat.(cpp,h): removed
+	* /gameswf/gameswf_dlist.cpp:
+	commented <log_error("remove_display_object: no characters in display list\n")>
+	because it's not error
+	* gameswf/gameswf_text.cpp,
+	* gameswf/gameswf_xml.cpp: updated #includes
+	* gameswf/gameswf_action.cpp: math moved to as_classes folder
+	* gameswf/win32/VC8/gameswf.vcproj: removed unused files & added new files
+
+2007-03-01  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_impl.cpp: a bit optimization
+	* gameswf/gameswf.h,
+	* gameswf/gameswf_movie.h,
+	* gameswf/gameswf_types.cpp: removed matrix::is_valid() because
+	we uses tu_float
+
+2007-03-01  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf.h: a bit optimization of tu_float
+	* gameswf/gameswf_impl.cpp: added flash version 4 specific code
+
+2007-03-01  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* a lot of files: void set_member() ==> bool set_member()
+	* gameswf/gameswf_movie.h: added bool get_member() & bool set_member()
+	to struct character	which contains the standart properties of character
+	* sprite, button, text, video files: removed the processing of
+	standart properties
+
+2007-02-27  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_dlist.cpp,
+	* gameswf/gameswf_text.cpp: fixed KILLFOCUS bug
+	* gameswf/gameswf.h: added assert(0) to virtual get_root()
+	
+2007-02-27  Thatcher Ulrich <tu@tulrich.com>
+	Remove dynamic_cast, using cast_to_* idiom.  Library clients
+	should be able to choose whether or not to enable RTTI, therefore gameswf
+	should not require it.
+	* docs/AUTHORS: misc updates
+	* gameswf/gameswf.h
+	* gameswf/gameswf_action.cpp
+	* gameswf/gameswf_as_classes/as_db(cpp,h)
+	* gameswf/gameswf_as_classes/as_netstream(cpp,h)
+	* gameswf/gameswf_as_classes/as_table(cpp,h)
+	* gameswf/gameswf_video_impl(cpp,h)
+
+2007-02-27  Thatcher Ulrich <tu@tulrich.com>
+	Fixes for the Makefile
+	* gameswf/config: adjusted c/c++ build rule to specify the object directory
+	  (so source files can live in subdirectories of the Makefile dir)
+	* gameswf/Makefile: added new source files from Vitaly
+	* gameswf/gameswf_test_ogl.cpp: disable logo & progress bar when
+	  do_render is false
+	* base/utility.h: fix windows warning
+	* base/tu_queue.h: small compile fix
+
+2007-02-27  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_video_impl.(cpp,h),
+	* gameswf/gameswf_action.cpp:
+	netstream object is moved to gameswf/gameswf_classes folder
+	* gameswf/gameswf_classes/as_netstream(cpp,h): added
+	* gameswf/gameswf_netstream.cpp,h): removed
+	* gameswf/win32/VC8/gameswf.vcproj: removed unused files & added new files
+	
+
+2007-02-27  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Key object listeners are being handled by movie_root
+	* gameswf/gameswf.h: added get_root() to struct as_object_interface
+	* gameswf/gameswf_root(cpp,h): removed notify_keypress_listeners()
+	and updated notify_key_event()
+	* gameswf/gameswf_classes/as_key(cpp,h): removed
+	add_listener(), remove_listener(), clear_listener()
+
+2007-02-25  Vitaly Alexeev <tishka92@yahoo.com>
+
+	Preparation for merge keypress_listeners & key listeners(from "as_key")
+	* gameswf/gameswf_classes/as_key(cpp,h): added
+	virtual	bool as_key::on_event(const event_id& id)
+	* gameswf/gameswf_root.(cpp,h): replaced
+	character* listener ==>	as_object_interface* listener
+	* gameswf/gameswf.h: added
+	virtual	bool as_key::on_event(const event_id& id) to as_object_interface
+	* gameswf/gameswf_movie.h: removed
+	virtual	bool as_key::on_event(const event_id& id) to as_object_interface
+	* gameswf/gameswf_text.cpp,
+	* gameswf/gameswf_button.cpp,
+	* gameswf/gameswf_impl.cpp: updated on_event() declaration
+
+2007-02-25  Vitaly Alexeev <tishka92@yahoo.com>
+
+	struct movie_root is moved
+	from
+	* gameswf/gameswf_impl.(cpp,h)
+	to
+	* gameswf/gameswf_root.(cpp,h)
+	* gameswf/gameswf_text.cpp,
+	* gameswf/gameswf_dlist.cpp: added #include gameswf_root.h
+	* gameswf/win32/VC8/gameswf.vcproj: added gameswf_root.(cpp,h)
+	
+2007-02-25  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_movie.h: added,
+	contains struct movie
+	* gameswf/gameswf_impl.h: added #include gameswf_movie.h
+	* gameswf/win32/VC8/gameswf.vcproj: added gameswf_movie.h
+	
+2007-02-25  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_morph(cpp,h): removed since they
+	have become outdated many years ago
+	
+2007-02-25  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action.cpp: movie.h => gameswf_classes/as_MovieClipLoader.h
+	* gameswf/gameswf_movie(cpp, h): moved to
+	gameswf_classes/as_MovieClipLoader(cpp,h)
+	* gameswf/win32/VC8/gameswf.vcproj:
+	removed gameswf_movie9cpp,h)
+	added gameswf_classes/as_MovieClipLoader(cpp,h)
+	
+2007-02-25  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/win32/VC8/gameswf.vcproj,
+	* gameswf/gameswf_classes/as_key(cpp,h): 
+	forgot to commit
+
+2007-02-25  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_text.cpp: fixed ~edit_text_character()
+	on_event(event_id::KILLFOCUS) bug
+	* gameswf/gameswf_button.cpp: a bit cleanup
+	
+2007-02-24  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_text.cpp,
+	* gameswf/gameswf_impl.(cpp,h),
+	fixed KILL_FOCUS bug,
+	We cannot use get_parent() because parent may not be any more
+	
+2007-02-24  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action.(cpp,h),
+	* gameswf/gameswf_impl.(cpp,h),
+	* gameswf/gameswf.h,
+	* gameswf/gameswf_test_ogl.cpp:
+	key object is moved to own files, 
+	I do not see the sense to send key events to inactive movies
+	in multifile games therefore notify_key_event() is moved to
+	movie_root 
+	* gameswf/win32/VC8/gameswf.vcproj: added as_key(cpp,h)
+
+2007-02-23  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_video_base(cpp,h),
+	* gameswf/gameswf_video_ogl.cpp: tabs & cleanup
+	
+2007-02-23  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action.cpp,
+	* gameswf/gameswf_classes/as_sound(cpp,h): sound object is moved to
+	own files
+	* gameswf/win32/VC8/gameswf.vcproj: added as_sound(cpp,h)
+	
+2007-02-23  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf.h: fixed tu_float
+	* gameswf/gameswf_test_ogl: the cleanup
+
+2007-02-23  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_impl(cpp,h): added 
+	virtual bool can_handle_mouse_event(), 	fixed mouse event bug
+	* gameswf/gameswf_text.cpp,
+	* gameswf/gameswf_button.cpp: added can_handle_mouse_event() method
+	* gameswf/gameswf_action.cpp:  a bit cleanup of get_variable_raw()
+	
+2007-02-23  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* base/utility.h,
+	* gameswf/gameswf_types(cpp,h),
+	* gameswf/gameswf_impl.cpp,
+	* gameswf/gameswf_button.cpp,
+	* gameswf/gameswf.h: 
+	removed infinite_to_fzero() & added "struct tu_float"
+	because it's more convenient and better 
+
+2007-02-22  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* base/utility.h: added "float infinite_to_fzero(float f)" because
+	Flash converts inf to zero
+	* gameswf/gameswf_types.cpp: applied infinite_to_fzero() to matrix
+	* gameswf/gameswf_button.cpp: applied infinite_to_fzero() to M_X, M_Y, ...
+	* gameswf/gameswf_text.cpp: applied infinite_to_fzero() to M_X, M_Y, ...
+	* gameswf/gameswf_impl.cpp: applied infinite_to_fzero() to M_X, M_Y, ...,
+	If we already have this object on this plane, then move it instead of replacing
+	in only case when they has the same events
+
+2007-02-22  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_impl(cpp, h): get_timer() is removed because this
+	for (i=0; i<1000000;i++)
+	{
+		trace(getTimer());
+	}
+	showed the const result,
+	get_timer() depends on advance() that is incorrect
+	
+	* gameswf/gameswf_action.cpp: added s_start_time = tu_timer::get_ticks()
+	at the moment of start gameswf
+
+2007-02-22  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/samples/test_duplicateclip(fla, swf): added the test of
+	getDepth(), removeMovieClip() & createEmptyMovieClip() method
+	* gameswf/gameswf_impl.cpp: added
+	getDepth(), removeMovieClip() & createEmptyMovieClip() method
+
+2007-02-22  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/samples/test_duplicateclip(fla, swf): includes the using of
+	duplicateMovieClip() function & duplicateMovieClip() method
+	* gameswf/gameswf_impl(cpp, h): fixed sprite_duplicate_movieclip(), 
+	clone_display_object() is used for duplicateMovieClip() function & 
+	duplicateMovieClip() method
+	* gameswf/gameswf_action.cpp: fixed 0x24(duplicate) opcode,
+	added 0x43 opcode(decl object) is needed for duplicateclip
+	* gameswf/gameswf_classes/as_db.cpp: added [#define ulong Uint32]
+
+2007-02-20  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/samples/test_swapdepths(fla, swf): swapDepths() tester
+	* gameswf/samples/test_duplicateclip(fla, swf): duplicateMovieClip() tester
+	* gameswf/gameswf_impl(cpp, h),
+	* gameswf/gameswf_dlist(cpp, h): added swapDepths & duplicateMovieClip stuff,
+	duplicateMovieClip has a bug, later will be fixed
+
+2007-02-20  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/samples/test_delete(fla, swf): added delete tester
+	* gameswf/gameswf_classes/as_array(cpp,h): added to_string()
+	for trace() & updated length property
+	* gameswf/gameswf_action.cpp: The next attempt to fix the delete & delete2
+	
+
+2007-02-20  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/samples/test_mysql.fla: compacted
+
+2007-02-20  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/samples/test_mysql(fla, swf): added mysql test
+	* gameswf/gameswf_classes/as_db(cpp,h), as_table(h, cpp):
+	added very simple, working and convenient MYSQL extension
+	for the gameswf SWF player library.
+	* gameswf/win32/VC8: added as_db(cpp,h) & as_table(h, cpp) files
+	* gameswf/gameswf_action.cpp: The attempt to fix delete & delete2,
+	added the call to mysql ctor
+	* gameswf/gameswf_impl.cpp: simplified notify_keypress_listener(),
+	Thanks Thatcher
+
+2007-02-18  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action.cpp: There is begun process of allocation
+	of action script classes in own files, fixed as_array
+	* gameswf/gameswf_classes/as_array(cpp,h): moved as_array class stuff
+	* gameswf/win32/VC8: added new files
+	
+2007-02-18  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_test_ogl: a bit cleanup
+	* gameswf/gameswf_impl.cpp: fixed memory leaks
+
+2007-02-17  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_test_ogl: added memory leaks tester
+
+2007-02-17  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_test_ogl: added SDL_VIDEORESIZE event handler
+	* gameswf/gameswf_impl.cpp: a bit cleanup
+
+2007-02-17  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_button.cpp: protect character from deleting
+	during execution of event handler
+	* gameswf/gameswf_test_ogl: added digits to key_event()
+	* gameswf/gameswf_impl.cpp: added the addition check of type
+	in	notify_keypress_listeners()
+	* gameswf/gameswf_dlist.cpp: cleanuping
+
+
+2007-02-17  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_impl.cpp: pow() ==>  (1 << (ARRAYSIZE(s_code_bits))
+	Thanks Thatcher.
+	* gameswf/gameswf_dlist.cpp: forgot add_keypress_listener()
+
+2007-02-17  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action(cpp, h): fixed set_target, target can be both 
+	movie* and path
+	* gameswf/gameswf_dlist(cpp, h): fixed goto_farme(), 
+	Macromedia Flash ignores goto_frame(bad_frame) & does goto_frame then
+	run actions from this frame. We do too. Removed display_list::reset() & clear()
+	as we do not require them more.
+	* gameswf/gameswf_test_ogl: commented fscommand messages because they stir to debugging
+	* gameswf/gameswf_impl.cpp: Macromedia Flash does not call remove display object tag
+	for 1-st frame therefore we should do it for it
+
+2007-02-15  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_impl(h, cpp): 
+	* gameswf/gameswf_dlist.cpp: fixed the incorrect sequence of
+	execution of events
+	* gameswf/samples/test_action_order(fla, swf): updated
+	for fuller analysis of sequence of events
+
+2007-02-15  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/samples/test_keypress_event(swf, fla): added testcase
+	* gameswf/gameswf_button.cpp: added keypress event handler, 
+	events do not added to parent action list, and are executed at once
+	* gameswf/gameswf_impl(h,cpp): optimized methods of keypress listener,
+	added keypress & multi event handler,
+	like on(release, press, keyPress "<Space>") {...},
+	added do_actions(const array<action_buffer*>& action_list)
+	to execute a code in the environment of the parent
+	* gameswf/gameswf_test_ogl.cpp: added warning about version 7 & above
+	* gameswf/gameswf_dlist(h,cpp): keypress event is activated/deactivated when 
+	character is added/removed from dlist
+	* gameswf/gameswf_action.h: operator= of action_buffer has been commented
+	because	I need to assign same code to another events
+	
+
+2007-02-14  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* base/contatiner.h: fixed insert() method of tu_string.
+	VC8 recognizes this situation and creates a correct code,
+	but other compilers probably to not recognize it. 
+	Thanks Thatcher.
+
+2007-02-13  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_action.cpp: cleanup
+	* gameswf/gameswf_text.cpp: cleanup
+	* gameswf/gameswf_impl.h: character* ==> smart_ptr<character>
+
+2007-02-13  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* base/container.h: added erase & insert methods to tu_string
+	* gameswf/gameswf_impl(h.cpp), gameswf/gameswf_button(h.cpp):	
+	the development of input_edit_text has demanded reorganization of these files
+	* gameswf/gameswf_action(h,cpp), gameswf/gameswf_text(h,cpp):
+	added input edit text stuff
+	* gameswf/gameswf_test_ogl.cpp: fixed "processing of not arising events" bug
+	* gameswf/samples/test_input_text(fla,swf): added testcase
+	
+2007-02-11  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* base/tu_queue.h: fixed typo
+	* gameswf_video_ogl.cpp: added glDisable(GL_TEXTURE_2D),
+	which absence very much braked video
+
+2007-02-11  Thatcher Ulrich <tu@tulrich.com>
+
+	* base/tu_queue.h: very simple std::queue work-alike
+	* base/container(h,cpp): add hash::erase() functions
+	* gameswf/Makefile: add Vitaly's new files
+	* gameswf/gameswf_test_ogl.cpp: avoid fixed-size buffer for path manipulations
+	* gameswf/gameswf_impl.cpp: try workdir when importing resources from other movies
+	* gameswf/(various): remove std:: headers, and other misc compile fixes.
+
+2007-02-10  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_netstream(h,cpp): added USE_FFMEG ifdefs
+	* gameswf/gameswf_sound_handler_sdl(h,cpp): vector ==> array
+	* video.fla is compacted
+
+2007-02-10  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_impl(h,cpp): added video tag loaders
+	* gameswf/gameswf_action.cpp: added netstream constructor
+	* gameswf/gameswf_render(h, cpp): added video interface
+	* gameswf/gameswf_test_ogl.cpp: SDL_Init() should be executed
+	up to create_render_handler()
+	* gameswf/gameswf.h: added video interface
+	* gameswf/gameswf_render_handler_ogl.cpp: added video interface
+	* gameswf/gameswf_video_base(h,cpp), gameswf/gameswf_video_impl(h,cpp),
+	gameswf/gameswf_video_ogl(h,cpp), gameswf/gameswf_netstream(h,cpp):
+	added video stuff
+	* base/ogl(h,cpp): added video stuff
+	
+2007-02-08  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_test_ogl.cpp: added the support of multi-file games
+	* gameswf/gameswf_sound_handler.h: typo
+	* gameswf/gameswf_impl.cpp: fixed the bug being
+	the reason of an infinite cycle
+	
+2007-02-07  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* gameswf/gameswf_test_ogl.cpp: display of the gameswf_logo and process of loading
+	of a swf-file is added
+	* gameswf/gameswf_sound_handler.(cpp, h): has returned the lost comments
+	
+2007-02-06  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* base/container.h: added operator[] into class hash
+	* gameswf/gameswf.h: added typedef used for audio of video
+	* gameswf/gameswf_sound_handler_sdl.h: added new h-file for
+	gameswf_sound_handler_sdl.cpp
+	* gameswf/gameswf_sound_handler_sdl.cpp: totally rewritten.
+	Uses FFMPEG for MP3 audio. Can process audio of video stream.
+	* gameswf/gameswf_test_ogl.cpp: a bit cleanup
+	* gameswf/win32/VC8/gameswf.vcproj: added gameswf_sound_handler.h
+	
+
+2007-02-06  Vitaly Alexeev <tishka92@yahoo.com>
+
+	* base/tu_types.h: The new version of SDL has own
+	typedefs(Sint8, Uint8, ..)
+	* gameswf/win32/VC8/gameswf.vcproj: added VC8 project file
+
+
+2005-06-06  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_test_ogl.cpp (runThread): New SDL_Thread to
+	handle looking for network data, and if there is data, push an SDL
+	User Event on the event queue.
+	(main): Add new -e option to enable a threaded event based main
+	loop or the existing polling one. Pass SDL_INIT_EVENTTHREAD to
+	SDL_Init() on all platforms but win32.
+	(runThread): Use the global variable to pass to select().
+	* gameswf/gameswf_xmlsocket.{h,cpp}: Add checkSockets(), which
+	checks to see if there is data waiting in a socket. Add a temporay
+	global variable to pass the file descriptor from ::connect() up to
+	the main loop.
+	* gameswf/gameswf_xml.{h,cpp} (memadjust): Adjust a byte count to
+	be aligned on the proper boundary. (word size for now) Use only
+	adjusted memory for all dynamic memory allocation sizes.
+	* autogen.h: Remove bogus warning message and amke it say
+	something intelligent.
+
+2005-05-28  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_test_ogl.cpp (main): Move the setting of the LOD
+	BIAS up a few lines, as to be effective, it has to be executed
+	before initializing the video mode for the I810. Otherwise it core
+	dumps.
+
+2005-05-26  Rob Savoye  <rob@darkstar.welcomehome.org>
+
+	* gameswf/gameswf_test_ogl.cpp (main): Initialize the LOD BIAS
+	here, rather than in apply(). This gets rid of the global
+	variable.
+	* gameswf/gameswf_test_ogl.cpp (main): Don't initialize the
+	log_callback unless verbose is specified. This improves the
+	performance when not using -v, since the display function returns
+	immediately.
+
+2005-05-25  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* macros/png.m4, sdl.m4: tweak so help output lines up.
+	* configure.ac: Add enable options for DOM or xmlReader parsers,
+	with DOM being the default.
+	* configure, config.h.in, aclocal.m4: Regenerated.
+
+2005-05-23  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_xmlsocket.cpp(anydata): Use our own environment
+	when calling sub functions, and then be like George Bush, and nuke
+	the environment.
+	* gameswf/gameswf_xml.cpp: Enable the DOM parser by default, as
+	the new xmlReader one has problems with gcc 3.x.
+
+2005-05-21  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_xml.cpp (load): Use xmlReader API instead of
+	lower-level DOM API to save memory.
+
+2005-05-20  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* Makefile.in, base/Makefile.in, geometry/Makefile.in,
+	gameswf/Makefile.in: Add a "mudflap" target that rebuilds
+	everything with mudflap enabled. Mudflap is the new GCC memory
+	checker like Purify. Slow but thorough...
+	* gameswf/gameswf_xml.cpp: Use DEBUG_MEMORY_ALLOCATION to
+	optionally display memory allocation information. Set _name and
+	_value to zero when instantiating. Explicitly delete _name and
+	_value when destructing. Use char * rather than as_value or
+	tu_string for an XMLNode name and value so we can track every
+	byte better.
+	* gameswf/gameswf_xml.h: Use char * rather than as_value or
+	tu_string for an XMLNode name and value so we can track every byte
+	better. Use DEBUG_MEMORY_ALLOCATION to optionally display memory
+	allocation information.
+	* gameswf/gameswf_xmlsocket.cpp: Don't pass an array to anydata()
+	anymore. Delete messages in a batch so we can track memory
+	allocation better.
+	* gameswf/gameswf_xmlsocket.h: Don't pass an array to anydata()
+	anymore.
+	* base/tu_config.h: Don't include dmalloc.h, it conflicts with the
+	one included from glib.h, which we inherit via libxml2. Since
+	glib.h and gameswf use the same constant for enabling this
+	feature, we get this support by default.
+	* base/utility.cpp (dump_memory_stats): Renable.
+	
+2005-05-19  Rob Savoye  <rob@darkstar.welcomehome.org>
+
+	* base/utility.cpp: Use _win32 rather than 0 for #ifdef.
+	* compatibility_include.h: Optionally include config.h.
+	* base/tu_config.h: Don't include config.h here.
+
+2005-05-16  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* base/utility.cpp (dump_memory_stats): Disable for now by exiting
+	before right away..
+	* gameswf/gameswf_xmlsocket.h: Add char ** parameter to anydata().
+	* gameswf/gameswf_xmlsocket.cpp: Add char ** parameter to
+	anydata(). Call malloc_trim() to release memory back to the
+	system so we don't eat up all the memory. 
+	(anydata) Use char * rather than tu_strings for the buffering so
+	we can track every byte. Parse looking for the newline delimiter
+	between messages. Setup single messages faster than processing
+	multiple messages.
+	* gameswf/gameswf_xml.cpp: Delete name and value too. Use char *
+	rather than tu_strings for the attribute name and value.
+	
+	* base/utility.{cpp,h}: Add dump_memory_stats() to dump the
+	internal statistics from malloc so we can track memory allocations
+	in great detail.
+
+2005-05-14  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_action.cpp: Print the address of the object for
+	get_variable and get_member so we can trace through the object
+	dependancies.
+	* geometry/Makefile.in: Add -I.. to INCLUDES so config.h can be
+	found.
+	* gameswf/gameswf_xml.cpp: Call xmlCleanupParser() after freeing
+	the Doc pointer.
+	* base/{container.h, image.cpp, ogl.cpp, tu_file.cpp}: Add support
+	for optionally using dmalloc for debugging memory problems.
+	* gameswf/{gameswf_action.cpp, gameswf_font.cpp,
+	gameswf_fontlib.cpp, gameswf_impl.cpp, gameswf_movie.cpp,
+	gameswf_string.cpp, gameswf_xml.cpp, gameswf_xmlsocket.cpp}: Add
+	support for optionally using dmalloc for debugging memory
+	problems.
+	* geometry/bsp.cpp:  Add support for optionally using dmalloc for
+	debugging memory problems.
+	* configure.ac: Add --enable-dmalloc option. Display all config
+	options at the end.
+	* configure, config.h.in: Regenerated.
+	* gameswf/Makefile.in: Link in libdmallocxx if --enable-dmalloc is
+	passed to configure.
+
+2005-05-09  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf_xmlsocket.h: Pass an array to anydata instead of a
+	string.
+	* gameswf_xmlsocket.cpp: Pass an array to anydata instead of a
+	string.
+	* gameswf/gameswf_timers.cpp, gameswf_timers.h,
+	gameswf_xmlsocket.cpp, gameswf_xmlsocket.h, gameswf_movie.cpp:
+	Use fn structure fields instead of a slew of local variables.
+	* gameswf/gameswf_xml.cpp: Delete all the attributes and child
+	nodes too.
+	
+2005-05-09  Rob Savoye  <rob@wharfrat.welcomehome.org>
+
+	* gameswf/gameswf_action.cpp: Use xml_new instead of
+	xmlsocket_xml_new for new XML objects.
+	* gameswf/gameswf_timers.cpp, gameswf_timers.h,
+	gameswf_xmlsocket.cpp, gameswf_xmlsocket.h, gameswf_movie.cpp:
+	Extract args from fn structure. Call AS functions the new way with
+	fn_call().
+
+2005-05-08  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_movie.cpp (as_value): Cast wstr to be either 32
+	or 16 bit based on the size of wchar_t.
+
+2005-05-08  Rob Savoye  <rob@darkstar.welcomehome.org>
+
+	* gameswf/gameswf_action.h: Cast the wide character to a uint32 so
+	it'll compile.
+	* gameswf/gameswf_xml.cpp (setupFrame): Don't set members for
+	firstChild or childNodes, these are handled differently now. 
+	* gameswf/gameswf_xml.h: Add virtual overload of get_member() to
+	the xml_as_object and xmlnode_as_object to return firstChild and
+	childNodes without creating a circular dependancy.
+	
+
+2005-05-05  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_timers.cpp (gameswf): If _start is trashed for
+	some reason, assuming it's expired and then reset it. This should
+	eventually be fixed once I figure out what's causing the
+	problem. It takes about an hour to occur.
+	* base/tu_timer.cpp (get_profile_ticks): Don't need the tz
+	variable, as it's not used with gettimeofday() on Linux anymore.
+	
+
+2005-05-05  Rob Savoye  <rob@darkstar.welcomehome.org>
+
+	* gameswf_string.cpp (string_new): Don't recreate the String
+	object.
+	* gameswf/gameswf_action.cpp (execute): Clear the members of an
+	object on the stack when the 'with' stack frame returns to a
+	higher level.
+
+2005-05-05  Rob Savoye  <rob@darkstar.welcomehome.org>
+
+	* gameswf/gameswf_render_handler_ogl.cpp (render_handler): Check
+	in patch #1195922, making the workaround for the i810 OpenGL
+	problem configurable.
+	* configure.ac: Add -enable-i810-lod-bias to make workaround
+	optional. Add descriptive text to AC_DEFINE(HAVE_WINSOCK)
+	* configure, config.h.in: Regenerated.
+
+2005-05-04  Rob Savoye  <rob@blackpeter.welcomehome.org>
+
+	* gameswf/gameswf_render_handler_ogl.cpp (render_handler): Added
+	and slightly changed patch #1194680. This code now only gets
+	executed when using a non default value for the LOD BIAS.
+
+2005-05-01  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_textformat.cpp (textformat_setformat): Set the
+	flags if the corresponding members are set.
+
+	* configure.ac: Add patch from sourceforge (#1186726) for checking
+	xml option differently.
+	* aclocal.m4, configure: Regenerated.
+	* gameswf/gameswf_test_ogl.cpp: Add additional value to "-r" option
+	to optionally disable sound. From same sourceforge patch
+	#1186726.
+	
+2005-04-30  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* base/container.h: Add support to tu_string for += char.
+	Added new methods to tu_string, utf8_from_char(), utf8_to_upper(),
+	utf8_to_lower().
+	* base/container.cpp: Add functions for utf8_from_char(),
+	utf8_to_upper(), utf8_to_lower().
+	* gameswf/gameswf_action.h: Add operator!= to as_value.
+	* gameswf/gameswf_action.cpp:  Add operator!= to as_value. Don't
+	flag a "new String error", cause it's being used like this 
+	"String.fromCharCode(67)" without needing an object to be created
+	first.
+	* gameswf/gameswf_string.h: Add support for fromCharCode,
+	toUpperCase, toLowerCase.
+	* gameswf/gameswf_string.cpp: Make string_new return a
+	tu_string_as_object after attaching fromCharCode and charCodeAt
+	members to it.
+	* gameswf/gameswf_action.cpp: Add fromCharCode, toUpperCase,
+	toLowerCase, to builtin string.
+	* gameswf/gameswf_textformat.cpp: Initialize all data in
+	constructor to -1 so we can tell if it's been set or not
+	later. Add getTextFormat() support.
+	* gameswf/gameswf_textformat.h: Make several values that were an
+	int a float.
+	* gameswf/gameswf_xmlsocket.cpp: Add a xmlsocket_xml_new so the
+	socket class has a handle on the XML messages it's processing.
+	
+	* gameswf/gameswf_render_handler_ogl.cpp (apply): Set the Texture
+	LOD BIAS.
+	* gameswf/gameswf_test_ogl.cpp (main): Add -ml option to
+	set the Texture LOD Bias. "-ml -1.0" works good for small fonts.
+
+2005-04-29  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_test_ogl.cpp (main): Add -mi and -ma options to
+	set the minimum and maximum LOD Bias. "-mi -2 -ma 2" seems to work
+	good. 
+	* gameswf/gameswf_render_handler_ogl.cpp (apply): Set the LOD Bias.
+
+	* gameswf/gameswf_impl.cpp (get_topmost_mouse_entity): Don't
+	return a character unless the parent is visible.
+
+2005-04-26  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_textformat.cpp: Add setTextFormat as a variable
+	when making a new TextFormat object.
+
+2005-04-19  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_movie.cpp: Use different headers on win32.
+	* gameswf/gameswf_xmlsocket.cpp: Use different headers on win32
+	for tcp/ip networking. Also define MAXHOSTNAMELEN if if doesn't
+	exist, don't use fcntl(), and use SHUT_BOTH for shutdown() on
+	win32 as well.
+	* configure.ac: Set HAVE_WINSOCK if the platform is win23.
+	* configure: Regenerated.
+	* gameswf/Makefile: Add optional libxml support. Update
+	dependencies to not have system paths.
+	* config: Add optional libxml defines.
+
+2005-04-16  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_xml.cpp (extractNode): New recursive
+	version. Faster, and uses less memory.
+	(setupFrame) New recursive version. Faster, and uses less memory.
+	* gameswf_impl.cpp: Move the definition of bitmap_character to
+	gameswf_impl.h.
+	* gameswf_movie.cpp (loadclip): Various hacks trying to replace a
+	character with a bitmap defined by a jpeg. None of these works
+	yet...
+	* gameswf_xml.h: Add conditional debug print statements as
+	constructor/destructors so we can track memory allocation.
+	* gameswf_xmlsocket.cpp (XMLSocket::anydata): Return the returned
+	value.
+	* kd_tree_dynamic.cpp: Comment out a few variable definitions that
+	aren't used cause GCC 4.1 complains.
+
+2005-04-14  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* base/utility.h: Tweak definitions of _max and _min to not
+	produce errors with a more recent GCC because the "<?" operator
+	has been depreciated.
+
+2005-04-10  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_test_ogl.cpp (main): Add -d option to supply a
+	different value for SDL_Delay() in the main loop.
+
+2005-04-08  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_xml.cpp (setupStackFrames): delete the XML
+	parsed data after setting up the stack frames.
+	* gameswf/gameswf_movie.cpp: Make sure the files exist, and is a
+	valid JPEG before trying to read it.
+
+2005-04-06  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_movie.cpp: New data structure to hold MCL data
+	for GetProgress().
+
+2005-04-03  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_xml.cpp (setupStackFrames): Grab nodeValue for
+	all elements if there is any.
+	* gameswf/gameswf_action.cpp (MATH_WRAP_FUNC): Return an
+	as_value.
+	(call_method) Needs to check if the method is a NUMBER.
+	* gameswf/gameswf_xml.cpp (extractNode): Add some filtering of
+	bogus data content (just a CR) that seems to be creeping in from
+	libxml. This gets rid of the extraneous "undefined" fields. Free
+	the pointer after calling xmlParseFile.
+
+	* gameswf/gameswf_xml.cpp: Free xml doc pointer after parsing.
+	
+2005-04-02  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* configure.ac: Add --disable-xml option to not look for XML or
+	use the XML and XMLSocket AS objects. The default is to support
+	XML, since it's part of SWF v6.
+	* configure: Regenerated.
+	* gameswf/gameswf_test_ogl.cpp (main): Ad "-c" option to turn off
+	SDL Parachutes, because sometimes we want the core file for
+	debugging.
+	* gameswf/gameswf_action.cpp: Remove object creation code for new
+	AS objects.
+	* gameswf/gameswf_xml.cpp (xml_new): Move code from
+	gameswf_action.cpp to here so we create new objects correctly using
+	constructors.
+	* gameswf/gameswf_string.cpp (string_new): Move code from
+	gameswf_action.cpp to here so we create new objects correctly using
+	constructors.
+	* gameswf/gameswf_movie.cpp (moviecliploader_new): Move code from
+	gameswf_action.cpp to here so we create new objects correctly using
+	constructors.
+	* gameswf/gameswf_xmlsocket.cpp (xmlsocket_new):  Move code from
+	gameswf_action.cpp to here so we create new objects correctly using
+	constructors.
+	* gameswf/gameswf_*: Don't use __PRETTY_FUNCTION__, it's GCC
+	specific. Instead use __FUNCTION__, which supported with VC++..
+
+2005-04-01  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_test_ogl.cpp (key_event): Add trapping ENTER and
+	ESCAPE too. These supposedly get turned on by an
+	fscommand('trapallkeys', true) somehow.
+	* gameswf/gameswf_xml.cpp (xml_load): Don't try to open an XML
+	disk file that doesn't exist, or the path is wrong.
+	* gameswf/gameswf_xml.cpp: Fix attribute parsing so it works for
+	all levels of the XML data.
+
+2005-03-28  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_xml.cpp: Process XML messages one level
+	deeper. Properly setup stack so firstChild.firstChild.nodeValue
+	actually works.
+
+2005-03-26  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_xmlsocket.cpp (anydata): Read as much data as
+	there is on the socket. Break up the data into seperate messages,
+	and store them in a queue.
+	(xmlsocket_event_ondata): Process all the messages in the message
+	queue before reading more messages. Call onData callback on all
+	messages without returning. 
+	
+2005-03-25  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/Makefile.in: Add optional pthreads support. (currently
+	unused)
+	* gameswf/gameswf_xmlsocket.h: Add prototype for pthread entry
+	point. (currently unused)
+	* gameswf/gameswf_xmlsocket.cpp: Add pthread entry point that
+	reads the socket. (currently unused)
+
+	* gameswf/gameswf_impl.cpp: Check for socket data every time
+	through the advance loop. Don't use an interupt handler, it's
+	orders of magnitude too slow.
+	* gameswf/gameswf_xmlsocket.cpp: Reduce by a huge amount the
+	select timeout.
+
+
+2005-03-24  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_xml.cpp (extractNode): New method to recursively
+	parse XML data. Make _nodes a pointer.
+	* gameswf/gameswf_xmlsocket.cpp: Add a NULL when sending XML
+	messages, and don't strip off the NULL when reading XML messages.
+	* gameswf/gameswf_textfield.{cpp,h}: Remove as unnecessary.
+	* gameswf/Makefile.in: Don't build gameswf_textfield, we don't
+	need it.
+	* gameswf/gameswf_textformat.cpp: Add minimal support for all
+	forms of setTextFormat.
+
+2005-03-23  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* configure.ac: Don't try to configure the empty testsuite
+	directory.
+	* configure: Regenerated.
+
+2005-03-20  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/gameswf_movie.{cpp,h}: Add gameswf namespace. 
+	* gameswf/gameswf_string.{cpp,h}: Add gameswf namespace. 
+	* gameswf/gameswf_textfield.{cpp,h}: Add gameswf namespace. 
+	* gameswf/gameswf_textformat.{cpp,h}: Add gameswf namespace.
+	Rename TextFormat to text_format.
+	* gameswf/gameswf_timers.cpp (Timer::start): Don't cast the double
+	to a time_t.
+	* macros/libXML.m4: Define HAVE_LIBXML if libxml2 is found.
+	* configure.ac: Add AM_CONFIG_HEADER. Don't both to link to my
+	test XML file.
+	* config.h.in: Add autoheader generated config file.
+	* config.mk: Add DEFS to CFLAGS so HAVE_CONFIG_H gets passed to
+	G++.
+	* base/Makefile.in: Add dependencies.
+	* aclocal.m4: Regenerated using aclocal
+	* autogen.sh: Regenerate aclocal.m4, config.h.in, and configure
+	without having to understand the GNU auto tools.
+	* tu_opengl_includes.h: Don't redefine APIENTRY if it exists.
+	* gameswf_action.cpp: Include config.h if HAVE_CONFIG_H is
+	defined. Only include gameswf_xml.h and gameswf_xmlsocket.h if
+	HAVE_LIBXML is defined in config.h. Eliminate compiler
+	warnings. Use HAVE_LIBXML instead of TU_CONFIG_LINK_TO_LIBXML.
+	* gameswf_xml.cpp: Include config.h if HAVE_CONFIG_H is
+	defined. Don't use any of this code unless HAVE_LIBXML is defined
+	in config.h. Add gameswf namespace. Use HAVE_LIBXML instead of
+	TU_CONFIG_LINK_TO_LIBXML.
+	* gameswf_xml.h: Include config.h if HAVE_CONFIG_H is
+	defined. Don't use any of this code unless HAVE_LIBXML is defined
+	in config.h. Use HAVE_LIBXML instead of TU_CONFIG_LINK_TO_LIBXML.
+	* gameswf_xmlsocket.cpp: Include config.h if HAVE_CONFIG_H is
+	defined. Don't use any of this code unless HAVE_LIBXML is defined
+	in config.h. Add gameswf namespace. Use HAVE_LIBXML instead of
+	TU_CONFIG_LINK_TO_LIBXML. 
+	* gameswf_xmlsocket.h: Include config.h if HAVE_CONFIG_H is
+	defined. Don't use any of this code unless HAVE_LIBXML is defined
+	in config.h. Use HAVE_LIBXML instead of TU_CONFIG_LINK_TO_LIBXML.
+	
+2005-03-19  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* gameswf/Makefile.in: Update dependencies for new files.
+
+	* gameswf/gameswf_action.cpp: Add a few debugging statements so we
+	can track Text objects by their address. Add initial support for
+	the TextField::_visible and TextField::_width properties. Add
+	callback for XML::loaded().
+	* gameswf/gameswf_impl.cpp: Remove interval timer from array on a
+	clearInterval() command. Use our own stack when calling AS
+	functions from do_something() so they have the local variables
+	propogated into this call frame.
+	* gameswf/gameswf_timers.cpp: Propogate local variables into the
+	child function's stack frame since it's supposed to inherit these
+	values. There has got to be a better way to do this...
+	* gameswf/gameswf_xmlsocket.cpp: Don't pass additional arguments
+	to onConnect().
+
+2005-03-17  Rob Savoye  <rob@bertha.welcomehome.org>
+
+	* macros/libXML.m4: New. Look for libxml2 directories.
+	* base/container.{cpp,h}: memset buffer so tu_string prints better in
+	GDB.
+	* base/triangulate_impl.h: Use  compiler_assert(0) rather than
+	COMPILER_ASSERT(0).
+	* base/tu_timer.cpp: Add Linux imnplementations of get_profile_ticks()
+	and profile_ticks_to_seconds().
+	* configure.ac: Look for XML2 directories. Configure a Makefile in
+	the testsuite directory.
+	* configure: regenerate.
+	* gameswf/Makefile: Add new files, gameswf_xml, gameswf_movie,
+	gameswf_xmlsocket, gameswf_string.
+	* gameswf/gameswf_xml.{cpp,h}: New files for XML ActionScript support.
+	* gameswf/gameswf_xmlsocket.{cpp,h}: New files for XMLSocket
+	ActionScript support.
+	* gameswf/gameswf_timers.{cpp,h}: New files for setInterval
+	ActionScript support.	
+	* gameswf/gameswf_movie.{cpp,h}: New files for MovieClipLoader
+	ActionScript support.
+	* gameswf/gameswf_string.{cpp,h}: New files for a more complete
+	String ActionScript implementation.
+	* gameswf/gameswf_textfield.{cpp,h}: New files for TextField
+	ActionScript support.
+	* gameswf/gameswf_textformat.{cpp,h}: New files for TextFormat
+	ActionScript support.
+	* gameswf.h: Add add_interval_timer() and void clear_interval_timer().
+	* gameswf/gameswf_action.cpp: Include gameswf_string.h,
+	gameswf_xml.h, gameswf_xmlsocket.h, gameswf_movie.h,
+	gameswf_timers.h, gameswf_textformat.h, gameswf_textfield.h. Add
+	support for new ActionScripts, XML, XMLSocket, TextField,
+	TextFormat, and MovieClipLoader.
+	* gameswf/gameswf_action.h: Move event_id to here. 
+	* gameswf/gameswf_impl.{cpp,h}: Include gameswf_timers.h. Add support
+	for setInterval. 
+

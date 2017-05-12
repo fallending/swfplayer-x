@@ -1,0 +1,10 @@
+samples/test_undefined_v7.swf
+a
+undefined
+test_field.text
+undefined
+a
+a undefined
+a != '' and a != 'undefined'
+9
+nde

@@ -1,0 +1,254 @@
+// tu-testbed builds
+[
+  // A default build-everything target.
+  { "name": "default",
+    "type": "generic",
+    "dep": [
+      // "demos/font_output/default",
+      "gameswf/default",
+    ]
+  },
+
+  // Some external libs that are used by various programs.
+
+//  // SDL
+//  { "name": "sdl",
+//    "type": "external_lib",
+//
+//    "base_dir_searcher": {
+//      "base_search_paths": ["../../..", "third_party"],
+//      "base_patterns": ["SDL-1.2.13", "SDL-1.2.*", "SDL-1.*", "SDL"],
+//      "detected":
+//        ["and",
+//	  ["file_exists", ["fill", "${base_dir}/include/SDL.h"]],
+//	  ["file_exists", ["fill", "${base_dir}/lib/SDL.lib"]],
+//	  ["file_exists", ["fill", "${base_dir}/lib/SDL.dll"]]]
+//    },
+//
+//    "dep_inc_dirs": ["include"],
+//    "dep_libs": ["lib/SDL.lib"]
+//  },
+//  { "name": "sdlmain",
+//    "type": "external_lib",
+//
+//    "base_dir_inherit": "sdl",
+//
+//    // Stupid SDL #defines away main() so it can insert its own
+//    // wrapper at WinMain!  So we need to link as a windows prog.
+//    "linker_flags": "-subsystem:windows",
+//
+//    "dep_libs": ["lib/SDLmain.lib"]
+//  },
+
+  // OpenGL
+  { "name": "ogl",
+    "type": "external_lib",
+
+    // no special inc_dirs
+
+    "dep_libs": ["#:opengl32.lib", "#:glu32.lib"]
+  },
+
+  // winsock / net libraries
+  { "name": "winsock",
+    "type": "external_lib",
+
+    // no special inc_dirs
+
+    "dep_libs": ["#:wsock32.lib"]
+  },
+
+  // Windows advapi32 (e.g. registry functions)
+  { "name": "advapi32",
+    "type": "external_lib",
+    "dep_libs": ["#:advapi32.lib"]
+  },
+
+  // jpeglib -- build from source.
+  { "name": "jpeglib",
+    "type": "lib",
+
+    "base_dir_searcher": {
+      "base_search_paths": [
+        "../../..", "third_party", "/usr/local/src", "/usr/src"],
+      "base_patterns": ["jpeg-6b", "jpeg-6*", "jpeg-*", "jpeg"],
+      "detected":
+        ["and",
+	  ["file_exists", ["fill", "${base_dir}/jpeglib.h"]],
+	  ["file_exists", ["fill", "${base_dir}/jerror.c"]]]
+    },
+
+    "src": [
+      "jcomapi.c",
+      "jutils.c",
+      "jerror.c",
+      "jmemmgr.c",
+      "jmemnobs.c",
+      "jcapimin.c",
+      "jcapistd.c",
+      "jctrans.c",
+      "jcparam.c",
+      "jdatadst.c",
+      "jcinit.c",
+      "jcmaster.c",
+      "jcmarker.c",
+      "jcmainct.c",
+      "jcprepct.c",
+      "jccoefct.c",
+      "jccolor.c",
+      "jcsample.c",
+      "jchuff.c",
+      "jcphuff.c",
+      "jcdctmgr.c",
+      "jfdctfst.c",
+      "jfdctflt.c",
+      "jfdctint.c",
+      "jdapimin.c",
+      "jdapistd.c",
+      "jdtrans.c",
+      "jdatasrc.c",
+      "jdmaster.c",
+      "jdinput.c",
+      "jdmarker.c",
+      "jdhuff.c",
+      "jdphuff.c",
+      "jdmainct.c",
+      "jdcoefct.c",
+      "jdpostct.c",
+      "jddctmgr.c",
+      "jidctfst.c",
+      "jidctflt.c",
+      "jidctint.c",
+      "jidctred.c",
+      "jdsample.c",
+      "jdcolor.c",
+      "jquant1.c",
+      "jquant2.c",
+      "jdmerge.c"
+    ],
+
+    "inc_dirs": [""],
+
+    "dep_inc_dirs": [
+      ""
+    ],
+  },
+
+  // libpng
+  { "name": "libpng",
+    "type": "external_lib",
+
+    "base_dir_searcher": {
+      "base_search_paths": [
+        "../../..", "third_party", "/usr/local/src", "/usr/src"],
+      "base_patterns": ["libpng-1.2.8", "libpng-1.*", "libpng"],
+      "detected":
+        ["and",
+	  ["file_exists", ["fill", "${base_dir}/png.h"]],
+	  ["file_exists", ["fill", "${base_dir}/libpng.lib"]]]
+    },
+
+    "dep_inc_dirs": [""],
+    "dep_libs": ["libpng.lib"]
+  },
+
+  // zlib
+  { "name": "zlib",
+    "type": "external_lib",
+
+    "base_dir_searcher": {
+      "base_search_paths": [
+        "../../..", "third_party", "/usr/local/src", "/usr/src"],
+      "base_patterns": ["zlib-1.2.2", "zlib-1.*", "zlib"],
+      "detected":
+        ["and",
+	  ["file_exists", ["fill", "${base_dir}/zlib.h"]],
+	  ["file_exists", ["fill", "${base_dir}/zlib.lib"]]]
+    },
+
+    "dep_inc_dirs": [""],
+    "dep_libs": ["zlib.lib"]
+  },
+
+  // freetype -- build from source.  Easier than getting their build
+  // system to work w/ the right options!
+  { "name": "freetype",
+    "type": "lib",
+
+    // Automation for finding the right source directory.
+    "base_dir_searcher": {
+      "base_search_paths": [
+        "../../..", "third_party", "/usr/local/src", "/usr/src"],
+      "base_patterns": ["freetype-2.3.5", "freetype-2.*.*", "freetype-*", "freetype"],
+      "detected": 
+          ["and",
+            ["file_exists", ["fill", "${base_dir}/include/freetype/freetype.h"]],
+            ["file_exists", ["fill", "${base_dir}/src/base/ftapi.c"]]]
+    },
+
+    // These source files are relative to the base_dir found or specified above.
+    "src": [
+      "src/autofit/autofit.c",
+      "src/base/ftapi.c",
+      "src/base/ftbase.c",
+      "src/base/ftbbox.c",
+      "src/base/ftbdf.c",
+      "src/base/ftbitmap.c",
+      "src/base/ftdebug.c",
+      "src/base/ftgasp.c",
+      "src/base/ftglyph.c",
+      "src/base/ftgxval.c",
+      "src/base/ftinit.c",
+      "src/base/ftlcdfil.c",
+      "src/base/ftmm.c",
+      "src/base/ftotval.c",
+      "src/base/ftpatent.c",
+      "src/base/ftpfr.c",
+      "src/base/ftstroke.c",
+      "src/base/ftsynth.c",
+      "src/base/ftsystem.c",
+      "src/base/fttype1.c",
+      "src/base/ftwinfnt.c",
+      "src/base/ftxf86.c",
+      "src/bdf/bdf.c",
+      "src/cache/ftcache.c",
+      "src/cff/cff.c",
+      "src/cid/type1cid.c",
+      "src/gzip/ftgzip.c",
+      "src/lzw/ftlzw.c",
+      "src/pcf/pcf.c",
+      "src/pfr/pfr.c",
+      "src/psaux/psaux.c",
+      "src/pshinter/pshinter.c",
+      "src/psnames/psnames.c",
+      "src/raster/raster.c",
+      "src/sfnt/sfnt.c",
+      "src/smooth/smooth.c",
+      "src/truetype/truetype.c",
+      "src/type1/type1.c",
+      "src/type42/type42.c",
+      "src/winfonts/winfnt.c"
+    ],
+
+    // These include dirs are relative to the base_dir found or specified above.
+    "inc_dirs": [
+      "include/freetype/internal",
+      "include/freetype",
+      "include",
+    ],
+
+    "dep": [
+      "#zlib"
+    ],
+
+    "target_cflags": "-DFT2_BUILD_LIBRARY",
+
+    // These include dirs are relative to the base_dir found or specified above.
+    "dep_inc_dirs": [
+      "include/freetype",
+      "include",
+    ],
+
+    "dep_cflags": "-DTU_CONFIG_LINK_TO_FREETYPE=1"
+  }
+]

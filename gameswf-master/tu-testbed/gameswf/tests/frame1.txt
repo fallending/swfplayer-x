@@ -1,0 +1,94 @@
+# The movie code looks like this:
+#
+# // ------------ frame 1 ------------
+# trace("frame " + _currentFrame + " actions (1)");
+# 
+# onLoad = function()
+# {
+# 	passcount = 0;
+# 	trace("onLoad");
+# }
+# 
+# onEnterFrame = function()
+# {
+# 	frame.text = _currentFrame;
+# 	trace("onEnterFrame " + _currentFrame);
+# 	
+# 	if (passcount >= 100)
+# 	{
+# 		passcount++;
+# 		if (passcount > 102)
+# 		{
+# 			gotoAndPlay(20);
+# 		}
+# 	}
+# }
+# 
+# // ------------ frame 10 ------------
+# trace("frame " + _currentFrame + " actions (10)");
+# 
+# passcount++;
+# if (passcount < 2)
+# {
+# 	// Loop.
+# 	gotoAndPlay(5);
+# }
+# else if (passcount < 3)
+# {
+# 	gotoAndPlay(1);
+# }
+# else
+# {
+# 	passcount = 100;
+# 	gotoAndStop(15);
+# }
+# trace("frame " + _currentFrame + " actions post");
+# 
+# // ------------ frame 15 ------------
+# trace("frame " + _currentFrame + " actions (15)");
+#
+# // ------------ frame 20 ------------
+# trace("frame " + _currentFrame + " actions (20)");
+# onEnterFrame = function () {}
+#
+# // ------------ frame 20 ------------
+# stop();
+#
+samples/test_frame1.swf
+frame 1 actions (1)
+onLoad
+onEnterFrame 2
+onEnterFrame 3
+onEnterFrame 4
+onEnterFrame 5
+onEnterFrame 6
+onEnterFrame 7
+onEnterFrame 8
+onEnterFrame 9
+onEnterFrame 10
+frame 10 actions (10)
+frame 5 actions post
+onEnterFrame 6
+onEnterFrame 7
+onEnterFrame 8
+onEnterFrame 9
+onEnterFrame 10
+frame 10 actions (10)
+frame 1 actions post
+frame 1 actions (1)
+onEnterFrame 2
+onEnterFrame 3
+onEnterFrame 4
+onEnterFrame 5
+onEnterFrame 6
+onEnterFrame 7
+onEnterFrame 8
+onEnterFrame 9
+onEnterFrame 10
+frame 10 actions (10)
+frame 15 actions post
+frame 15 actions (15)
+onEnterFrame 15
+onEnterFrame 15
+onEnterFrame 15
+frame 20 actions (20)

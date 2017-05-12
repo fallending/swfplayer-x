@@ -1,0 +1,50 @@
+# Makefile for tu-testbed/geometry library
+
+# Library containing mostly 3d and geometric utility code
+
+include ../config.mk
+
+srcdir = @srcdir@
+top_srcdir = @top_srcdir@
+VPATH = $(srcdir)
+
+INCLUDES := \
+	-I.. \
+	-I$(top_srcdir) \
+	$(SDL_CFLAGS) \
+	$(ENGINE_INCLUDE) \
+	$(LIBPNG_CFLAGS) \
+	$(ZLIB_CFLAGS) \
+	$(JPEGLIB_CFLAGS)
+
+CPPFLAGS := $(CFLAGS) $(SDL_CFLAGS) $(INCLUDES) $(CC_DEBUG_FLAGS)
+LDFLAGS := -lGL -lGLU $(SDL_LIBS) $(LIB_DEBUG_FLAGS)
+
+# Source files.
+SRCS := \
+	axial_box.cpp		\
+	bsp.cpp			\
+	collision.cpp		\
+	cull.cpp		\
+	geometry.cpp		\
+	kd_tree_dynamic.cpp	\
+	kd_tree_packed.cpp	\
+	tqt.cpp
+OBJS := $(SRCS:.cpp=.$(OBJ_EXT))
+OBJS := $(OBJS:.c=.$(OBJ_EXT))
+
+
+GEOMETRY_LIB = $(LIB_PRE)geometry.$(LIB_EXT)
+
+all: $(GEOMETRY_LIB)
+
+# Rebuild everything completely, but with GCC 4.x Mudflap support
+mudflap:
+	@echo "Rebuilding with GCC Mudflap support"
+	$(MAKE) clean all CFLAGS="$(CFLAGS) -fmudflap"
+
+$(GEOMETRY_LIB): $(OBJS)
+	$(AR) $(ARFLAGS) $(LIB_OUT_FLAG)$(GEOMETRY_LIB) $(OBJS)
+
+clean:
+	-@rm -f $(GEOMETRY_LIB) $(OBJS)

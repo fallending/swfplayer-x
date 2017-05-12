@@ -1,0 +1,6 @@
+# Make sure delete operator doesn't delete referents.
+samples/test_delete_references.swf
+#Warning: Reference to undeclared variable, 'Test'
+Hello!
+undefined
+y

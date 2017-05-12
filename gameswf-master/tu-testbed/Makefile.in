@@ -1,0 +1,134 @@
+# Makefile for tu-testbed project.
+
+# Very miscellaneous at the moment.
+all:
+	make -C base
+	make -C geometry
+	make -C gameswf
+#	make -C demos/chunklod
+
+# Rebuild everything completely, but with GCC 4.x Mudflap support
+mudflap:
+	@echo "Rebuilding with GCC Mudflap support"
+	make -C base mudflap
+	make -C geometry mudflap
+	make -C gameswf mudflap
+
+clean:
+	make -C base clean
+	make -C geometry clean
+	make -C gameswf clean
+#	make -C engine clean
+#	make -C demos/chunklod clean
+
+TAGS: .PHONY
+	-rm -rf TAGS
+	touch TAGS
+	find . -name '*.h' -o -name '*.cpp' -o -name '*.c' | xargs etags -a -f TAGS -e
+
+.PHONY:
+
+basic_files =					\
+	tu-testbed/README			\
+	tu-testbed/Makefile			\
+	tu-testbed/config			\
+	tu-testbed/docs/AUTHORS			\
+	tu-testbed/docs/LICENSE			\
+	tu-testbed/docs/MANIFESTO		\
+	tu-testbed/docs/README			\
+	tu-testbed/docs/STYLE			\
+	tu-testbed/compatibility_include.h
+
+base_files =					\
+	tu-testbed/base/Makefile		\
+	tu-testbed/base/*.cpp			\
+	tu-testbed/base/*.c			\
+	tu-testbed/base/*.h			\
+	tu-testbed/base/TODO
+
+geometry_files =				\
+	tu-testbed/geometry/Makefile		\
+	tu-testbed/geometry/*.cpp		\
+	tu-testbed/geometry/*.c			\
+	tu-testbed/geometry/*.h			\
+	tu-testbed/geometry/TODO
+
+engine_files = $(base_files) $(geometry_files)
+
+chunklod_files =						\
+	tu-testbed/go_chunklod.bat				\
+	tu-testbed/demos/chunklod/chunkdemo.exe			\
+	tu-testbed/demos/chunklod/heightfield_chunker.exe	\
+	tu-testbed/demos/chunklod/heightfield_shader.exe	\
+	tu-testbed/demos/chunklod/maketqt.exe			\
+	tu-testbed/demos/chunklod/makebt.exe			\
+	tu-testbed/demos/chunklod/decimate_texture.exe		\
+	tu-testbed/demos/chunklod/dem2bt.pl			\
+	tu-testbed/demos/chunklod/Makefile			\
+	tu-testbed/demos/chunklod/*.cpp				\
+	tu-testbed/demos/chunklod/*.h				\
+	tu-testbed/demos/chunklod/README			\
+	tu-testbed/demos/chunklod/TODO				\
+	tu-testbed/demos/chunklod/README-SDL.txt		\
+	tu-testbed/demos/chunklod/*.dll				\
+	tu-testbed/demos/chunklod/lua.exe			\
+	tu-testbed/demos/chunklod/*.lua
+
+psm_vistool_files =					\
+	tu-testbed/go_psm_vistool.bat			\
+	tu-testbed/demos/psm_vistool/psm_vistool.exe	\
+	tu-testbed/demos/psm_vistool/Makefile		\
+	tu-testbed/demos/psm_vistool/*.cpp		\
+	tu-testbed/demos/psm_vistool/*.h		\
+	tu-testbed/demos/psm_vistool/*.dll
+
+gameswf_source =				\
+	tu-testbed/gameswf/Makefile		\
+	tu-testbed/gameswf/*.cpp		\
+	tu-testbed/gameswf/*.c			\
+	tu-testbed/gameswf/*.h			\
+	tu-testbed/gameswf/TODO
+
+gameswf_exe =					\
+	tu-testbed/gameswf/*.dll		\
+	tu-testbed/gameswf/gameswf_parser.exe	\
+	tu-testbed/gameswf/gameswf_processor.exe \
+	tu-testbed/gameswf/gameswf_test_ogl.exe
+
+gameswf_files = $(gameswf_source) $(gameswf_exe)	\
+	tu-testbed/go_gameswf.bat
+
+crater_data_files =					\
+	tu-testbed/demos/chunklod/crater/crater.chu	\
+	tu-testbed/demos/chunklod/crater/crater.jpg
+
+chunkdemo.zip:
+	cd ..; zip tu-testbed/chunkdemo.zip						\
+		$(basic_files) $(engine_files) $(chunklod_files) $(crater_data_files)
+
+gameswf.zip:
+	cd ..; zip tu-testbed/gameswf.zip			\
+		$(basic_files) $(base_files) $(gameswf_files)
+
+bspdemo.zip:
+	cd ..; zip tu-testbed/bspdemo.zip		\
+		tu-testbed/Makefile			\
+		tu-testbed/config			\
+		tu-testbed/demos/bsp/bspdemo.exe	\
+		tu-testbed/demos/bsp/Makefile		\
+		tu-testbed/demos/bsp/*.cpp		\
+		tu-testbed/demos/bsp/*.h		\
+		tu-testbed/demos/bsp/README		\
+		tu-testbed/demos/bsp/TODO		\
+		tu-testbed/demos/bsp/*.ply		\
+		tu-testbed/demos/bsp/*.pl		\
+		$(engine_files)
+
+psm_vistool.zip:
+	cd ..; zip tu-testbed/psm_vistool.zip				\
+		$(basic_files) $(engine_files) $(psm_vistool_files)
+
+
+luaSDL.src.tar.gz:
+	make -C luaSDL clean
+	tar czvf $@ luaSDL

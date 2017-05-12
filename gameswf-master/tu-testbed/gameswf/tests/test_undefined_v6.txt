@@ -1,0 +1,30 @@
+# The code looks like:
+#
+# var a;
+# 
+# trace("a");
+# trace(a);
+# test_field.text = a;
+# 
+# trace("test_field.text");
+# trace(test_field.text);
+# 
+# trace("a");
+# trace("a " + a);
+# 
+# if (a == "undefined") { trace("a == 'undefined'"); }
+# else if (a == "") { trace("a == ''"); }
+# else { trace("a != '' and a != 'undefined'"); }
+# 
+# trace(length(a));
+# trace(substring(a, 2, 3));
+samples/test_undefined_v6.swf
+a
+undefined
+test_field.text
+undefined
+a
+a 
+a != '' and a != 'undefined'
+0
+

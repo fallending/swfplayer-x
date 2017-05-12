@@ -1,0 +1,57 @@
+// Example build file:
+[
+  { "name": "default",
+    "type": "generic",
+    "dep": [
+      "dmb"
+    ]
+  },
+  
+  { "name": "jsonlib",
+    "type": "lib",
+    "base_dir": "jsoncpp/src/lib_json",
+    "src": [
+      "json_reader.cpp",
+      "json_value.cpp",
+      "json_writer.cpp"
+    ],
+    "inc_dirs": [
+      "../../include",
+      ""
+    ],
+    "dep_inc_dirs": [
+      "../../include",
+    ],
+  },
+
+  { "name": "dmb",
+    "type": "exe",
+
+    "src": [
+      "compile_util.cpp",
+      "config.cpp",
+      "context.cpp",
+      "dumbuild.cpp",
+      "eval.cpp",
+      "exe_target.cpp",
+      "external_lib_target.cpp",
+      "file_deps.cpp",
+      "generic_target.cpp",
+      "hash.cpp",
+      "hash_util.cpp",
+      "lib_target.cpp",
+      "object.cpp",
+      "object_store.cpp",
+      "os.cpp",
+      "path.cpp",
+      "res.cpp",
+      "sha1.cpp",
+      "target.cpp",
+      "test.cpp",
+      "util.cpp"
+          ],
+    "dep": [
+      "jsonlib"
+    ],
+  }
+]

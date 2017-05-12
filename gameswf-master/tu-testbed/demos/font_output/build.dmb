@@ -1,0 +1,21 @@
+// Build file for font_output.exe
+[
+  { "name": "default",
+    "type": "generic",
+    "dep": [ "font_output" ]
+  },
+
+  { "name": "font_output",
+    "type": "exe",
+    "src": [
+      "font_output.cpp"
+    ],
+    "inc_dirs": [
+      "#"
+    ],
+    "dep": [
+      "#base/base",
+      "#freetype"
+    ]
+  }
+]

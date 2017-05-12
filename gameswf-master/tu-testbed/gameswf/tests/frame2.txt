@@ -1,0 +1,11 @@
+samples/test_frame2.swf
+onEnterFrame 2
+onEnterFrame 3
+onEnterFrame 4
+onEnterFrame 5
+onEnterFrame 6
+onEnterFrame 7
+onEnterFrame 8
+onEnterFrame 9
+onEnterFrame 10
+frame 10 actions

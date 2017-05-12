@@ -1,0 +1,20 @@
+# Test the order of onEnterFrame() in relation to animation actions in
+# the frame.  The movie has ten frames, with a sprite "icon" moving
+# right one pixel per frame.  The code in frame 1 looks like:
+#
+# trace("frame(1) pre: icon._x = " + icon._x);
+# onEnterFrame = function() {
+# 	trace("_currentFrame = " + _currentFrame + ", icon._x = " + icon._x);
+# }
+#
+samples/test_motion_exec_order.swf
+frame(1) pre: icon._x = 107
+_currentFrame = 2, icon._x = 108
+_currentFrame = 3, icon._x = 109
+_currentFrame = 4, icon._x = 110
+_currentFrame = 5, icon._x = 111
+_currentFrame = 6, icon._x = 112
+_currentFrame = 7, icon._x = 113
+_currentFrame = 8, icon._x = 114
+_currentFrame = 9, icon._x = 115
+_currentFrame = 10, icon._x = 116

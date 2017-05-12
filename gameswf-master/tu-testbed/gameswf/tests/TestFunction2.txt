@@ -1,0 +1,19 @@
+samples/TestFunction2.swf
+Tulsa nightlife -
+filth, gin, a slut.
+
+Arg a
+Arg b
+[object Object]
+[object Object]
+Arg a,Arg b
+Arg b
+modified b!
+another test
+27
+[object Object]
+[object Object]
+another test,27
+27
+modified b!
+

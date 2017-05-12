@@ -1,0 +1,47 @@
+/* test_function2.sswf -- Thatcher Ulrich 2005 */
+/* encoding="utf-8" */
+
+/* For testing gameswf's handling of the function2 opcode. */
+
+// TODO: it's not actually using function2 yet!
+
+rectangle "screen" { 0, 0, 100, 100 };
+
+sequence "main"
+{
+	frame_rate = 30;
+	screen;
+
+	set background color { 255, 255, 255 };
+
+	do action {
+		function "print_two_args(a1, a2)" {
+			action "push data" {
+				string: "a1";
+			};
+			action "get variable";
+			action "trace";
+
+			action "push data" {
+				string: "a2";
+			};
+			action "get variable";
+			action "trace";
+		};
+
+		action "push data" {
+			string: "Hello world";
+		};
+		action "trace";
+
+		action "push data" {
+			string: "arg a2";
+			string: "arg a1 bobo";
+			integer: 2;
+			string: "print_two_args";
+		};
+		action "call function";
+	};
+
+	show frame;
+};

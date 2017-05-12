@@ -1,0 +1,62 @@
+CodeVisionAVR C Compiler V1.23.6a Standard
+(C) Copyright 1998-2002 HP InfoTech s.r.l.
+http://www.hpinfotech.ro
+e-mail:office@hpinfotech.ro , hpinfotech@xnet.ro
+
+File: C:\Projects\NovaCruz\X50_AtmelCpu\AtmelCode_Rev3_12\Main.c
+Global variables memory map:
+
+Variable                          Address   Size
+SOC_LEDS                              E0h      6
+DischargePoints                       E6h     50
+BatteryPowerLow                        R4      1
+ComStr                               118h     20
+ComRecBuff                           12Ch     16
+RecBuffPtr                             R5      1
+RecByteRdy                             R6      1
+PhaseOutFWD                          13Ch      8
+PhasePtr                               R7      1
+PhaseErr                               R8      1
+OvrTemp                                R9      1
+CruiseMode                            R10      1
+MaxWattSeconds                       144h      4
+ActiveOut                            148h      8
+AdcPWMVal                         R11,R12      2
+AdcTempVal                        R13,R14      2
+HeatSinkTemp                         150h      1
+BatteryCurrent                       151h      1
+BatteryVoltage                       152h      2
+AvgBatteryVoltage                    154h      2
+LowBatteryVoltage                    156h      2
+AutoUpdate                           158h      1
+iMaxEconoSpeed                       159h      2
+iPhaseZero                           15Bh      2
+iPhaseCurrent                        15Dh      2
+iPhaseZeroPoints                     15Fh     12
+cPWMVal                              16Bh      1
+OldcPWMVal                           16Ch      1
+hSensors                             16Dh      1
+prevhSensors                         16Eh      1
+LEDbyte                              16Fh      1
+OldLEDbyte                           170h      1
+calcLEDbyte                          171h      1
+LEDStatus                            172h      1
+iTimerSOC                            173h      1
+CurrentWattSeconds                   174h      4
+SavedWattSeconds                     178h      4
+itrDelay                             17Ch      4
+isecTmr                              180h      1
+isecTimer                            181h      2
+isecTmrWatts                         183h      1
+DriveEnable                          184h      1
+iMotorTimer                          185h      2
+iMotorSpeed                          187h      2
+iMotorRPM                            189h      2
+CurrentLimitByte                     18Bh      1
+ComSequence                          18Ch      1
+vtmp                                 18Dh      4
+ftmp                                 191h      4
+itmp                                 195h      2
+tmpChar                              197h      1
+tmpPWMVal                            198h      1
+*pp_G2                               199h      2

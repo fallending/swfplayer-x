@@ -1,0 +1,11 @@
+# A very simple test.  Five frames, each one has a trace() statement
+# that prints the literal frame number, and also the value of
+# _currentFrame, which should match the literal frame number.
+#
+# This verifies that _currentFrame is returning the correct value.
+samples/test_currentframe.swf
+frame 1: _currentFrame = 1
+frame 2: _currentFrame = 2
+frame 3: _currentFrame = 3
+frame 4: _currentFrame = 4
+frame 5: _currentFrame = 5

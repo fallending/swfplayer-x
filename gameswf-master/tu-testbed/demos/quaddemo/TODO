@@ -1,0 +1,5 @@
+* read .BT files
+
+* pack the quadsquare structure more tightly
+
+* calibrate the error metric to max pixel error

@@ -1,0 +1,38 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 9.00
+# Visual Studio 2005
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "gameswf", "gameswf.vcproj", "{EB28DB11-E5F4-4A55-B792-F82257ED0466}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4EFB79AD-644B-42BF-ACE5-57CFB699E236} = {4EFB79AD-644B-42BF-ACE5-57CFB699E236}
+	EndProjectSection
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libgameswf", "libgameswf.vcproj", "{4EFB79AD-644B-42BF-ACE5-57CFB699E236}"
+EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "libmysql", "libmysql.vcproj", "{224BCA8B-374B-4844-99B7-4DE009912271}"
+	ProjectSection(ProjectDependencies) = postProject
+		{4EFB79AD-644B-42BF-ACE5-57CFB699E236} = {4EFB79AD-644B-42BF-ACE5-57CFB699E236}
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Win32 = Debug|Win32
+		Release|Win32 = Release|Win32
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EB28DB11-E5F4-4A55-B792-F82257ED0466}.Debug|Win32.ActiveCfg = Debug|Win32
+		{EB28DB11-E5F4-4A55-B792-F82257ED0466}.Debug|Win32.Build.0 = Debug|Win32
+		{EB28DB11-E5F4-4A55-B792-F82257ED0466}.Release|Win32.ActiveCfg = Release|Win32
+		{EB28DB11-E5F4-4A55-B792-F82257ED0466}.Release|Win32.Build.0 = Release|Win32
+		{4EFB79AD-644B-42BF-ACE5-57CFB699E236}.Debug|Win32.ActiveCfg = Debug|Win32
+		{4EFB79AD-644B-42BF-ACE5-57CFB699E236}.Debug|Win32.Build.0 = Debug|Win32
+		{4EFB79AD-644B-42BF-ACE5-57CFB699E236}.Release|Win32.ActiveCfg = Release|Win32
+		{4EFB79AD-644B-42BF-ACE5-57CFB699E236}.Release|Win32.Build.0 = Release|Win32
+		{224BCA8B-374B-4844-99B7-4DE009912271}.Debug|Win32.ActiveCfg = Debug|Win32
+		{224BCA8B-374B-4844-99B7-4DE009912271}.Debug|Win32.Build.0 = Debug|Win32
+		{224BCA8B-374B-4844-99B7-4DE009912271}.Release|Win32.ActiveCfg = Release|Win32
+		{224BCA8B-374B-4844-99B7-4DE009912271}.Release|Win32.Build.0 = Release|Win32
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

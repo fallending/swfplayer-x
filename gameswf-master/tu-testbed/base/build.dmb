@@ -1,0 +1,67 @@
+[
+  { "name": "base",
+    "type": "lib",
+    "src": [
+      "configvars.cpp",
+      "ear_clip_triangulate_float.cpp",
+      "ear_clip_triangulate_sint16.cpp",
+      "container.cpp",
+      "demo.cpp",
+      "dlmalloc.c",
+      "file_util.cpp",
+      "image.cpp",
+      "image_filters.cpp",
+      "jpeg.cpp",
+      "logger.cpp",
+      "membuf.cpp",
+      "png_helper.cpp",
+      "postscript.cpp",
+      "triangulate_float.cpp",
+      "triangulate_sint32.cpp",
+      "tu_file.cpp",
+      "tu_gc_singlethreaded_marksweep.cpp",
+      "tu_loadlib.cpp",
+      "tu_random.cpp",
+      "tu_timer.cpp",
+      "tu_types.cpp",
+      "utf8.cpp",
+      "utility.cpp",
+      "zlib_adapter.cpp"
+    ],
+    "inc_dirs": [
+      "#"
+    ],
+    "dep": [
+      //"#sdl",
+      "#jpeglib",
+      //"#ogl",
+      "#libpng",
+      "#zlib"
+    ]
+  },
+
+  { "name": "base_sdl",
+    "type": "lib",
+    "src": [
+      "ogl.cpp",
+      "tu_file_SDL.cpp",
+    ],
+    "dep": [
+      "#sdl",
+      "#ogl"
+    ]
+  },
+
+  { "name": "container_test",
+    "type": "exe",
+    "src": [
+      "container.cpp",
+      "tu_random.cpp",
+      "utf8.cpp"
+    ],
+    "inc_dirs": [
+      "#"
+    ],
+    "target_cflags": "-DCONTAINER_UNIT_TEST"
+  }
+]

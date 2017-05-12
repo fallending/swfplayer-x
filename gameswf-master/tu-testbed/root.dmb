@@ -1,0 +1,166 @@
+[
+  //
+  // msvc
+  //
+
+  // Basic stuff common to all msvc configs.
+  { "name": "vc-base",
+    "type": "config",
+
+    "obj_extension": ".obj",
+    "lib_extension": ".lib",
+    "exe_extension": ".exe",
+  },
+
+  { "name": "vc8-base",
+    "type": "config",
+
+    "inherit": "vc-base",
+
+    // This is the environment that the compiler runs in.  dmb's
+    // environment does not leak into the compiler processes, so
+    // the environment must be defined completely here.
+    "compile_environment": {
+      "PATH": "c:/Program Files/Microsoft Visual Studio 8/VC/bin;c:/Program Files/Microsoft Visual Studio 8/Common7/IDE",
+      "INCLUDE": "c:/Program Files/Microsoft Visual Studio 8/VC/include;c:/Program Files/Microsoft Platform SDK/Include",
+      "LIB": "c:/Program Files/Microsoft Visual Studio 8/VC/lib;c:/Program Files/Microsoft Platform SDK/Lib",
+      "SystemRoot": "C:\\WINDOWS"
+    },
+
+    "cl_exe": "\"c:/Program Files/Microsoft Visual Studio 8/VC/bin/cl.exe\"",
+    "lib_exe": "\"c:/Program Files/Microsoft Visual Studio 8/VC/bin/lib.exe\"",
+
+    "cflags": "-D_CRT_SECURE_NO_DEPRECATE",
+    
+    // This is the command-line template used to invoke the compiler.
+    "compile_template": "${cl_exe} -nologo ${cflags} ${target_cflags} ${dep_cflags} ${inc_dirs} -c ${src_list} -Fd${basename}.pdb",
+
+    // This is the command-line template used to invoke the linker.
+    "link_template": "${cl_exe} -nologo ${cflags} ${target_cflags} ${dep_cflags} ${obj_list} ${lib_list} -Fe${basename}.exe -Fd${basename}.pdb -link ${linker_flags}",
+
+    // This is the command-line template used to combine object files into a library.
+    "lib_template": "${lib_exe} -nologo -OUT:${basename}.lib ${obj_list}",
+
+    "detected": ["file_exists", ["fill", "${cl_exe}"]],
+  },
+
+  { "name": "vc8-debug",
+    "type": "config",
+
+    "inherit": "vc8-base",
+
+    "cflags": ["fill", "${cflags} -Zi -MD"],
+  },
+
+  { "name": "vc8-release",
+    "type": "config",
+
+    "inherit": "vc8-base",
+
+    "cflags": ["fill", "${cflags} -Ox -DNDEBUG -MD"],
+  },
+
+  { "name": "vc9-base",
+    "type": "config",
+
+    "inherit": "vc-base",
+    
+    // This is the environment that the compiler runs in.  dmb's
+    // environment does not leak into the compiler processes, so
+    // the environment must be defined completely here.
+    "compile_environment": {
+      "PATH": "c:/Program Files/Microsoft Visual Studio 9.0/VC/bin;c:/Program Files/Microsoft Visual Studio 9.0/Common7/IDE",
+      "INCLUDE": "c:/Program Files/Microsoft Visual Studio 9.0/VC/include;c:/Program Files/Microsoft SDKs/Windows/v6.1/Include",
+      "LIB": "c:/Program Files/Microsoft Visual Studio 9.0/VC/lib;c:/Program Files/Microsoft SDKs/Windows/v6.1/Lib",
+      "SystemRoot": "C:\\WINDOWS"
+    },
+
+    "cl_exe": "c:/Program Files/Microsoft Visual Studio 9.0/VC/bin/cl.exe",
+    "lib_exe": "\"c:/Program Files/Microsoft Visual Studio 9.0/VC/bin/lib.exe\"",
+
+    "cflags": "-D_CRT_SECURE_NO_DEPRECATE -D_HAS_EXCEPTIONS=0",
+
+    // This is the command-line template used to invoke the compiler.
+    "compile_template": "\"${cl_exe}\" -nologo ${cflags} ${target_cflags} ${dep_cflags} ${inc_dirs} -c ${src_list} -Fd${basename}.pdb",
+
+    // This is the command-line template used to invoke the linker.
+    "link_template": "\"${cl_exe}\" -nologo ${cflags} ${target_cflags} ${dep_cflags} ${obj_list} ${lib_list} -Fe${basename}.exe -Fd${basename}.pdb -link ${linker_flags}",
+
+    // This is the command-line template used to combine object files into a library.
+    "lib_template": "${lib_exe} -nologo -OUT:${basename}.lib ${obj_list}",
+
+    "detected": ["file_exists", ["fill", "${cl_exe}"]],
+  },
+
+  { "name": "vc9-debug",
+    "type": "config",
+    "inherit": "vc9-base",
+    "cflags": ["fill", "${cflags} -Zi -MD"],
+  },
+
+  { "name": "vc9-release",
+    "type": "config",
+    "inherit": "vc9-base",
+    "cflags": ["fill", "${cflags} -Ox -MD -DNDEBUG"],
+  },
+
+  //
+  // gcc
+  //
+  
+  // Basic stuff common to all gcc configs.
+  { "name": "gcc-base",
+    "type": "config",
+
+    // This is the environment that the compiler runs in.  dmb's
+    // environment does not leak into the compiler processes, so
+    // the environment must be defined completely here.
+    "compile_environment": {
+      "PATH": "/usr/sbin:/usr/bin:/sbin:/bin"
+    },
+
+    "obj_extension": ".o",
+    "lib_extension": ".a",
+    "exe_extension": "",
+
+    "cflags": "-Wall",
+    
+    // This is the command-line template used to invoke the compiler.
+    "compile_template": "/usr/bin/gcc ${cflags} ${target_cflags} ${dep_cflags} ${inc_dirs} -c ${src_list}",
+
+    // This is the command-line template used to invoke the linker.
+    "link_template": "/usr/bin/gcc -o ${basename} ${cflags} ${target_cflags} ${dep_cflags} ${obj_list} ${lib_list} -lstdc++ ${linker_flags}",
+
+    // This is the command-line template used to combine object files into a library.
+    "lib_template": "/usr/bin/ar rc ${basename}.a ${obj_list}",
+
+    "detected": ["file_exists", "/usr/bin/gcc"],
+  },
+    
+  { "name": "gcc-debug",
+    "type": "config",
+
+    "inherit": "gcc-base",
+
+    "cflags": ["fill", "${cflags} -g"],
+  },
+
+  { "name": "gcc-release",
+    "type": "config",
+
+    "inherit": "gcc-base",
+
+    "cflags": ["fill", "${cflags} -O2"],
+  },
+
+  //
+  // default
+  //
+
+  // default config picks one of the detected toolsets.
+  { "name": "default",
+    "type": "config",
+
+    "inherit": ["config_detected", "vc9-debug", "vc8-debug", "gcc-debug"],
+  }
+]

@@ -1,0 +1,51 @@
+// net library build file
+[
+  { "name": "default",
+    "type": "generic",
+    "dep": [
+      "net"
+    ]
+  },
+
+  { "name": "net",
+    "type": "lib",
+    "src": [
+      "http_client.cpp",
+      "http_file_handler.cpp",
+      "http_helper.cpp",
+      "http_server.cpp",
+      "net_interface_tcp.cpp",
+      "net_test.cpp",  // ?
+      "tu_net_file.cpp",
+      "webtweaker.cpp",
+      "webwidgets.cpp"
+    ],
+    "dep": [
+      "#winsock",
+      "#base/base"
+    ],
+    "inc_dirs": [
+      "#"
+    ]
+  },
+
+  { "name": "net_test",
+    "type": "exe",
+    "src": [
+      "net_test.cpp"
+    ],
+    "dep": [
+      "net"
+    ]
+  },
+  
+  { "name": "test_client",
+    "type": "exe",
+    "src": [
+      "test_client.cpp"
+    ],
+    "dep": [
+      "net"
+    ]
+  }
+]
