@@ -1,7 +1,0 @@
-#!/bin/sh
-
-if [ ! -f dmb-out/bootstrap/dmb ] ; then
-  ./bootstrap.sh
-fi
-
-dmb-out/bootstrap/dmb $@

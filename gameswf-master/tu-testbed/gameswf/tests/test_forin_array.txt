@@ -1,2 +1,0 @@
-samples/test_forin_array.swf
-true
