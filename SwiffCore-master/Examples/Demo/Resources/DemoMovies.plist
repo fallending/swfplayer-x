@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>movies</key>
+	<array>
+		<dict>
+			<key>url</key>
+			<string>bundle:ff1.swf</string>
+			<key>name</key>
+			<string>ff1 swf</string>
+			<key>author</key>
+			<string>亮亮</string>
+		</dict>
+		<dict>
+			<key>url</key>
+			<string>bundle:TestSuite.swf</string>
+			<key>name</key>
+			<string>Test Suite</string>
+			<key>author</key>
+			<string>SwiffCore</string>
+		</dict>
+		<dict>
+			<key>url</key>
+			<string>bundle:DynamicText.swf</string>
+			<key>name</key>
+			<string>Dynamic Text</string>
+			<key>author</key>
+			<string>SwiffCore</string>
+		</dict>
+		<dict>
+			<key>url</key>
+			<string>bundle:Bitmaps.swf</string>
+			<key>name</key>
+			<string>Bitmaps</string>
+			<key>author</key>
+			<string>SwiffCore</string>
+		</dict>
+	</array>
+</dict>
+</plist>

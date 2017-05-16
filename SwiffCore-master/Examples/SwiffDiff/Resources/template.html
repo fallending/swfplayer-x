@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title></title>
+<style>
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#movie {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+}
+
+</style>
+<script>
+
+var gMovie;
+var gCurrentFrame = 1;
+
+function SyncFrame()
+{
+    if (!(gMovie && gMovie.TGetProperty && gMovie.TGetProperty("/", 4) == gCurrentFrame)) {
+        if (gMovie && gMovie.GotoFrame) {
+            gMovie.GotoFrame(gCurrentFrame - 1);
+        }
+
+        setTimeout(SyncFrame, 0);
+    }
+}
+
+
+function GotoFrame(n)
+{
+    gCurrentFrame = n;
+    SyncFrame();
+}
+
+
+function SetURL(url)
+{
+    var movie = document.createElement("object");
+    var param = document.createElement("param");
+
+    movie.setAttribute("data",    url);
+    movie.setAttribute("allowScriptAccess", "always");
+    movie.setAttribute("type",   "application/x-shockwave-flash");
+    movie.setAttribute("width",  "100%");
+    movie.setAttribute("height", "100%");
+    movie.setAttribute("play",   "false");
+    movie.setAttribute("id",     "movie");
+
+    param.setAttribute("name", "AllowScriptAccess");
+    param.setAttribute("value", "true");
+    
+    movie.appendChild(param);
+    document.body.appendChild(movie);
+    
+    gMovie = movie;
+
+    SyncFrame();
+}
+
+
+</script>
+</head>
+<body>
+<object
+    wmode="opaque"
+    allowScriptAccess="always"
+    width="100%"
+    height="100%"
+    data=""
+    id="movie">
+    <param name="AllowScriptAccess" value="true">
+</object>
+</body>
+</html>
