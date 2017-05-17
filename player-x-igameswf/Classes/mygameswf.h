@@ -16,6 +16,9 @@ void set_gameswf_window(int backingWidth, int backingHeight);
  */
 void advance_gameswf(int w, int h, std::function<void()> handler_pre_play, std::function<void()> hanler_post_play);
 
+void gameswf_play();
+void gameswf_stop();
+
 
 void onMouseDown(float x, float y);
 void onMouseUp(float x, float y);

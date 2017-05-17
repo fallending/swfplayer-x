@@ -14,8 +14,8 @@
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		6A628B891ECB01BC00E6A2E5 /* play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A628B871ECB01BC00E6A2E5 /* play@3x.png */; };
 		6A628B8A1ECB01BC00E6A2E5 /* stop@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A628B881ECB01BC00E6A2E5 /* stop@3x.png */; };
-		6AEF96881EC9BC3B00D7C561 /* ff1.swf in Resources */ = {isa = PBXBuildFile; fileRef = 6AEF96861EC9BC3B00D7C561 /* ff1.swf */; };
-		6AEF96891EC9BC3B00D7C561 /* TestSuite.swf in Resources */ = {isa = PBXBuildFile; fileRef = 6AEF96871EC9BC3B00D7C561 /* TestSuite.swf */; };
+		6A628B8C1ECBF3FA00E6A2E5 /* app_mashaladi.swf in Resources */ = {isa = PBXBuildFile; fileRef = 6A628B8B1ECBF3FA00E6A2E5 /* app_mashaladi.swf */; };
+		6A628B8E1ECBF41900E6A2E5 /* ff1.swf in Resources */ = {isa = PBXBuildFile; fileRef = 6A628B8D1ECBF41900E6A2E5 /* ff1.swf */; };
 		6AEF968D1ECA926200D7C561 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6AEF968B1ECA926200D7C561 /* ViewController.mm */; };
 		6AEF968E1ECA926200D7C561 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AEF968C1ECA926200D7C561 /* ViewController.xib */; };
 		BA4B5686102213EF00C08431 /* gameswf_fontlib.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BA4B5684102213EF00C08431 /* gameswf_fontlib.cpp */; };
@@ -25,7 +25,6 @@
 		BAE7694C100DE266004050F5 /* gameswf_freetype.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAE7694A100DE266004050F5 /* gameswf_freetype.cpp */; };
 		BAE76952100DE297004050F5 /* gameswf_font.cpp in Sources */ = {isa = PBXBuildFile; fileRef = BAE76950100DE297004050F5 /* gameswf_font.cpp */; };
 		BAE7695F100DE359004050F5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE7695D100DE359004050F5 /* icon.png */; };
-		BAE76960100DE359004050F5 /* start.swf in Resources */ = {isa = PBXBuildFile; fileRef = BAE7695E100DE359004050F5 /* start.swf */; };
 		D84701320FFE30A700AD7D9B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D84701310FFE30A700AD7D9B /* SystemConfiguration.framework */; };
 		D85EB9B80FE53C99009275D2 /* mygameswf.mm in Sources */ = {isa = PBXBuildFile; fileRef = D85EB9B70FE53C99009275D2 /* mygameswf.mm */; };
 		D89F8ED10FE5437200DEDD34 /* jmemmgr.c in Sources */ = {isa = PBXBuildFile; fileRef = D89F8ED00FE5437200DEDD34 /* jmemmgr.c */; };
@@ -189,8 +188,8 @@
 		32CA4F630368D1EE00C91783 /* igameswf_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = igameswf_Prefix.pch; sourceTree = "<group>"; };
 		6A628B871ECB01BC00E6A2E5 /* play@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@3x.png"; sourceTree = "<group>"; };
 		6A628B881ECB01BC00E6A2E5 /* stop@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop@3x.png"; sourceTree = "<group>"; };
-		6AEF96861EC9BC3B00D7C561 /* ff1.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = ff1.swf; sourceTree = "<group>"; };
-		6AEF96871EC9BC3B00D7C561 /* TestSuite.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = TestSuite.swf; sourceTree = "<group>"; };
+		6A628B8B1ECBF3FA00E6A2E5 /* app_mashaladi.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = app_mashaladi.swf; path = ../test/app_mashaladi.swf; sourceTree = "<group>"; };
+		6A628B8D1ECBF41900E6A2E5 /* ff1.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ff1.swf; path = ../test/ff1.swf; sourceTree = "<group>"; };
 		6AEF968A1ECA926200D7C561 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6AEF968B1ECA926200D7C561 /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		6AEF968C1ECA926200D7C561 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
@@ -205,7 +204,6 @@
 		BAE76950100DE297004050F5 /* gameswf_font.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = gameswf_font.cpp; sourceTree = "<group>"; };
 		BAE76951100DE297004050F5 /* gameswf_font.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = gameswf_font.h; sourceTree = "<group>"; };
 		BAE7695D100DE359004050F5 /* icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = icon.png; sourceTree = "<group>"; };
-		BAE7695E100DE359004050F5 /* start.swf */ = {isa = PBXFileReference; lastKnownFileType = file; path = start.swf; sourceTree = "<group>"; };
 		BAE7696F100DE57C004050F5 /* igameswf.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = igameswf.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D84701310FFE30A700AD7D9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D85EB9B60FE53C99009275D2 /* mygameswf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mygameswf.h; sourceTree = "<group>"; };
@@ -542,10 +540,9 @@
 		29B97317FDCFA39411CA2CEA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6AEF96861EC9BC3B00D7C561 /* ff1.swf */,
-				6AEF96871EC9BC3B00D7C561 /* TestSuite.swf */,
+				6A628B8D1ECBF41900E6A2E5 /* ff1.swf */,
+				6A628B8B1ECBF3FA00E6A2E5 /* app_mashaladi.swf */,
 				BAE7695D100DE359004050F5 /* icon.png */,
-				BAE7695E100DE359004050F5 /* start.swf */,
 				8D1107310486CEB800E47090 /* Info.plist */,
 			);
 			name = Resources;
@@ -921,12 +918,11 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				6A628B8E1ECBF41900E6A2E5 /* ff1.swf in Resources */,
 				6A628B8A1ECB01BC00E6A2E5 /* stop@3x.png in Resources */,
 				BAE7695F100DE359004050F5 /* icon.png in Resources */,
-				6AEF96891EC9BC3B00D7C561 /* TestSuite.swf in Resources */,
-				6AEF96881EC9BC3B00D7C561 /* ff1.swf in Resources */,
+				6A628B8C1ECBF3FA00E6A2E5 /* app_mashaladi.swf in Resources */,
 				6AEF968E1ECA926200D7C561 /* ViewController.xib in Resources */,
-				BAE76960100DE359004050F5 /* start.swf in Resources */,
 				6A628B891ECB01BC00E6A2E5 /* play@3x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

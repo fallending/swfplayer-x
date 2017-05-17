@@ -47,13 +47,15 @@
 
 - (void)onPlay {
     if (_isPlaying) {
-        
+        gameswf_stop();
         
         _isPlaying = NO;
         [self.playButton setImage:[UIImage imageNamed:@"stop"] forState:UIControlStateNormal];
     } else {
         
-        _isPlaying = NO;
+        gameswf_play();
+        
+        _isPlaying = YES;
         [self.playButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
     }
 }

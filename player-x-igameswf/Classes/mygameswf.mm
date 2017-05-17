@@ -486,6 +486,16 @@ void advance_gameswf(int w, int h, std::function<void()> handler_pre_play, std::
     hanler_post_play(); // fallenink add
 }
 
+void gameswf_play() {
+    m->set_play_state(gameswf::character::PLAY);
+}
+
+void gameswf_stop() {
+    m->set_play_state(gameswf::character::STOP);
+}
+
+#pragma mark -
+
 void onMouseDown(float x, float y)
 {
     // mouse move event

@@ -23,7 +23,7 @@
             <subviews>
                 <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2uN-h4-xMb" customClass="EAGLView">
                     <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                 </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDv-Cb-d0r">
                     <rect key="frame" x="154" y="300" width="66" height="66"/>
@@ -34,7 +34,7 @@
                     <state key="normal" image="play.png"/>
                 </button>
             </subviews>
-            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color key="backgroundColor" red="0.80784313730000001" green="0.63529411759999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
                 <constraint firstAttribute="bottom" secondItem="2uN-h4-xMb" secondAttribute="bottom" id="Cgd-8t-ZAU"/>
                 <constraint firstAttribute="trailing" secondItem="2uN-h4-xMb" secondAttribute="trailing" id="FlT-2R-YOO"/>
