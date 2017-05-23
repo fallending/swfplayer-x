@@ -873,7 +873,7 @@ static int find_ear_vertex(const tristate* ts, int vi0, int vi1)
 				      ts->m_verts[vi0].m_v, ts->m_verts[vi1].m_v, ts->m_verts[vi2].m_v)) {
 			// Can't clip this ear; there's an edge in the way.
 #ifdef DEBUG_MARKUP
-			vec2_t centroid = debug_centroid(ts, vi0, vi1, vi2);
+//			vec2_t centroid = debug_centroid(ts, vi0, vi1, vi2);
 			debug_make_square(ts->m_debug_edges, debug_centroid(ts, vi0, vi1, vi2));
 #endif // DEBUG_MARKUP
 			return -1;

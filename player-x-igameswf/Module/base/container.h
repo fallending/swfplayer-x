@@ -384,7 +384,7 @@ public:
 				m_buffer = (T*) tu_realloc(m_buffer, sizeof(T) * m_buffer_size, sizeof(T) * old_size);
 			} else {
 				m_buffer = (T*) tu_malloc(sizeof(T) * m_buffer_size);
-				memset(m_buffer, 0, (sizeof(T) * m_buffer_size));
+				memset((void *)m_buffer, 0, (sizeof(T) * m_buffer_size));
 			}
 			assert(m_buffer);	// need to throw (or something) on malloc failure!
 		}			

@@ -34,20 +34,21 @@
 @synthesize animationTimer;
 @synthesize animationInterval;
 
-
 // You must implement this method
-+ (Class)layerClass
-{
++ (Class)layerClass {
     return [CAEAGLLayer class];
 }
 
-
 //The GL view is stored in the nib file. When it's unarchived it's sent -initWithCoder:
-- (id)initWithCoder:(NSCoder*)coder {
-    
+- (id)initWithCoder:(NSCoder *)coder {
     if ((self = [super initWithCoder:coder])) {
+        self.userInteractionEnabled = YES;
+        self.backgroundColor = [UIColor clearColor];
+        
         // Get the layer
         CAEAGLLayer *eaglLayer = (CAEAGLLayer *)self.layer;
+        
+        self.layer.backgroundColor = [UIColor clearColor].CGColor;
         
         eaglLayer.opaque = YES;
         eaglLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
@@ -65,8 +66,7 @@
 }
 
 
-- (void)drawView
-{
+- (void)drawView {
 	[EAGLContext setCurrentContext:context];
 	
 	glBindFramebufferOES(GL_FRAMEBUFFER_OES, viewFramebuffer);
@@ -114,9 +114,7 @@
     [self drawView];
 }
 
-- (BOOL)createFramebuffer
-{
-    
+- (BOOL)createFramebuffer {
     glGenFramebuffersOES(1, &viewFramebuffer);
     glGenRenderbuffersOES(1, &viewRenderbuffer);
     
@@ -148,49 +146,41 @@
     }
   
 //		glEnable(GL_MULTISAMPLE_ARB);
+    glEnable(GL_ONE_MINUS_SRC_ALPHA);
 	
-		set_gameswf_window(backingWidth, backingHeight);
+    set_gameswf_window(backingWidth, backingHeight);
 	
     return YES;
 }
 
-
-- (void)destroyFramebuffer
-{
+- (void)destroyFramebuffer {
     glDeleteFramebuffersOES(1, &viewFramebuffer);
     viewFramebuffer = 0;
+    
     glDeleteRenderbuffersOES(1, &viewRenderbuffer);
     viewRenderbuffer = 0;
     
-    if(depthRenderbuffer)
-		{
+    if(depthRenderbuffer) {
         glDeleteRenderbuffersOES(1, &depthRenderbuffer);
         depthRenderbuffer = 0;
     }
 }
 
 
-- (void)startAnimation 
-{
+- (void)startAnimation  {
     self.animationTimer = [NSTimer scheduledTimerWithTimeInterval:animationInterval target:self selector:@selector(drawView) userInfo:nil repeats:YES];
 }
 
-
-- (void)stopAnimation
-{
+- (void)stopAnimation {
     self.animationTimer = nil;
 }
 
-
-- (void)setAnimationTimer:(NSTimer *)newTimer 
-{
+- (void)setAnimationTimer:(NSTimer *)newTimer  {
     [animationTimer invalidate];
     animationTimer = newTimer;
 }
 
-
-- (void)setAnimationInterval:(NSTimeInterval)interval
-{
+- (void)setAnimationInterval:(NSTimeInterval)interval {
 		animationInterval = interval;
     if (animationTimer)
 		{
@@ -200,9 +190,7 @@
 }
 
 
-- (void)dealloc
-{
-   
+- (void)dealloc {
     [self stopAnimation];
     
     if ([EAGLContext currentContext] == context) {
@@ -210,9 +198,7 @@
     }
 }
 
-- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event
-{
-	
+- (void)touchesBegan:(NSSet *)touches withEvent:(UIEvent *)event {
 	UITouch *t = [[touches allObjects] objectAtIndex:0];
 	CGPoint touchPos = [t locationInView:t.view];
 //	CGRect bounds = [self bounds];
