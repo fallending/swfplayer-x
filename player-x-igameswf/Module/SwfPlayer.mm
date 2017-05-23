@@ -262,7 +262,10 @@ static void	fs_callback(gameswf::character* movie, const char* command, const ch
     
     m->set_display_viewport(_idealPoint.x, _idealPoint.y, _actualDisplaySize.width, _actualDisplaySize.height);
     
-    m->set_background_alpha(1.0f); // 透明度, opacity 不透明度
+    // 设置swf播放区域的透明度
+//    m->set_background_alpha(1.0f); // 透明度, opacity,opaque 不透明度
+    // 设置swf播放去的背景色
+    m->set_background_color(gameswf::rgba(255.f, 255.f, 255.f, 0.f));
     
     if (s_mouse_event.size() > 0) {
         m->notify_mouse_state(s_mouse_event[0].m_x, s_mouse_event[0].m_y, s_mouse_event[0].m_state);
@@ -303,8 +306,6 @@ static void	fs_callback(gameswf::character* movie, const char* command, const ch
     if (m == NULL) {
         if (error) *error = [NSError errorWithDomain:@"swf-player" code:100 userInfo:@{}];
     }
-    
-    m->set_background_alpha(1.0f); // 透明度, opacity 不透明度
     
     if (error) *error = nil;
 }

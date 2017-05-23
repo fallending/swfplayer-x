@@ -6,7 +6,11 @@
 //  Copyright Home 2009. All rights reserved.
 //
 
-
+/**
+ *  知识点
+ *
+ *  [CAEAGLLayer](http://blog.csdn.net/u013773524/article/details/51385127)
+ */
 
 #import <QuartzCore/QuartzCore.h>
 #import <OpenGLES/EAGLDrawable.h>
@@ -50,7 +54,7 @@
         
         self.layer.backgroundColor = [UIColor clearColor].CGColor;
         
-        eaglLayer.opaque = YES;
+        eaglLayer.opaque = NO;
         eaglLayer.drawableProperties = [NSDictionary dictionaryWithObjectsAndKeys:
                                         [NSNumber numberWithBool:NO], kEAGLDrawablePropertyRetainedBacking, kEAGLColorFormatRGBA8, kEAGLDrawablePropertyColorFormat, nil];
         
