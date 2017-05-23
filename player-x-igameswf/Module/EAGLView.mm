@@ -12,7 +12,7 @@
 #import <OpenGLES/EAGLDrawable.h>
 #include <functional>
 #import "EAGLView.h"
-#import "mygameswf.h"
+#import "SwfPlayer.h"
 
 #define USE_DEPTH_BUFFER 0
 
@@ -60,7 +60,8 @@
             
             return nil;
         }
-			animationInterval = 1.0f / 60.0f;
+		
+        animationInterval = 1.0f / 60.0f;
     }
     return self;
 }
@@ -85,20 +86,22 @@
     glLoadIdentity();
     
     // ====== snippet be wrapped
-    advance_gameswf(w, h, [&](){
-        glDisableClientState(GL_TEXTURE_COORD_ARRAY);
-        glDisableClientState(GL_COLOR_ARRAY);
-    },[&](){
-        glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-        glEnableClientState(GL_COLOR_ARRAY);
-        
-        glEnable(GL_TEXTURE_2D);
-        
-        glEnableClientState(GL_VERTEX_ARRAY);
-//        SetGLColor(1, 1, 1, 1);
-        glColorMask(1, 1, 1, 1);
-        glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
-    });
+    [__SWFPlayer update];
+    
+//    advance_gameswf(w, h, [&](){
+//        glDisableClientState(GL_TEXTURE_COORD_ARRAY);
+//        glDisableClientState(GL_COLOR_ARRAY);
+//    },[&](){
+//        glEnableClientState(GL_TEXTURE_COORD_ARRAY);
+//        glEnableClientState(GL_COLOR_ARRAY);
+//        
+//        glEnable(GL_TEXTURE_2D);
+//        
+//        glEnableClientState(GL_VERTEX_ARRAY);
+////        SetGLColor(1, 1, 1, 1);
+//        glColorMask(1, 1, 1, 1);
+//        glBlendFunc(GL_ONE, GL_ONE_MINUS_SRC_ALPHA);
+//    });
     
     
     // ====== play end
@@ -147,8 +150,8 @@
   
 //		glEnable(GL_MULTISAMPLE_ARB);
     glEnable(GL_ONE_MINUS_SRC_ALPHA);
-	
-    set_gameswf_window(backingWidth, backingHeight);
+    
+    [__SWFPlayer setPreferredSize:CGSizeMake(backingWidth, backingHeight)];
 	
     return YES;
 }
@@ -208,7 +211,8 @@
 //	CGPoint p = CGPointMake((touchPos.x - bounds.origin.x) / bounds.size.width,
 	//												(touchPos.y - bounds.origin.y) / bounds.size.height);
 
-	onMouseDown(touchPos.x, touchPos.y);
+    [__SWFPlayer onMouseDown:touchPos.x :touchPos.y];
+
 }
 
 - (void)touchesMoved:(NSSet *)touches withEvent:(UIEvent *)event 
@@ -222,7 +226,8 @@
 	//   That is 0.85 = 85%
 //	CGPoint p = CGPointMake((touchPos.x - bounds.origin.x) / bounds.size.width,
 //													(touchPos.y - bounds.origin.y) / bounds.size.height);
-	onMouseMove(touchPos.x, touchPos.y);
+    
+    [__SWFPlayer onMouseMove:touchPos.x :touchPos.y];
 }
 
 - (void)touchesEnded:(NSSet *)touches withEvent:(UIEvent *)event
@@ -230,7 +235,7 @@
 	UITouch *t = [[touches allObjects] objectAtIndex:0];
 	CGPoint touchPos = [t locationInView:t.view];
 	
-	onMouseUp(touchPos.x, touchPos.y);
+    [__SWFPlayer onMouseUp:touchPos.x :touchPos.y];
 }
 
 @end

@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#import "mygameswf.h"
+#import "SwfPlayer.h"
 #import "igameswfAppDelegate.h"
 
 #define LOG(FORMAT, ...) {\
@@ -21,23 +21,15 @@ fprintf(stderr,"[--%s--]*[--%s--]*[--%s:%d--]\n",[str UTF8String], [[NSString st
 
 int main(int argc, char *argv[]) {
     int retVal = -1;
-    char myfile[512];
-
-    strncpy(myfile, argv[0], 512);
-    strcpy(myfile + strlen(myfile) - 8, "app_mashaladi.swf"); // app_mashaladi
-
-    char *arg[2];
-
-    arg[0] = NULL;
-    arg[1] = myfile;
-
-    LOG(@" init start ");
+    NSError *error = nil;
+    NSString *path = [[NSBundle mainBundle] pathForResource:@"app_mashaladi" ofType:@"swf"];
     
-    if (init_gameswf(2, arg)) {
-        
-        LOG(@" init end ");
-        
+    __SWFPlayer = [SwfPlayer new];
+    [__SWFPlayer setFilePath:path error:&error];
+    if (!error) {
         retVal = UIApplicationMain(argc, argv, nil, NSStringFromClass([igameswfAppDelegate class]));
+        
+        [__SWFPlayer setPreferredSize:[UIScreen mainScreen].bounds.size];
     }
     
     return retVal;

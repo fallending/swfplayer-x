@@ -170,6 +170,7 @@
 		6AB4A9BC1ED4138200599CDE /* wrrle.c in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4A9211ED4138100599CDE /* wrrle.c */; };
 		6AB4A9BD1ED4138200599CDE /* wrtarga.c in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4A9221ED4138100599CDE /* wrtarga.c */; };
 		6AB4A9BE1ED4138200599CDE /* mygameswf.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4A9241ED4138100599CDE /* mygameswf.mm */; };
+		6AB4AB831ED48D9200599CDE /* SwfPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4AB821ED48D9200599CDE /* SwfPlayer.mm */; };
 		6AEF968D1ECA926200D7C561 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6AEF968B1ECA926200D7C561 /* ViewController.mm */; };
 		6AEF968E1ECA926200D7C561 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AEF968C1ECA926200D7C561 /* ViewController.xib */; };
 		BAE7695F100DE359004050F5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE7695D100DE359004050F5 /* icon.png */; };
@@ -462,6 +463,8 @@
 		6AB4A9221ED4138100599CDE /* wrtarga.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrtarga.c; sourceTree = "<group>"; };
 		6AB4A9231ED4138100599CDE /* mygameswf.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = mygameswf.h; sourceTree = "<group>"; };
 		6AB4A9241ED4138100599CDE /* mygameswf.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = mygameswf.mm; sourceTree = "<group>"; };
+		6AB4AB811ED48D9200599CDE /* SwfPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwfPlayer.h; sourceTree = "<group>"; };
+		6AB4AB821ED48D9200599CDE /* SwfPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SwfPlayer.mm; sourceTree = "<group>"; };
 		6AEF968A1ECA926200D7C561 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6AEF968B1ECA926200D7C561 /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		6AEF968C1ECA926200D7C561 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
@@ -578,6 +581,8 @@
 				6AB4A8D81ED4138100599CDE /* jpeglib */,
 				6AB4A9231ED4138100599CDE /* mygameswf.h */,
 				6AB4A9241ED4138100599CDE /* mygameswf.mm */,
+				6AB4AB811ED48D9200599CDE /* SwfPlayer.h */,
+				6AB4AB821ED48D9200599CDE /* SwfPlayer.mm */,
 			);
 			path = Module;
 			sourceTree = "<group>";
@@ -1022,6 +1027,7 @@
 				6AB4A9901ED4138200599CDE /* jcprepct.c in Sources */,
 				6AB4A97A1ED4138200599CDE /* gameswf_sprite_def.cpp in Sources */,
 				6AB4A97E1ED4138200599CDE /* gameswf_text.cpp in Sources */,
+				6AB4AB831ED48D9200599CDE /* SwfPlayer.mm in Sources */,
 				6AB4A96A1ED4138100599CDE /* gameswf_jit.cpp in Sources */,
 				6AB4A9B21ED4138200599CDE /* rdcolmap.c in Sources */,
 				6AB4A98B1ED4138200599CDE /* jcmarker.c in Sources */,
