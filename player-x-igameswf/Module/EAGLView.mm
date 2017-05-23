@@ -78,10 +78,6 @@
 	glClear(GL_COLOR_BUFFER_BIT);
 	
     // ====== play start
-//    const int w =
-    const int w = [UIScreen mainScreen].bounds.size.width;
-    const int h = [UIScreen mainScreen].bounds.size.height;
-    
     glMatrixMode(GL_PROJECTION);
     glLoadIdentity();
     
