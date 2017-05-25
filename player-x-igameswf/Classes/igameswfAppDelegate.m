@@ -7,7 +7,7 @@
 //
 
 #import "igameswfAppDelegate.h"
-#import "ViewController.h"
+#import "RootViewController.h"
 
 @implementation igameswfAppDelegate
 
@@ -15,20 +15,11 @@
 
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];
-    
-    self.window.rootViewController = [ViewController new];
-//    self.window.rootViewController = [UIViewController new];
-    
+    self.window.rootViewController = [[UINavigationController alloc] initWithRootViewController:[RootViewController new]];
     [self.window makeKeyAndVisible];
     
     return YES;
 }
-
-//- (void)applicationDidFinishLaunching:(UIApplication *)application {
-//    
-//	
-//}
-//
 
 - (void)applicationWillResignActive:(UIApplication *)application {
 //	glView.animationInterval = 1.0 / 5.0;

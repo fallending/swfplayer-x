@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 #import "EAGLView.h"
-#import "mygameswf.h"
+#import "SWFPlayer.h"
 
 @interface ViewController () {
     BOOL _isPlaying;
@@ -24,14 +24,26 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
     
-    self.eaglView.animationInterval = 1.0 / 60.0;
+    {
+        self.title = @"SWF播放测试";
+    }
     
-    [self.eaglView startAnimation];
-    
-    _isPlaying = YES;
-    [self.playButton addTarget:self action:@selector(onPlay) forControlEvents:UIControlEventTouchUpInside];
+    {
+        NSError *error = nil;
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"app_mashaladi" ofType:@"swf"];
+        
+        __SWFPlayer = [SwfPlayer new];
+        [__SWFPlayer setFilePath:path error:&error];
+        if (!error) {
+            self.eaglView.animationInterval = 1.0 / 60.0;
+            
+            [self.eaglView startAnimation];
+            
+            _isPlaying = YES;
+            [self.playButton addTarget:self action:@selector(onPlay) forControlEvents:UIControlEventTouchUpInside];
+        }
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -46,18 +58,18 @@
 #pragma mark -
 
 - (void)onPlay {
-    if (_isPlaying) {
-        gameswf_stop();
-        
-        _isPlaying = NO;
-        [self.playButton setImage:[UIImage imageNamed:@"stop"] forState:UIControlStateNormal];
-    } else {
-        
-        gameswf_play();
-        
-        _isPlaying = YES;
-        [self.playButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
-    }
+//    if (_isPlaying) {
+//        gameswf_stop();
+//        
+//        _isPlaying = NO;
+//        [self.playButton setImage:[UIImage imageNamed:@"stop"] forState:UIControlStateNormal];
+//    } else {
+//        
+//        gameswf_play();
+//        
+//        _isPlaying = YES;
+//        [self.playButton setImage:[UIImage imageNamed:@"play"] forState:UIControlStateNormal];
+//    }
 }
 
 @end
