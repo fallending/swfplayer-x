@@ -675,18 +675,8 @@ namespace gameswf
 			m_def->m_frame_size.m_x_min, m_def->m_frame_size.m_x_max,
 			m_def->m_frame_size.m_y_min, m_def->m_frame_size.m_y_max);
 
-        
-        // ======= fallenink
-//        const int w = get_
-        
-        
-        
-        // non fallenink
 		m_movie->display();
         
-        
-        // ======= fallenink
-
 		gameswf::render::end_display();
 	}
 

@@ -15,7 +15,7 @@
 #if TU_CONFIG_LINK_TO_JPEGLIB
 
 extern "C" {
-#include <jpeglib.h>
+#include "jpeglib.h"
 }
 
 

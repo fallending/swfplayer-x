@@ -335,6 +335,10 @@ static void	fs_callback(gameswf::character* movie, const char* command, const ch
     }
 }
 
+- (CGSize)getActualSize {
+    return _actualDisplaySize;
+}
+
 #pragma mark - GameswfWrapperDelegate
 
 - (void)onMouseDown:(double)x :(double)y {

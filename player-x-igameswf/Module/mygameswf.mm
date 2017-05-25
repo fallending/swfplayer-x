@@ -1,3 +1,6 @@
+#import <UIKit/UIKit.h>
+#import <Foundation/Foundation.h>
+
 #include "gameswf/gameswf.h"
 #include <stdlib.h>
 #include <stdio.h>

@@ -35,6 +35,8 @@ extern SwfPlayer *__SWFPlayer;
 - (void)setFilePath:(NSString *)path error:(NSError **)error;
 - (void)setPreferredSize:(CGSize)size;
 
+- (CGSize)getActualSize;
+
 /**
  *  先尝试用 后接 transform filter 来实现 图像 旋转、放大、移动
  */

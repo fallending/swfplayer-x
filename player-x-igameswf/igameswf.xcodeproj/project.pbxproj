@@ -12,6 +12,7 @@
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
+		4A5E67A9E9E6D176A8C2A9A6 /* libPods-igameswf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F717158033B66073080194 /* libPods-igameswf.a */; };
 		6A628B891ECB01BC00E6A2E5 /* play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A628B871ECB01BC00E6A2E5 /* play@3x.png */; };
 		6A628B8A1ECB01BC00E6A2E5 /* stop@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A628B881ECB01BC00E6A2E5 /* stop@3x.png */; };
 		6A628B8C1ECBF3FA00E6A2E5 /* app_mashaladi.swf in Resources */ = {isa = PBXBuildFile; fileRef = 6A628B8B1ECBF3FA00E6A2E5 /* app_mashaladi.swf */; };
@@ -171,6 +172,11 @@
 		6AB4A9BD1ED4138200599CDE /* wrtarga.c in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4A9221ED4138100599CDE /* wrtarga.c */; };
 		6AB4A9BE1ED4138200599CDE /* mygameswf.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4A9241ED4138100599CDE /* mygameswf.mm */; };
 		6AB4AB831ED48D9200599CDE /* SwfPlayer.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4AB821ED48D9200599CDE /* SwfPlayer.mm */; };
+		6AB4AD3B1ED6B33600599CDE /* GPUSwfRender.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4AD3A1ED6B33600599CDE /* GPUSwfRender.m */; };
+		6AB4AD3F1ED6B44900599CDE /* RootViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4AD3D1ED6B44900599CDE /* RootViewController.m */; };
+		6AB4AD401ED6B44900599CDE /* RootViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB4AD3E1ED6B44900599CDE /* RootViewController.xib */; };
+		6AB4AD441ED6B45E00599CDE /* GPURenderViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AB4AD421ED6B45E00599CDE /* GPURenderViewController.m */; };
+		6AB4AD451ED6B45E00599CDE /* GPURenderViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AB4AD431ED6B45E00599CDE /* GPURenderViewController.xib */; };
 		6AEF968D1ECA926200D7C561 /* ViewController.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6AEF968B1ECA926200D7C561 /* ViewController.mm */; };
 		6AEF968E1ECA926200D7C561 /* ViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 6AEF968C1ECA926200D7C561 /* ViewController.xib */; };
 		BAE7695F100DE359004050F5 /* icon.png in Resources */ = {isa = PBXBuildFile; fileRef = BAE7695D100DE359004050F5 /* icon.png */; };
@@ -186,7 +192,10 @@
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		28FD14FF0DC6FC520079059D /* OpenGLES.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenGLES.framework; path = System/Library/Frameworks/OpenGLES.framework; sourceTree = SDKROOT; };
 		28FD15070DC6FC5B0079059D /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		3276ADA8F8870B14600BFB2F /* Pods-igameswf.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-igameswf.release.xcconfig"; path = "Pods/Target Support Files/Pods-igameswf/Pods-igameswf.release.xcconfig"; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* igameswf_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = igameswf_Prefix.pch; sourceTree = "<group>"; };
+		4F91A4BC274F51BACF52F22A /* Pods-igameswf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-igameswf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-igameswf/Pods-igameswf.debug.xcconfig"; sourceTree = "<group>"; };
+		5D8B9A13B4B37C28D1A16EE2 /* Pods-igameswf.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-igameswf.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-igameswf/Pods-igameswf.distribution.xcconfig"; sourceTree = "<group>"; };
 		6A628B871ECB01BC00E6A2E5 /* play@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@3x.png"; sourceTree = "<group>"; };
 		6A628B881ECB01BC00E6A2E5 /* stop@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop@3x.png"; sourceTree = "<group>"; };
 		6A628B8B1ECBF3FA00E6A2E5 /* app_mashaladi.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = app_mashaladi.swf; path = ../test/app_mashaladi.swf; sourceTree = "<group>"; };
@@ -465,6 +474,14 @@
 		6AB4A9241ED4138100599CDE /* mygameswf.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = mygameswf.mm; sourceTree = "<group>"; };
 		6AB4AB811ED48D9200599CDE /* SwfPlayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwfPlayer.h; sourceTree = "<group>"; };
 		6AB4AB821ED48D9200599CDE /* SwfPlayer.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = SwfPlayer.mm; sourceTree = "<group>"; };
+		6AB4AD391ED6B33600599CDE /* GPUSwfRender.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPUSwfRender.h; sourceTree = "<group>"; };
+		6AB4AD3A1ED6B33600599CDE /* GPUSwfRender.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPUSwfRender.m; sourceTree = "<group>"; };
+		6AB4AD3C1ED6B44900599CDE /* RootViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RootViewController.h; sourceTree = "<group>"; };
+		6AB4AD3D1ED6B44900599CDE /* RootViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RootViewController.m; sourceTree = "<group>"; };
+		6AB4AD3E1ED6B44900599CDE /* RootViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RootViewController.xib; sourceTree = "<group>"; };
+		6AB4AD411ED6B45E00599CDE /* GPURenderViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = GPURenderViewController.h; sourceTree = "<group>"; };
+		6AB4AD421ED6B45E00599CDE /* GPURenderViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GPURenderViewController.m; sourceTree = "<group>"; };
+		6AB4AD431ED6B45E00599CDE /* GPURenderViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = GPURenderViewController.xib; sourceTree = "<group>"; };
 		6AEF968A1ECA926200D7C561 /* ViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		6AEF968B1ECA926200D7C561 /* ViewController.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = ViewController.mm; sourceTree = "<group>"; };
 		6AEF968C1ECA926200D7C561 /* ViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ViewController.xib; sourceTree = "<group>"; };
@@ -474,6 +491,7 @@
 		D84701310FFE30A700AD7D9B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		D8C09BD30FE53B9B0089E37F /* main.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = main.mm; sourceTree = "<group>"; };
 		D8F7C1810FE95FD1006BB652 /* OpenAL.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = OpenAL.framework; path = System/Library/Frameworks/OpenAL.framework; sourceTree = SDKROOT; };
+		F9F717158033B66073080194 /* libPods-igameswf.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-igameswf.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -487,6 +505,7 @@
 				28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */,
 				D8F7C1820FE95FD1006BB652 /* OpenAL.framework in Frameworks */,
 				D84701320FFE30A700AD7D9B /* SystemConfiguration.framework in Frameworks */,
+				4A5E67A9E9E6D176A8C2A9A6 /* libPods-igameswf.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -501,6 +520,12 @@
 				6AEF968A1ECA926200D7C561 /* ViewController.h */,
 				6AEF968B1ECA926200D7C561 /* ViewController.mm */,
 				6AEF968C1ECA926200D7C561 /* ViewController.xib */,
+				6AB4AD3C1ED6B44900599CDE /* RootViewController.h */,
+				6AB4AD3D1ED6B44900599CDE /* RootViewController.m */,
+				6AB4AD3E1ED6B44900599CDE /* RootViewController.xib */,
+				6AB4AD411ED6B45E00599CDE /* GPURenderViewController.h */,
+				6AB4AD421ED6B45E00599CDE /* GPURenderViewController.m */,
+				6AB4AD431ED6B45E00599CDE /* GPURenderViewController.xib */,
 			);
 			path = Classes;
 			sourceTree = "<group>";
@@ -523,6 +548,7 @@
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				29B97323FDCFA39411CA2CEA /* Frameworks */,
 				19C28FACFE9D520D11CA2CBB /* Products */,
+				95593C4678F724E3B7B735B2 /* Pods */,
 			);
 			name = CustomTemplate;
 			sourceTree = "<group>";
@@ -556,6 +582,7 @@
 				28FD14FF0DC6FC520079059D /* OpenGLES.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
+				F9F717158033B66073080194 /* libPods-igameswf.a */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -573,6 +600,8 @@
 		6AB4A8101ED4138100599CDE /* Module */ = {
 			isa = PBXGroup;
 			children = (
+				6AB4AD391ED6B33600599CDE /* GPUSwfRender.h */,
+				6AB4AD3A1ED6B33600599CDE /* GPUSwfRender.m */,
 				6AB4A8111ED4138100599CDE /* base */,
 				6AB4A8461ED4138100599CDE /* compatibility_include.h */,
 				6AB4A8471ED4138100599CDE /* EAGLView.h */,
@@ -883,6 +912,16 @@
 			path = jpeglib;
 			sourceTree = "<group>";
 		};
+		95593C4678F724E3B7B735B2 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				4F91A4BC274F51BACF52F22A /* Pods-igameswf.debug.xcconfig */,
+				3276ADA8F8870B14600BFB2F /* Pods-igameswf.release.xcconfig */,
+				5D8B9A13B4B37C28D1A16EE2 /* Pods-igameswf.distribution.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -890,9 +929,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1D6058960D05DD3E006BFB54 /* Build configuration list for PBXNativeTarget "igameswf" */;
 			buildPhases = (
+				916852AE3B3A383F91B9CD6F /* [CP] Check Pods Manifest.lock */,
 				1D60588D0D05DD3D006BFB54 /* Resources */,
 				1D60588E0D05DD3D006BFB54 /* Sources */,
 				1D60588F0D05DD3D006BFB54 /* Frameworks */,
+				B182188EBDC686EF0E0E781E /* [CP] Embed Pods Frameworks */,
+				CD952B46F57F955C41962473 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -940,12 +982,62 @@
 				6A628B8A1ECB01BC00E6A2E5 /* stop@3x.png in Resources */,
 				BAE7695F100DE359004050F5 /* icon.png in Resources */,
 				6A628B8C1ECBF3FA00E6A2E5 /* app_mashaladi.swf in Resources */,
+				6AB4AD401ED6B44900599CDE /* RootViewController.xib in Resources */,
 				6AEF968E1ECA926200D7C561 /* ViewController.xib in Resources */,
 				6A628B891ECB01BC00E6A2E5 /* play@3x.png in Resources */,
+				6AB4AD451ED6B45E00599CDE /* GPURenderViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		916852AE3B3A383F91B9CD6F /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		B182188EBDC686EF0E0E781E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-igameswf/Pods-igameswf-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CD952B46F57F955C41962473 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-igameswf/Pods-igameswf-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		1D60588E0D05DD3D006BFB54 /* Sources */ = {
@@ -953,6 +1045,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6AB4A95A1ED4138100599CDE /* as_xmlsocket.cpp in Sources */,
+				6AB4AD441ED6B45E00599CDE /* GPURenderViewController.m in Sources */,
 				1D3623260D0F684500981E51 /* igameswfAppDelegate.m in Sources */,
 				6AB4A9771ED4138100599CDE /* gameswf_sound.cpp in Sources */,
 				6AB4A9481ED4138100599CDE /* as_key.cpp in Sources */,
@@ -1066,6 +1159,7 @@
 				6AB4A9291ED4138100599CDE /* file_util.cpp in Sources */,
 				6AB4A96C1ED4138100599CDE /* gameswf_listener.cpp in Sources */,
 				6AB4A9951ED4138200599CDE /* jdatadst.c in Sources */,
+				6AB4AD3F1ED6B44900599CDE /* RootViewController.m in Sources */,
 				6AB4A9261ED4138100599CDE /* dlmalloc.c in Sources */,
 				6AB4A99E1ED4138200599CDE /* jdmaster.c in Sources */,
 				6AB4A9521ED4138100599CDE /* as_point.cpp in Sources */,
@@ -1106,6 +1200,7 @@
 				6AB4A9961ED4138200599CDE /* jdatasrc.c in Sources */,
 				6AB4A9361ED4138100599CDE /* tu_types.cpp in Sources */,
 				6AB4A9581ED4138100599CDE /* as_transform.cpp in Sources */,
+				6AB4AD3B1ED6B33600599CDE /* GPUSwfRender.m in Sources */,
 				6AB4A95D1ED4138100599CDE /* gameswf_avm2_jit.cpp in Sources */,
 				6AB4A9431ED4138100599CDE /* as_date.cpp in Sources */,
 				6AB4A9921ED4138200599CDE /* jctrans.c in Sources */,
@@ -1118,13 +1213,14 @@
 /* Begin XCBuildConfiguration section */
 		1D6058940D05DD3E006BFB54 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 4F91A4BC274F51BACF52F22A /* Pods-igameswf.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
-				CODE_SIGN_IDENTITY = "Mac Developer";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				DEVELOPMENT_TEAM = Z5P6G49J44;
 				ENABLE_BITCODE = NO;
@@ -1148,12 +1244,14 @@
 		};
 		1D6058950D05DD3E006BFB54 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3276ADA8F8870B14600BFB2F /* Pods-igameswf.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = Z5P6G49J44;
@@ -1168,6 +1266,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = igameswf;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";
@@ -1240,12 +1339,14 @@
 		};
 		D82235CB1005E4680042F40D /* Distribution */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5D8B9A13B4B37C28D1A16EE2 /* Pods-igameswf.distribution.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = YES;
 				ARCHS = "$(ARCHS_STANDARD)";
 				CLANG_CXX_LANGUAGE_STANDARD = "c++14";
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = YES;
 				DEVELOPMENT_TEAM = Z5P6G49J44;
@@ -1260,6 +1361,7 @@
 				);
 				MACOSX_DEPLOYMENT_TARGET = 10.9;
 				PRODUCT_NAME = igameswf;
+				"PROVISIONING_PROFILE[sdk=iphoneos*]" = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = iphoneos;
 				USER_HEADER_SEARCH_PATHS = "${SRCROOT}/**";

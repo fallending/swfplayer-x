@@ -151,7 +151,7 @@
 //		glEnable(GL_MULTISAMPLE_ARB);
     glEnable(GL_ONE_MINUS_SRC_ALPHA);
     
-    [__SWFPlayer setPreferredSize:CGSizeMake(backingWidth, backingHeight)];
+    [__SWFPlayer setPreferredSize:CGSizeMake(backingWidth/2, backingHeight/2)];
 	
     return YES;
 }
