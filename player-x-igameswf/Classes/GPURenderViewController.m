@@ -12,6 +12,9 @@
 
 @interface GPURenderViewController ()
 
+@property (nonatomic, strong) GPUImageView *filterView;
+@property (nonatomic, strong) GPUSwfRender *outputFilter;
+
 @end
 
 @implementation GPURenderViewController
@@ -24,7 +27,19 @@
     }
     
     {
+        self.filterView = [[GPUImageView alloc] initWithFrame:self.view.frame];
+        self.filterView.center = self.view.center;
+        [self.view addSubview:self.filterView];
         
+        NSString *path = [[NSBundle mainBundle] pathForResource:@"app_mashaladi" ofType:@"swf"];
+        
+        self.outputFilter = [[GPUSwfRender alloc] initWithSwfPath:path];
+        
+        [self.outputFilter addTarget:self.filterView];
+        [self.outputFilter startProcessing];
+        
+//        self.videoCamera.outputImageOrientation = UIInterfaceOrientationPortrait;
+//        self.videoCamera.horizontallyMirrorFrontFacingCamera = YES;
     }
     
 }
