@@ -20,17 +20,5 @@ fprintf(stderr,"[--%s--]*[--%s--]*[--%s:%d--]\n",[str UTF8String], [[NSString st
 }
 
 int main(int argc, char *argv[]) {
-    int retVal = -1;
-    NSError *error = nil;
-    NSString *path = [[NSBundle mainBundle] pathForResource:@"app_mashaladi" ofType:@"swf"];
-    
-    __SWFPlayer = [SwfPlayer new];
-    [__SWFPlayer setFilePath:path error:&error];
-    if (!error) {
-        retVal = UIApplicationMain(argc, argv, nil, NSStringFromClass([igameswfAppDelegate class]));
-        
-        [__SWFPlayer setPreferredSize:[UIScreen mainScreen].bounds.size];
-    }
-    
-    return retVal;
+    return UIApplicationMain(argc, argv, nil, NSStringFromClass([igameswfAppDelegate class]));
 }

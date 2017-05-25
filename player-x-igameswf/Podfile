@@ -1,0 +1,5 @@
+platform:ios, '7.0.0'
+
+target 'igameswf' do
+	pod 'GPUImage', '~> 0.1.7'
+end
