@@ -33,7 +33,6 @@
         NSError *error = nil;
         NSString *path = [[NSBundle mainBundle] pathForResource:@"app_mashaladi" ofType:@"swf"];
         
-        __SWFPlayer = [SwfPlayer new];
         [__SWFPlayer setFilePath:path error:&error];
         if (!error) {
             self.eaglView.animationInterval = 1.0 / 60.0;

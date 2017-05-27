@@ -237,6 +237,16 @@ static void	fs_callback(gameswf::character* movie, const char* command, const ch
 
 @implementation SwfPlayer
 
++ (void)load {
+    if (!__SWFPlayer) {
+        __SWFPlayer = [SwfPlayer new];
+    } else {
+        NSAssert(NO, @"no message");
+    }
+}
+
+#pragma mark -
+
 - (instancetype)initWithFilepath:(NSString *)path preferredSize:(CGSize)size {
     
     if (self = [super init]) {
@@ -307,6 +317,12 @@ static void	fs_callback(gameswf::character* movie, const char* command, const ch
         if (error) *error = [NSError errorWithDomain:@"swf-player" code:100 userInfo:@{}];
     }
     
+    {   // 获取视频源信息
+        
+        // 视频本身的分辨率
+        _videoSize = CGSizeMake(m->get_movie_width(), m->get_movie_height());
+    }
+    
     if (error) *error = nil;
 }
 
@@ -314,9 +330,6 @@ static void	fs_callback(gameswf::character* movie, const char* command, const ch
     
     // 期望的分辨率
     _preferredSize = size;
-    
-    // 视频本身的分辨率
-    _videoSize = CGSizeMake(m->get_movie_width(), m->get_movie_height());
     
     float scale_x = (float) _preferredSize.width / _videoSize.width;
     float scale_y = (float) _preferredSize.height / _videoSize.height;

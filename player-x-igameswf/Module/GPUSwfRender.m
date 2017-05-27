@@ -32,6 +32,8 @@
     
     GLuint _renderBuffer;
     GLuint _outputFrameBuffer;
+    
+    CGSize _swfSize;
 }
 
 @end
@@ -45,14 +47,20 @@
         [__SWFPlayer setFilePath:path error:&error];
 
         if (error) {
+            NSLog(@"Swf render init failed!!");
+            
             return nil;
         }
+        
+        _swfSize = [__SWFPlayer getVideoSize];
+        
+        [__SWFPlayer setPreferredSize:[UIScreen mainScreen].bounds.size];
+        
+        _swfSize = [__SWFPlayer getActualSize];
         
         [self setupLayer];
         
         [self setupContext];
-        
-        [__SWFPlayer setPreferredSize:[UIScreen mainScreen].bounds.size];
         
         [self createFramebuffer];
     }
@@ -64,7 +72,7 @@
     runSynchronouslyOnVideoProcessingQueue(^{
         displayLink = [CADisplayLink displayLinkWithTarget:self selector:@selector(updateUsingCurrentTime)];
         [displayLink addToRunLoop:[NSRunLoop currentRunLoop] forMode:NSRunLoopCommonModes];
-        [displayLink setPaused:YES];
+        [displayLink setPaused:NO];
         
         [self updateUsingCurrentTime];
     });
@@ -144,7 +152,7 @@
             NSInteger indexOfObject = [targets indexOfObject:currentTarget];
             NSInteger textureIndexOfTarget = [[targetTextureIndices objectAtIndex:indexOfObject] integerValue];
             
-            [currentTarget setInputSize:[__SWFPlayer getActualSize] atIndex:textureIndexOfTarget];
+            [currentTarget setInputSize:_swfSize atIndex:textureIndexOfTarget];
             [currentTarget setInputFramebuffer:outputFramebuffer atIndex:textureIndexOfTarget];
             [currentTarget newFrameReadyAtTime:frameTime atIndex:textureIndexOfTarget];
         }
@@ -154,7 +162,8 @@
 #pragma mark -
 
 - (BOOL)createFramebuffer {
-    outputFramebuffer = [[GPUImageContext sharedFramebufferCache] fetchFramebufferForSize:[__SWFPlayer getVideoSize] onlyTexture:YES];
+    outputFramebuffer = [[GPUImageContext sharedFramebufferCache] fetchFramebufferForSize:_swfSize onlyTexture:YES];
+    [outputFramebuffer activateFramebuffer];
     
     glGenRenderbuffers(1, &_renderBuffer);
     glBindRenderbuffer(GL_RENDERBUFFER, _renderBuffer);
