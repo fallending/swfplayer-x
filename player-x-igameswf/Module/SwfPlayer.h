@@ -35,6 +35,7 @@ extern SwfPlayer *__SWFPlayer;
 - (void)setFilePath:(NSString *)path error:(NSError **)error;
 - (void)setPreferredSize:(CGSize)size;
 
+- (CGSize)getVideoSize;
 - (CGSize)getActualSize;
 
 /**

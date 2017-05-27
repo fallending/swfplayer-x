@@ -216,7 +216,7 @@ static void	fs_callback(gameswf::character* movie, const char* command, const ch
 @interface SwfPlayer () {
     CGSize _actualDisplaySize;
     CGSize _preferredSize;
-    CGSize _movieSize;
+    CGSize _videoSize;
     
     CGFloat _scale;
     
@@ -316,10 +316,10 @@ static void	fs_callback(gameswf::character* movie, const char* command, const ch
     _preferredSize = size;
     
     // 视频本身的分辨率
-    _movieSize = CGSizeMake(m->get_movie_width(), m->get_movie_height());
+    _videoSize = CGSizeMake(m->get_movie_width(), m->get_movie_height());
     
-    float scale_x = (float) _preferredSize.width / _movieSize.width;
-    float scale_y = (float) _preferredSize.height / _movieSize.height;
+    float scale_x = (float) _preferredSize.width / _videoSize.width;
+    float scale_y = (float) _preferredSize.height / _videoSize.height;
     
     _scale = fmin(scale_x, scale_y);
     
@@ -333,6 +333,10 @@ static void	fs_callback(gameswf::character* movie, const char* command, const ch
         _startTicks = tu_timer::get_ticks();
         _lastTicks = _startTicks;
     }
+}
+
+- (CGSize)getVideoSize {
+    return _videoSize;
 }
 
 - (CGSize)getActualSize {

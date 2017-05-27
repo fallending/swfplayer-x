@@ -16,6 +16,10 @@
 #import "GPUSwfRender.h"
 #import "SwfPlayer.h"
 
+/**
+ *  1. 只关注刷新时间，不关注swf本身的pts
+ */
+
 @interface GPUSwfRender () {
     CADisplayLink *displayLink;
     
@@ -46,7 +50,6 @@
         
         [self setupLayer];
         
-//        _context = [GPUImageContext sharedImageProcessingContext].context;
         [self setupContext];
         
         [__SWFPlayer setPreferredSize:[UIScreen mainScreen].bounds.size];
@@ -68,38 +71,21 @@
 }
 
 - (void)endProcessing {
-//    keepLooping = NO;
     [displayLink setPaused:YES];
     
     for (id<GPUImageInput> currentTarget in targets) {
         [currentTarget endProcessing];
     }
-    
-//    if (synchronizedMovieWriter != nil)
-//    {
-//        [synchronizedMovieWriter setVideoInputReadyCallback:^{return NO;}];
-//        [synchronizedMovieWriter setAudioInputReadyCallback:^{return NO;}];
-//    }
-//    
+
     if ((displayLink != nil)) {
         [displayLink invalidate]; // remove from all run loops
         displayLink = nil;
     }
-    
-//    if ([self.delegate respondsToSelector:@selector(didCompletePlayingMovie)]) {
-//        [self.delegate didCompletePlayingMovie];
-//    }
-//    self.delegate = nil;
+
 }
 
-- (void)cancelProcessing
-{
-//    if (reader) {
-//        [reader cancelReading];
-//    }
-    
+- (void)cancelProcessing {
     // 关闭 swf player
-    
     [self endProcessing];
 }
 
@@ -125,13 +111,7 @@
 
 #pragma mark - Layer management
 
-//- (void)update;
-//{
-//    [self updateWithTimestamp:kCMTimeIndefinite];
-//}
-
-- (void)updateUsingCurrentTime;
-{
+- (void)updateUsingCurrentTime {
     if(CMTIME_IS_INVALID(time)) {
         time = CMTimeMakeWithSeconds(0, 600);
         actualTimeOfLastUpdate = [NSDate timeIntervalSinceReferenceDate];
@@ -145,41 +125,27 @@
     [self updateWithTimestamp:time];
 }
 
-- (void)updateWithTimestamp:(CMTime)frameTime; {
-    [GPUImageContext useImageProcessingContext];
+- (void)updateWithTimestamp:(CMTime)frameTime {
     
-    CGSize size = [UIScreen mainScreen].bounds.size;
-    
-    [EAGLContext setCurrentContext:_context];
-    
-    glBindFramebufferOES(GL_FRAMEBUFFER_OES, [outputFramebuffer texture]);
-    
-    // clear screen
-    glViewport(0, 0, size.width, size.height);
-    glClearColor(0, 0, 0, 0);
-    glClear(GL_COLOR_BUFFER_BIT);
-    
-    [__SWFPlayer update];
-    
-    glBindRenderbufferOES(GL_RENDERBUFFER_OES, [outputFramebuffer texture]);
-    
-    [_context presentRenderbuffer:GL_RENDERBUFFER_OES];
-    
+    glBindTexture(GL_TEXTURE_2D, [outputFramebuffer texture]);
     
 //    [GPUImageContext useImageProcessingContext];
     
-//    glBindTexture(GL_TEXTURE_2D, [outputFramebuffer texture]);
-    // no need to use self.outputTextureOptions here, we always need these texture options
-//    glTexImage2D(GL_TEXTURE_2D, 0, GL_RGBA, (int)layerPixelSize.width, (int)layerPixelSize.height, 0, GL_BGRA, GL_UNSIGNED_BYTE, imageData);
+    [EAGLContext setCurrentContext:_context];
     
-    for (id<GPUImageInput> currentTarget in targets)
-    {
-        if (currentTarget != self.targetToIgnoreForUpdates)
-        {
+//    glBindFramebufferOES(GL_FRAMEBUFFER_OES, [outputFramebuffer texture]);
+    
+    [__SWFPlayer update];
+    
+    [_context presentRenderbuffer:GL_RENDERBUFFER_OES];
+    
+    for (id<GPUImageInput> currentTarget in targets) {
+        if (currentTarget != self.targetToIgnoreForUpdates) {
             NSInteger indexOfObject = [targets indexOfObject:currentTarget];
             NSInteger textureIndexOfTarget = [[targetTextureIndices objectAtIndex:indexOfObject] integerValue];
             
             [currentTarget setInputSize:[__SWFPlayer getActualSize] atIndex:textureIndexOfTarget];
+            [currentTarget setInputFramebuffer:outputFramebuffer atIndex:textureIndexOfTarget];
             [currentTarget newFrameReadyAtTime:frameTime atIndex:textureIndexOfTarget];
         }
     }    
@@ -188,6 +154,8 @@
 #pragma mark -
 
 - (BOOL)createFramebuffer {
+    outputFramebuffer = [[GPUImageContext sharedFramebufferCache] fetchFramebufferForSize:[__SWFPlayer getVideoSize] onlyTexture:YES];
+    
     glGenRenderbuffers(1, &_renderBuffer);
     glBindRenderbuffer(GL_RENDERBUFFER, _renderBuffer);
     

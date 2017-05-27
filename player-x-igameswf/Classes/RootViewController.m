@@ -18,7 +18,10 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view from its nib.
+    
+    self.title = @"swf研究";
+    
+    self.edgesForExtendedLayout = UIRectEdgeNone;
 }
 
 - (void)didReceiveMemoryWarning {
@@ -32,7 +35,7 @@
 }
 
 - (IBAction)onSWFRenderTest:(id)sender {
-    [self.navigationController pushViewController:[RootViewController new] animated:YES];
+    [self.navigationController pushViewController:[GPURenderViewController new] animated:YES];
 }
 
 @end
