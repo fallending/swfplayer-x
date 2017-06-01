@@ -1113,7 +1113,7 @@ struct render_handler_ogles : public gameswf::render_handler
             }else{
                 glDrawArrays(primitive_type, 0, vertex_count);
             }
-            delete tcoord;
+            delete[] tcoord;
             
         }
         
