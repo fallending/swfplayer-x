@@ -16,6 +16,8 @@
 #import "GPUSwfRender.h"
 #import "SwfPlayer.h"
 
+#define USE_LAYER_CONTEXT 0
+
 /**
  *  1. 只关注刷新时间，不关注swf本身的pts
  */
@@ -26,12 +28,16 @@
     CAEAGLLayer *_layer;
     EAGLContext *_context;
     
+    GLuint _renderBuffer;
+    GLuint _frameBuffer;
+    
+    GLuint _outputFrameBuffer;
+    
     CGSize previousLayerSizeInPixels;
     CMTime time;
     NSTimeInterval actualTimeOfLastUpdate;
     
-    GLuint _renderBuffer;
-    GLuint _outputFrameBuffer;
+    
     
     CGSize _swfSize;
 }
@@ -58,14 +64,20 @@
         
         _swfSize = [__SWFPlayer getActualSize];
         
+#if USE_LAYER_CONTEXT
         [self setupLayer];
         
         [self setupContext];
+#endif
         
         [self createFramebuffer];
     }
     
     return self;
+}
+
+- (void)dealloc {
+    [self destroyFramebuffer];
 }
 
 - (void)startProcessing {
@@ -135,36 +147,65 @@
 
 - (void)updateWithTimestamp:(CMTime)frameTime {
     
-    glBindTexture(GL_TEXTURE_2D, [outputFramebuffer texture]);
+    [GPUImageContext useImageProcessingContext];
     
-//    [GPUImageContext useImageProcessingContext];
     
+    outputFramebuffer = [[GPUImageContext sharedFramebufferCache] fetchFramebufferForSize:_swfSize onlyTexture:YES];
+    [outputFramebuffer activateFramebuffer];
+    
+    
+//    glActiveTexture(GL_TEXTURE4);
+//    glBindTexture(GL_TEXTURE_2D, [outputFramebuffer texture]);
+    
+#if USE_LAYER_CONTEXT
     [EAGLContext setCurrentContext:_context];
+#endif
     
 //    glBindFramebufferOES(GL_FRAMEBUFFER_OES, [outputFramebuffer texture]);
     
     [__SWFPlayer update];
     
-    [_context presentRenderbuffer:GL_RENDERBUFFER_OES];
+//    [_context presentRenderbuffer:GL_RENDERBUFFER_OES];
     
+    
+    
+    // First, update all the framebuffers in the targets
     for (id<GPUImageInput> currentTarget in targets) {
         if (currentTarget != self.targetToIgnoreForUpdates) {
             NSInteger indexOfObject = [targets indexOfObject:currentTarget];
             NSInteger textureIndexOfTarget = [[targetTextureIndices objectAtIndex:indexOfObject] integerValue];
             
-            [currentTarget setInputSize:_swfSize atIndex:textureIndexOfTarget];
-            [currentTarget setInputFramebuffer:outputFramebuffer atIndex:textureIndexOfTarget];
-            [currentTarget newFrameReadyAtTime:frameTime atIndex:textureIndexOfTarget];
+            if (currentTarget != self.targetToIgnoreForUpdates) {
+                [currentTarget setInputSize:_swfSize atIndex:textureIndexOfTarget];
+                [currentTarget setInputFramebuffer:outputFramebuffer atIndex:textureIndexOfTarget];
+            }
         }
-    }    
+    }
+    
+    // Then release our hold on the local framebuffer to send it back to the cache as soon as it's no longer needed
+    [outputFramebuffer unlock];
+    outputFramebuffer = nil;
+    
+    // Finally, trigger rendering as needed
+    for (id<GPUImageInput> currentTarget in targets) {
+        if (currentTarget != self.targetToIgnoreForUpdates) {
+            NSInteger indexOfObject = [targets indexOfObject:currentTarget];
+            NSInteger textureIndexOfTarget = [[targetTextureIndices objectAtIndex:indexOfObject] integerValue];
+            
+            if (currentTarget != self.targetToIgnoreForUpdates) {
+                [currentTarget newFrameReadyAtTime:frameTime atIndex:textureIndexOfTarget];
+            }
+        }
+    }
 }
 
 #pragma mark -
 
 - (BOOL)createFramebuffer {
-    outputFramebuffer = [[GPUImageContext sharedFramebufferCache] fetchFramebufferForSize:_swfSize onlyTexture:YES];
-    [outputFramebuffer activateFramebuffer];
+//    outputFramebuffer = [[GPUImageContext sharedFramebufferCache] fetchFramebufferForSize:_swfSize onlyTexture:YES];
+//    [outputFramebuffer activateFramebuffer];
     
+#if USE_LAYER_CONTEXT
     glGenRenderbuffers(1, &_renderBuffer);
     glBindRenderbuffer(GL_RENDERBUFFER, _renderBuffer);
     
@@ -172,57 +213,23 @@
     // 并且会设置渲染缓存的格式，和宽度
     [_context renderbufferStorage:GL_RENDERBUFFER fromDrawable:_layer];
     
-    glGenFramebuffers(1, &_outputFrameBuffer);
-    glBindFramebuffer(GL_FRAMEBUFFER, _outputFrameBuffer);
+    glGenFramebuffers(1, &_frameBuffer);
+    glBindFramebuffer(GL_FRAMEBUFFER, _frameBuffer);
     // 把颜色渲染缓存 添加到 帧缓存的GL_COLOR_ATTACHMENT0上,就会自动把渲染缓存的内容填充到帧缓存，在由帧缓存渲染到屏幕
     glFramebufferRenderbuffer(GL_FRAMEBUFFER, GL_COLOR_ATTACHMENT0, GL_RENDERBUFFER, _renderBuffer);
-
-//    glGenFramebuffersOES(1, &outputFramebuffer);
-////    glGenRenderbuffersOES(1, &viewRenderbuffer);
-//    
-//    glBindFramebufferOES(GL_FRAMEBUFFER_OES, viewFramebuffer);
-//    glBindRenderbufferOES(GL_RENDERBUFFER_OES, viewRenderbuffer);
-//    [context renderbufferStorage:GL_RENDERBUFFER_OES fromDrawable:(CAEAGLLayer*)self.layer];
-//    glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_COLOR_ATTACHMENT0_OES, GL_RENDERBUFFER_OES, viewRenderbuffer);
-//    
-//    glGetRenderbufferParameterivOES(GL_RENDERBUFFER_OES, GL_RENDERBUFFER_WIDTH_OES, &backingWidth);
-//    glGetRenderbufferParameterivOES(GL_RENDERBUFFER_OES, GL_RENDERBUFFER_HEIGHT_OES, &backingHeight);
-//    
-//    if (USE_DEPTH_BUFFER) {
-//        glGenRenderbuffersOES(1, &depthRenderbuffer);
-//        glBindRenderbufferOES(GL_RENDERBUFFER_OES, depthRenderbuffer);
-//        glRenderbufferStorageOES(GL_RENDERBUFFER_OES, GL_DEPTH_COMPONENT16_OES, backingWidth, backingHeight);
-//        glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_DEPTH_ATTACHMENT_OES, GL_RENDERBUFFER_OES, depthRenderbuffer);
-//    }
-//    
-//    //		const GLint GL_STENCIL_INDEX8_OES = 0x8D48;
-//    //		glGenRenderbuffersOES(1, &stencilRenderbuffer);
-//    //		glBindRenderbufferOES(GL_RENDERBUFFER_OES, stencilRenderbuffer);
-//    //		glRenderbufferStorageOES(GL_RENDERBUFFER_OES, GL_STENCIL_INDEX8_OES, backingWidth, backingHeight);
-//    //		glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_STENCIL_ATTACHMENT_OES, GL_RENDERBUFFER_OES, stencilRenderbuffer);
-//    
-//    if (glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES) != GL_FRAMEBUFFER_COMPLETE_OES)
-//    {
-//        NSLog(@"failed to make complete framebuffer object %x", glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES));
-//        return NO;
-//    }
-//    
-    
+#endif
     
     return YES;
 }
 
 - (void)destroyFramebuffer {
-//    glDeleteFramebuffersOES(1, &viewFramebuffer);
-//    viewFramebuffer = 0;
-//    
-//    glDeleteRenderbuffersOES(1, &viewRenderbuffer);
-//    viewRenderbuffer = 0;
-//    
-//    if(depthRenderbuffer) {
-//        glDeleteRenderbuffersOES(1, &depthRenderbuffer);
-//        depthRenderbuffer = 0;
-//    }
+#if USE_LAYER_CONTEXT
+    glDeleteFramebuffersOES(1, &_frameBuffer);
+    _frameBuffer = 0;
+    
+    glDeleteRenderbuffersOES(1, &_renderBuffer);
+    _renderBuffer = 0;
+#endif
 }
 
 @end

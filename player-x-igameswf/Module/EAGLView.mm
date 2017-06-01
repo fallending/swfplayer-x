@@ -136,20 +136,11 @@
         glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_DEPTH_ATTACHMENT_OES, GL_RENDERBUFFER_OES, depthRenderbuffer);
     }
     
-//		const GLint GL_STENCIL_INDEX8_OES = 0x8D48;
-//		glGenRenderbuffersOES(1, &stencilRenderbuffer);
-//		glBindRenderbufferOES(GL_RENDERBUFFER_OES, stencilRenderbuffer);
-//		glRenderbufferStorageOES(GL_RENDERBUFFER_OES, GL_STENCIL_INDEX8_OES, backingWidth, backingHeight);
-//		glFramebufferRenderbufferOES(GL_FRAMEBUFFER_OES, GL_STENCIL_ATTACHMENT_OES, GL_RENDERBUFFER_OES, stencilRenderbuffer);
-	
     if (glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES) != GL_FRAMEBUFFER_COMPLETE_OES)
 		{
         NSLog(@"failed to make complete framebuffer object %x", glCheckFramebufferStatusOES(GL_FRAMEBUFFER_OES));
         return NO;
     }
-  
-//		glEnable(GL_MULTISAMPLE_ARB);
-    glEnable(GL_ONE_MINUS_SRC_ALPHA);
     
     [__SWFPlayer setPreferredSize:CGSizeMake(backingWidth/2, backingHeight/2)];
 	

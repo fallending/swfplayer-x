@@ -284,12 +284,12 @@ static void	fs_callback(gameswf::character* movie, const char* command, const ch
     }
     
     Uint32 t_advance = tu_timer::get_ticks();
-    m->advance(delta_t);
+    m->advance(delta_t); // 下一帧
     sound->advance(delta_t);
     t_advance = tu_timer::get_ticks() - t_advance;
     
     Uint32 t_display = tu_timer::get_ticks();
-    m->display();
+    m->display(); // 播放
     t_display = tu_timer::get_ticks() - t_display;
 }
 

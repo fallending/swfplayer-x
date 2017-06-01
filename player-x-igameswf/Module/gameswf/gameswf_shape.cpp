@@ -1306,7 +1306,7 @@ namespace gameswf
 	}
 
 
-	void	shape_character_def::display(character* inst)
+	void	shape_character_def::display(character* inst) // fallenink: render logic
 	// Draw the shape using our own inherent styles.
 	{
 		matrix	mat = inst->get_world_matrix();

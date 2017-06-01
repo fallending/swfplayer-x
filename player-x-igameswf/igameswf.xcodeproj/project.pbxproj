@@ -13,6 +13,7 @@
 		28FD15000DC6FC520079059D /* OpenGLES.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD14FF0DC6FC520079059D /* OpenGLES.framework */; };
 		28FD15080DC6FC5B0079059D /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 28FD15070DC6FC5B0079059D /* QuartzCore.framework */; };
 		4A5E67A9E9E6D176A8C2A9A6 /* libPods-igameswf.a in Frameworks */ = {isa = PBXBuildFile; fileRef = F9F717158033B66073080194 /* libPods-igameswf.a */; };
+		6A18EB301EDB052700F39B95 /* README.md in Sources */ = {isa = PBXBuildFile; fileRef = 6A18EB2F1EDB052700F39B95 /* README.md */; };
 		6A628B891ECB01BC00E6A2E5 /* play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A628B871ECB01BC00E6A2E5 /* play@3x.png */; };
 		6A628B8A1ECB01BC00E6A2E5 /* stop@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A628B881ECB01BC00E6A2E5 /* stop@3x.png */; };
 		6A628B8C1ECBF3FA00E6A2E5 /* app_mashaladi.swf in Resources */ = {isa = PBXBuildFile; fileRef = 6A628B8B1ECBF3FA00E6A2E5 /* app_mashaladi.swf */; };
@@ -196,6 +197,7 @@
 		32CA4F630368D1EE00C91783 /* igameswf_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = igameswf_Prefix.pch; sourceTree = "<group>"; };
 		4F91A4BC274F51BACF52F22A /* Pods-igameswf.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-igameswf.debug.xcconfig"; path = "Pods/Target Support Files/Pods-igameswf/Pods-igameswf.debug.xcconfig"; sourceTree = "<group>"; };
 		5D8B9A13B4B37C28D1A16EE2 /* Pods-igameswf.distribution.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-igameswf.distribution.xcconfig"; path = "Pods/Target Support Files/Pods-igameswf/Pods-igameswf.distribution.xcconfig"; sourceTree = "<group>"; };
+		6A18EB2F1EDB052700F39B95 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		6A628B871ECB01BC00E6A2E5 /* play@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@3x.png"; sourceTree = "<group>"; };
 		6A628B881ECB01BC00E6A2E5 /* stop@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop@3x.png"; sourceTree = "<group>"; };
 		6A628B8B1ECBF3FA00E6A2E5 /* app_mashaladi.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = app_mashaladi.swf; path = ../test/app_mashaladi.swf; sourceTree = "<group>"; };
@@ -541,6 +543,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
+				6A18EB2F1EDB052700F39B95 /* README.md */,
 				6AB4A8101ED4138100599CDE /* Module */,
 				6A628B861ECB01BC00E6A2E5 /* images */,
 				080E96DDFE201D6D7F000001 /* Classes */,
@@ -1194,6 +1197,7 @@
 				6AB4A94B1ED4138100599CDE /* as_matrix.cpp in Sources */,
 				6AB4A9811ED4138200599CDE /* gameswf_video_impl.cpp in Sources */,
 				6AB4A9671ED4138100599CDE /* gameswf_freetype.cpp in Sources */,
+				6A18EB301EDB052700F39B95 /* README.md in Sources */,
 				6AB4A96B1ED4138100599CDE /* gameswf_jit_opcode.cpp in Sources */,
 				6AB4A9AA1ED4138200599CDE /* jidctint.c in Sources */,
 				6AB4A9421ED4138100599CDE /* as_color_transform.cpp in Sources */,
