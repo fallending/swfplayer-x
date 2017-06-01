@@ -13,6 +13,8 @@
 
 #import "RootViewController.h"
 
+#define USE_COCOS2D 1
+
 @implementation AppController
 
 @synthesize window;
@@ -38,11 +40,6 @@ static AppDelegate s_sharedApplication;
                                    multiSampling: NO
                                  numberOfSamples:0 ];
 
-    // Use RootViewController manage EAGLView
-    viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
-    viewController.wantsFullScreenLayout = YES;
-    viewController.view = __glView;
-
     // Set RootViewController to window
     if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
     {
@@ -51,15 +48,29 @@ static AppDelegate s_sharedApplication;
     }
     else
     {
+#if USE_COCOS2D
+        // Use RootViewController manage EAGLView
+        viewController = [[RootViewController alloc] initWithNibName:nil bundle:nil];
+        viewController.wantsFullScreenLayout = YES;
+        viewController.view = __glView;
+#else
+        
+#endif
+        
         // use this method on ios6
         [window setRootViewController:viewController];
     }
     
     [window makeKeyAndVisible];
 
+#if USE_COCOS2D
+    
     [[UIApplication sharedApplication] setStatusBarHidden: YES];
 
     cocos2d::CCApplication::sharedApplication()->run();
+    
+#endif
+    
     return YES;
 }
 
