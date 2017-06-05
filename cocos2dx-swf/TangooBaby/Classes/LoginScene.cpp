@@ -1,12 +1,12 @@
 #include "LoginScene.h"
 #include "SimpleAudioEngine.h"
-#include "MapScene.h"
-#include "Map1Layer.h"
+//#include "MapScene.h"
+//#include "Map1Layer.h"
 
-
-#include "Study1.h"
-#include "Study2.h"
-#include "Study3.h"
+//
+//#include "Study1.h"
+//#include "Study2.h"
+//#include "Study3.h"
 #include "DrawView.h"
 
 //#include "script_support/CCScriptSupport.h"

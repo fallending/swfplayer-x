@@ -41,12 +41,6 @@ static AppDelegate s_sharedApplication;
                                  numberOfSamples:0 ];
 
     // Set RootViewController to window
-    if ( [[UIDevice currentDevice].systemVersion floatValue] < 6.0)
-    {
-        // warning: addSubView doesn't work on iOS6
-        [window addSubview: viewController.view];
-    }
-    else
     {
 #if USE_COCOS2D
         // Use RootViewController manage EAGLView

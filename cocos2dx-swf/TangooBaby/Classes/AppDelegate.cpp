@@ -7,11 +7,9 @@
 //
 
 #include "AppDelegate.h"
-
+#include "LoginScene.h"
 #include "cocos2d.h"
 #include "SimpleAudioEngine.h"
-#include "LoginScene.h"
-#include "MapScene.h"
 #include "DrawView.h"
 
 USING_NS_CC;

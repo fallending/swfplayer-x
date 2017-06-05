@@ -381,29 +381,21 @@
 		185DDBBE1772BF8D00600E20 /* wrtarga.c in Sources */ = {isa = PBXBuildFile; fileRef = 185DDB1C1772BF8D00600E20 /* wrtarga.c */; };
 		185DDBC01772C38200600E20 /* wkszLogin in Resources */ = {isa = PBXBuildFile; fileRef = 185DDBBF1772C38200600E20 /* wkszLogin */; };
 		18E7A29C1772D8B600D647ED /* LoginScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18E7A29A1772D8B600D647ED /* LoginScene.cpp */; };
-		18E7A29F1772DA1600D647ED /* MapScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18E7A29D1772DA1600D647ED /* MapScene.cpp */; };
 		18E7A2A11772DADD00D647ED /* wkszMap in Resources */ = {isa = PBXBuildFile; fileRef = 18E7A2A01772DADD00D647ED /* wkszMap */; };
 		18EA3BE417783A05009A0D98 /* MapScene.ccbi in Resources */ = {isa = PBXBuildFile; fileRef = 18EA3BE317783A05009A0D98 /* MapScene.ccbi */; };
 		18EAB15E1783F632005781CE /* wyszDraw in Resources */ = {isa = PBXBuildFile; fileRef = 18EAB15D1783F632005781CE /* wyszDraw */; };
-		18EC1F7F177ABBB000E0805C /* Study2.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18EC1F7D177ABBB000E0805C /* Study2.cpp */; };
 		18EC1F81177ABCC900E0805C /* wkszStudy2 in Resources */ = {isa = PBXBuildFile; fileRef = 18EC1F80177ABCC900E0805C /* wkszStudy2 */; };
-		18EC1F84177B19BB00E0805C /* Study3.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18EC1F82177B19BB00E0805C /* Study3.cpp */; };
 		18EC1F86177B204500E0805C /* wkszStudy3 in Resources */ = {isa = PBXBuildFile; fileRef = 18EC1F85177B204500E0805C /* wkszStudy3 */; };
 		18EC1F8B177BD1F300E0805C /* wkszSound1 in Resources */ = {isa = PBXBuildFile; fileRef = 18EC1F87177BD1F300E0805C /* wkszSound1 */; };
 		18EC1F8C177BD1F300E0805C /* wkszSound2 in Resources */ = {isa = PBXBuildFile; fileRef = 18EC1F88177BD1F300E0805C /* wkszSound2 */; };
 		18EC1F8D177BD1F300E0805C /* wkszSound3 in Resources */ = {isa = PBXBuildFile; fileRef = 18EC1F89177BD1F300E0805C /* wkszSound3 */; };
 		18EC1F8E177BD1F300E0805C /* wkszSound4 in Resources */ = {isa = PBXBuildFile; fileRef = 18EC1F8A177BD1F300E0805C /* wkszSound4 */; };
 		18EC1F90177C203E00E0805C /* wkszMapMenu in Resources */ = {isa = PBXBuildFile; fileRef = 18EC1F8F177C203E00E0805C /* wkszMapMenu */; };
-		18EC1F93177C2B6000E0805C /* MapMenu1Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18EC1F91177C2B6000E0805C /* MapMenu1Layer.cpp */; };
 		18EC1F95177D593400E0805C /* wkszReview in Resources */ = {isa = PBXBuildFile; fileRef = 18EC1F94177D593400E0805C /* wkszReview */; };
-		18EC1F98177D5F8F00E0805C /* ReviewLayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18EC1F96177D5F8F00E0805C /* ReviewLayer.cpp */; };
 		18EC1F9A177D6EDA00E0805C /* wkszStory in Resources */ = {isa = PBXBuildFile; fileRef = 18EC1F99177D6EDA00E0805C /* wkszStory */; };
-		18EC1F9D177D70A600E0805C /* StoryScene.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18EC1F9B177D70A600E0805C /* StoryScene.cpp */; };
 		18EC1FA01782718A00E0805C /* DrawView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18EC1F9E1782718800E0805C /* DrawView.cpp */; };
-		18EC7AA11779346800B1C842 /* ClassRoom.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18EC7A9F1779346800B1C842 /* ClassRoom.cpp */; };
 		18EC7AA61779353400B1C842 /* wkszClassRoom in Resources */ = {isa = PBXBuildFile; fileRef = 18EC7AA51779353400B1C842 /* wkszClassRoom */; };
 		18EC7AA8177968F700B1C842 /* wkszStudy1 in Resources */ = {isa = PBXBuildFile; fileRef = 18EC7AA7177968F700B1C842 /* wkszStudy1 */; };
-		18EC7AAB1779694400B1C842 /* Study1.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18EC7AA91779694400B1C842 /* Study1.cpp */; };
 		18EC7AB41779799000B1C842 /* wkszCharacter1 in Resources */ = {isa = PBXBuildFile; fileRef = 18EC7AB21779799000B1C842 /* wkszCharacter1 */; };
 		18EC7AB51779799000B1C842 /* wkszCharacter2 in Resources */ = {isa = PBXBuildFile; fileRef = 18EC7AB31779799000B1C842 /* wkszCharacter2 */; };
 		18F3198517AB479B009AC145 /* CCSWFNodeGroup.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18F3198317AB479B009AC145 /* CCSWFNodeGroup.cpp */; };
@@ -413,7 +405,6 @@
 		18FB31CF177879DD00105066 /* ccbParticleSmoke.png in Resources */ = {isa = PBXBuildFile; fileRef = 18FB31C0177879DD00105066 /* ccbParticleSmoke.png */; };
 		18FB31D0177879DD00105066 /* ccbParticleSnow.png in Resources */ = {isa = PBXBuildFile; fileRef = 18FB31C1177879DD00105066 /* ccbParticleSnow.png */; };
 		18FB31D1177879DD00105066 /* ccbParticleStars.png in Resources */ = {isa = PBXBuildFile; fileRef = 18FB31C2177879DD00105066 /* ccbParticleStars.png */; };
-		18FB31DA17787A3300105066 /* Map1Layer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 18FB31D817787A3300105066 /* Map1Layer.cpp */; };
 		6A18EB351EDFE2AB00F39B95 /* UIImage+WebP.m in Sources */ = {isa = PBXBuildFile; fileRef = 6A18EB331EDFE2AB00F39B95 /* UIImage+WebP.m */; };
 		6A18EB361EDFE2AB00F39B95 /* WebP.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6A18EB341EDFE2AB00F39B95 /* WebP.framework */; };
 /* End PBXBuildFile section */
@@ -1171,38 +1162,22 @@
 		185DDBBF1772C38200600E20 /* wkszLogin */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wkszLogin; path = Resources/wkszLogin; sourceTree = "<group>"; };
 		18E7A29A1772D8B600D647ED /* LoginScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LoginScene.cpp; path = Classes/LoginScene.cpp; sourceTree = "<group>"; };
 		18E7A29B1772D8B600D647ED /* LoginScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = LoginScene.h; path = Classes/LoginScene.h; sourceTree = "<group>"; };
-		18E7A29D1772DA1600D647ED /* MapScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapScene.cpp; path = Classes/MapScene.cpp; sourceTree = "<group>"; };
-		18E7A29E1772DA1600D647ED /* MapScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapScene.h; path = Classes/MapScene.h; sourceTree = "<group>"; };
 		18E7A2A01772DADD00D647ED /* wkszMap */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wkszMap; path = Resources/wkszMap; sourceTree = "<group>"; };
 		18EA3BE317783A05009A0D98 /* MapScene.ccbi */ = {isa = PBXFileReference; lastKnownFileType = file; name = MapScene.ccbi; path = Resources/MapScene.ccbi; sourceTree = "<group>"; };
 		18EAB15D1783F632005781CE /* wyszDraw */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wyszDraw; path = Resources/wyszDraw; sourceTree = "<group>"; };
-		18EC1F7D177ABBB000E0805C /* Study2.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Study2.cpp; path = Classes/Study2.cpp; sourceTree = "<group>"; };
-		18EC1F7E177ABBB000E0805C /* Study2.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Study2.h; path = Classes/Study2.h; sourceTree = "<group>"; };
 		18EC1F80177ABCC900E0805C /* wkszStudy2 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wkszStudy2; path = Resources/wkszStudy2; sourceTree = "<group>"; };
-		18EC1F82177B19BB00E0805C /* Study3.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Study3.cpp; path = Classes/Study3.cpp; sourceTree = "<group>"; };
-		18EC1F83177B19BB00E0805C /* Study3.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Study3.h; path = Classes/Study3.h; sourceTree = "<group>"; };
 		18EC1F85177B204500E0805C /* wkszStudy3 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wkszStudy3; path = Resources/wkszStudy3; sourceTree = "<group>"; };
 		18EC1F87177BD1F300E0805C /* wkszSound1 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wkszSound1; path = Resources/wkszSound1; sourceTree = "<group>"; };
 		18EC1F88177BD1F300E0805C /* wkszSound2 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wkszSound2; path = Resources/wkszSound2; sourceTree = "<group>"; };
 		18EC1F89177BD1F300E0805C /* wkszSound3 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wkszSound3; path = Resources/wkszSound3; sourceTree = "<group>"; };
 		18EC1F8A177BD1F300E0805C /* wkszSound4 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wkszSound4; path = Resources/wkszSound4; sourceTree = "<group>"; };
 		18EC1F8F177C203E00E0805C /* wkszMapMenu */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wkszMapMenu; path = Resources/wkszMapMenu; sourceTree = "<group>"; };
-		18EC1F91177C2B6000E0805C /* MapMenu1Layer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = MapMenu1Layer.cpp; path = Classes/MapMenu1Layer.cpp; sourceTree = "<group>"; };
-		18EC1F92177C2B6000E0805C /* MapMenu1Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = MapMenu1Layer.h; path = Classes/MapMenu1Layer.h; sourceTree = "<group>"; };
 		18EC1F94177D593400E0805C /* wkszReview */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wkszReview; path = Resources/wkszReview; sourceTree = "<group>"; };
-		18EC1F96177D5F8F00E0805C /* ReviewLayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ReviewLayer.cpp; path = Classes/ReviewLayer.cpp; sourceTree = "<group>"; };
-		18EC1F97177D5F8F00E0805C /* ReviewLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ReviewLayer.h; path = Classes/ReviewLayer.h; sourceTree = "<group>"; };
 		18EC1F99177D6EDA00E0805C /* wkszStory */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wkszStory; path = Resources/wkszStory; sourceTree = "<group>"; };
-		18EC1F9B177D70A600E0805C /* StoryScene.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = StoryScene.cpp; path = Classes/StoryScene.cpp; sourceTree = "<group>"; };
-		18EC1F9C177D70A600E0805C /* StoryScene.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StoryScene.h; path = Classes/StoryScene.h; sourceTree = "<group>"; };
 		18EC1F9E1782718800E0805C /* DrawView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DrawView.cpp; path = Classes/DrawView.cpp; sourceTree = "<group>"; };
 		18EC1F9F1782718900E0805C /* DrawView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DrawView.h; path = Classes/DrawView.h; sourceTree = "<group>"; };
-		18EC7A9F1779346800B1C842 /* ClassRoom.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ClassRoom.cpp; path = Classes/ClassRoom.cpp; sourceTree = "<group>"; };
-		18EC7AA01779346800B1C842 /* ClassRoom.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ClassRoom.h; path = Classes/ClassRoom.h; sourceTree = "<group>"; };
 		18EC7AA51779353400B1C842 /* wkszClassRoom */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wkszClassRoom; path = Resources/wkszClassRoom; sourceTree = "<group>"; };
 		18EC7AA7177968F700B1C842 /* wkszStudy1 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wkszStudy1; path = Resources/wkszStudy1; sourceTree = "<group>"; };
-		18EC7AA91779694400B1C842 /* Study1.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Study1.cpp; path = Classes/Study1.cpp; sourceTree = "<group>"; };
-		18EC7AAA1779694400B1C842 /* Study1.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Study1.h; path = Classes/Study1.h; sourceTree = "<group>"; };
 		18EC7AB21779799000B1C842 /* wkszCharacter1 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wkszCharacter1; path = Resources/wkszCharacter1; sourceTree = "<group>"; };
 		18EC7AB31779799000B1C842 /* wkszCharacter2 */ = {isa = PBXFileReference; lastKnownFileType = folder; name = wkszCharacter2; path = Resources/wkszCharacter2; sourceTree = "<group>"; };
 		18F3198317AB479B009AC145 /* CCSWFNodeGroup.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = CCSWFNodeGroup.cpp; sourceTree = "<group>"; };
@@ -1213,8 +1188,6 @@
 		18FB31C0177879DD00105066 /* ccbParticleSmoke.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccbParticleSmoke.png; sourceTree = "<group>"; };
 		18FB31C1177879DD00105066 /* ccbParticleSnow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccbParticleSnow.png; sourceTree = "<group>"; };
 		18FB31C2177879DD00105066 /* ccbParticleStars.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ccbParticleStars.png; sourceTree = "<group>"; };
-		18FB31D817787A3300105066 /* Map1Layer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Map1Layer.cpp; path = Classes/Map1Layer.cpp; sourceTree = "<group>"; };
-		18FB31D917787A3300105066 /* Map1Layer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Map1Layer.h; path = Classes/Map1Layer.h; sourceTree = "<group>"; };
 		6A18EB321EDFE2AB00F39B95 /* UIImage+WebP.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIImage+WebP.h"; sourceTree = "<group>"; };
 		6A18EB331EDFE2AB00F39B95 /* UIImage+WebP.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIImage+WebP.m"; sourceTree = "<group>"; };
 		6A18EB341EDFE2AB00F39B95 /* WebP.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = WebP.framework; sourceTree = "<group>"; };
@@ -2239,26 +2212,8 @@
 			children = (
 				185DD9EC1772B74D00600E20 /* AppDelegate.h */,
 				185DD9ED1772B74D00600E20 /* AppDelegate.cpp */,
-				18E7A29D1772DA1600D647ED /* MapScene.cpp */,
-				18E7A29E1772DA1600D647ED /* MapScene.h */,
 				18E7A29A1772D8B600D647ED /* LoginScene.cpp */,
 				18E7A29B1772D8B600D647ED /* LoginScene.h */,
-				18EC7A9F1779346800B1C842 /* ClassRoom.cpp */,
-				18EC7AA01779346800B1C842 /* ClassRoom.h */,
-				18EC1F82177B19BB00E0805C /* Study3.cpp */,
-				18EC1F83177B19BB00E0805C /* Study3.h */,
-				18EC1F7D177ABBB000E0805C /* Study2.cpp */,
-				18EC1F7E177ABBB000E0805C /* Study2.h */,
-				18EC7AA91779694400B1C842 /* Study1.cpp */,
-				18EC7AAA1779694400B1C842 /* Study1.h */,
-				18FB31D817787A3300105066 /* Map1Layer.cpp */,
-				18FB31D917787A3300105066 /* Map1Layer.h */,
-				18EC1F91177C2B6000E0805C /* MapMenu1Layer.cpp */,
-				18EC1F92177C2B6000E0805C /* MapMenu1Layer.h */,
-				18EC1F96177D5F8F00E0805C /* ReviewLayer.cpp */,
-				18EC1F97177D5F8F00E0805C /* ReviewLayer.h */,
-				18EC1F9B177D70A600E0805C /* StoryScene.cpp */,
-				18EC1F9C177D70A600E0805C /* StoryScene.h */,
 				18EC1F9E1782718800E0805C /* DrawView.cpp */,
 				18EC1F9F1782718900E0805C /* DrawView.h */,
 			);
@@ -3078,15 +3033,6 @@
 				185DDBBD1772BF8D00600E20 /* wrrle.c in Sources */,
 				185DDBBE1772BF8D00600E20 /* wrtarga.c in Sources */,
 				18E7A29C1772D8B600D647ED /* LoginScene.cpp in Sources */,
-				18E7A29F1772DA1600D647ED /* MapScene.cpp in Sources */,
-				18FB31DA17787A3300105066 /* Map1Layer.cpp in Sources */,
-				18EC7AA11779346800B1C842 /* ClassRoom.cpp in Sources */,
-				18EC7AAB1779694400B1C842 /* Study1.cpp in Sources */,
-				18EC1F7F177ABBB000E0805C /* Study2.cpp in Sources */,
-				18EC1F84177B19BB00E0805C /* Study3.cpp in Sources */,
-				18EC1F93177C2B6000E0805C /* MapMenu1Layer.cpp in Sources */,
-				18EC1F98177D5F8F00E0805C /* ReviewLayer.cpp in Sources */,
-				18EC1F9D177D70A600E0805C /* StoryScene.cpp in Sources */,
 				18EC1FA01782718A00E0805C /* DrawView.cpp in Sources */,
 				18F3198517AB479B009AC145 /* CCSWFNodeGroup.cpp in Sources */,
 			);
