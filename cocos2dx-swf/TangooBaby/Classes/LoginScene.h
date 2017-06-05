@@ -17,9 +17,9 @@ public:
     static cocos2d::CCScene* scene();
     
     
-    void registerCB(CCObject* pSender);
-    void loginCB(CCObject* pSender);
-    void surferCB(CCObject* pSender);
+//    void registerCB(CCObject* pSender);
+//    void loginCB(CCObject* pSender);
+//    void surferCB(CCObject* pSender);
 
     // preprocessor macro for "static create()" constructor ( node() deprecated )
     CREATE_FUNC(LoginScene);
