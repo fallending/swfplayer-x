@@ -64,6 +64,14 @@ bool CCGameSWF::init()
     return true;
 }
 
+void CCGameSWF::update(float delta) {
+    CCNode::update(delta);
+}
+
+void CCGameSWF::draw() {
+    CCNode::draw();
+}
+
 void CCGameSWF::dealloc()
 {
 //    [m_fscommandListeners release];

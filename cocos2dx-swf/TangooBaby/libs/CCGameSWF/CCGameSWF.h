@@ -35,6 +35,9 @@ public:
     void addFscommandResponder( int responder,cocos2d::CCString* movieName);
     void removeFscommandResponder(int responder, cocos2d::CCString* movieName);
 
+    virtual void update(float delta);
+    virtual void draw();
+    
     bool init();
     void dealloc();
 };

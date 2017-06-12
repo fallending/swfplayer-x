@@ -205,6 +205,12 @@ void CCDirector::setGLDefaultValues(void)
     glClearColor(0.0f, 0.0f, 0.0f, 1.0f);
 }
 
+/**
+ 
+ 一个场景包含当前窗口可以看到的所有内容。由于OpenGL是基于状态的，比如设置的颜色，如果不去清楚或者修改就一直会使用下去。我们当然不希望上一次绘制场景产生的缓冲区数据被绘制到现在的场景当中。所以drawScene()首先清楚颜色缓冲区和深度缓冲区。
+ 
+ */
+
 // Draw the Scene
 void CCDirector::drawScene(void)
 {
@@ -221,15 +227,21 @@ void CCDirector::drawScene(void)
 
     /* to avoid flickr, nextScene MUST be here: after tick and before draw.
      XXX: Which bug is this one. It seems that it can't be reproduced with v0.9 */
+     //切换下一场景，必须放在逻辑后绘制前，否则会出bug
     if (m_pNextScene)
     {
         setNextScene();
     }
 
+    /**
+     
+     关于kmGLPushMatrix和kmGLPopMatrix，有必要先介绍下背景。Cocos2Dx使用了模型视图矩阵、投影矩阵和纹理矩阵。模型视图矩阵完成模型和视图的变换，包括平移、旋转和缩放。投影矩阵完成三维空间的顶点映射到二维的屏幕上，有两种投影：正射投影和透视投影。纹理矩阵用来对纹理进行变换。
+     
+     */
     kmGLPushMatrix();
 
     // draw the scene
-    if (m_pRunningScene)
+    if (m_pRunningScene) //绘制场景
     {
         m_pRunningScene->visit();
     }

@@ -30,7 +30,11 @@ THE SOFTWARE.
 
 NS_CC_BEGIN
 
-
+/**
+ 
+ 要能够使用OpenGL，肯定第一步是要先初始化OpenGL，并且创建一个可以在上面绘制的场景的窗口。OpenGL本身是跟操作系统，窗口系统无关的图形接口。因此初始化肯定也是平台相关。这就是为什么CCEGLView在每个平台下面都有自己实现的原因
+ 
+ */
 
 class CC_DLL CCEGLView : public CCEGLViewProtocol
 {

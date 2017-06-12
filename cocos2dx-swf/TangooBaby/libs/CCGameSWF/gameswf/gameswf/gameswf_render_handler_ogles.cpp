@@ -247,25 +247,25 @@ struct video_handler_ogles : public gameswf::video_handler
         
 		// this code is equal to code that above
         
-		GLfloat squareVertices[8];
-		squareVertices[0] = a.m_x;
-		squareVertices[1] = a.m_y;
-		squareVertices[2] = b.m_x;
-		squareVertices[3] = b.m_y;
-		squareVertices[4] = c.m_x;
-		squareVertices[5] = c.m_y;
-		squareVertices[6] = d.m_x;
-		squareVertices[7] = d.m_y;
-        
-		GLfloat squareTextureCoords[8];
-		squareTextureCoords[0] = 0;
-		squareTextureCoords[1] = 0;
-		squareTextureCoords[2] = m_scoord;
-		squareTextureCoords[3] = 0;
-		squareTextureCoords[4] = 0;
-		squareTextureCoords[5] = m_tcoord;
-		squareTextureCoords[6] = m_scoord;
-		squareTextureCoords[7] = m_tcoord;
+//		GLfloat squareVertices[8];
+//		squareVertices[0] = a.m_x;
+//		squareVertices[1] = a.m_y;
+//		squareVertices[2] = b.m_x;
+//		squareVertices[3] = b.m_y;
+//		squareVertices[4] = c.m_x;
+//		squareVertices[5] = c.m_y;
+//		squareVertices[6] = d.m_x;
+//		squareVertices[7] = d.m_y;
+//        
+//		GLfloat squareTextureCoords[8];
+//		squareTextureCoords[0] = 0;
+//		squareTextureCoords[1] = 0;
+//		squareTextureCoords[2] = m_scoord;
+//		squareTextureCoords[3] = 0;
+//		squareTextureCoords[4] = 0;
+//		squareTextureCoords[5] = m_tcoord;
+//		squareTextureCoords[6] = m_scoord;
+//		squareTextureCoords[7] = m_tcoord;
         //@chenee
         //		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
         //		glTexCoordPointer(2, GL_FLOAT, 0, squareTextureCoords);

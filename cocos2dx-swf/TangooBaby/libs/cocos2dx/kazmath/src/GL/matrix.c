@@ -37,6 +37,11 @@ km_mat4_stack* current_stack = NULL;
 
 static unsigned char initialized = 0;
 
+/**
+ 
+ kmGLPushMatrix()内部调用lazyInitialize()来延迟初始化Cocos2Dx使用的三类矩阵：模型视图矩阵、投影矩阵和纹理矩阵。初始化的过程中，不但为三个类型的矩阵都创建了一个堆栈（内部通过数组实现的），还在每个堆栈中都压入一个单位矩阵。单位矩阵左乘任何顶点，顶点不会变化。单位矩阵不会影响后续的变换。current_stack表示了当前使用的堆栈，可以通过kmGLMatrixMode(mode)来切换当前使用的矩阵堆栈。
+ 
+ */
 void lazyInitialize()
 {
 

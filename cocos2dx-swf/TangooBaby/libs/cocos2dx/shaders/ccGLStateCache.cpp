@@ -232,6 +232,10 @@ void ccGLEnableVertexAttribs( unsigned int flags )
 {
     ccGLBindVAO(0);
     
+    // glVertexAttribPointer或VBO 只是建立CPU和GPU之间的逻辑连接，从而实现了CPU数据上传至GPU
+    
+    // 数据在GPU端是否可见，即，着色器能否读取到数据，由是否启用了对应的属性决定，这就是glEnableVertexAttribArray的功能，允许顶点着色器读取GPU（服务器端）数据
+    
     /* Position */
     bool enablePosition = flags & kCCVertexAttribFlag_Position;
 

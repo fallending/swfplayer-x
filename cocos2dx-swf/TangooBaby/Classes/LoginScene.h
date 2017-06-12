@@ -3,7 +3,6 @@
 
 #include "cocos2d.h"
 #include "cocos-ext.h"
-#include "CCSWFNode.h"
 
 USING_NS_CC_EXT;
 
@@ -26,9 +25,7 @@ public:
     
 private:
     int flag;
-    CCSWFNode *swfBg;
-    CCSWFNode *swfWK;
-    CCSWFNode *swfMovie;
+
     CCEditBox *pEditBox,*pEditBoxPWD;
 };
 

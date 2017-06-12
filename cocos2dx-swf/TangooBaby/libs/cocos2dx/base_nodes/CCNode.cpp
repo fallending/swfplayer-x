@@ -788,6 +788,13 @@ void CCNode::sortAllChildren()
      // DON'T draw your stuff outside this method
  }
 
+/**
+ 
+    1. CCNode::visit()先复制一个栈顶元素并压栈
+    2. 计算出一个此节点相对于父节点的变换矩阵
+    3. 把它转换为OpenGL格式的矩阵并右乘在当前绘图矩阵之上，从而得到此节点的世界变换矩阵。随后，根据子节点的Z序确定渲染顺序，然后根据渲染顺序依次渲染子节点或自身。如果是渲染自身，直接调用draw函数。CCSprite的draw函数为空，什么都不做。当前节点及其子节点绘制完成之后，再执行出栈操作。
+ 
+ */
 void CCNode::visit()
 {
     // quick return if not visible. children won't be drawn.
@@ -802,6 +809,7 @@ void CCNode::visit()
          m_pGrid->beforeDraw();
      }
 
+    // CCNode::visit的核心是transform()。
     this->transform();
 
     CCNode* pNode = NULL;

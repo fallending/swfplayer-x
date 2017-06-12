@@ -545,14 +545,17 @@ void CCSprite::updateTransform(void)
 
 void CCSprite::draw(void)
 {
+    // 设置使用的OpenGL状态
     CC_PROFILER_START_CATEGORY(kCCProfilerCategorySprite, "CCSprite - draw");
 
     CCAssert(!m_pobBatchNode, "If CCSprite is being rendered by CCSpriteBatchNode, CCSprite#draw SHOULD NOT be called");
 
     CC_NODE_DRAW_SETUP();
 
+    // 设置混合函数
     ccGLBlendFunc( m_sBlendFunc.src, m_sBlendFunc.dst );
 
+    // 绑定纹理
     if (m_pobTexture != NULL)
     {
         ccGLBindTexture2D( m_pobTexture->getName() );
@@ -571,7 +574,7 @@ void CCSprite::draw(void)
 #define kQuadSize sizeof(m_sQuad.bl)
     long offset = (long)&m_sQuad;
 
-    // vertex
+    // vertex // 随后设置顶点数据, 包括顶点坐标、顶点颜色和纹理坐标。因为使用的是顶点数组的方式绘图，所以调用glDrawArrays绘制
     int diff = offsetof( ccV3F_C4B_T2F, vertices);
     glVertexAttribPointer(kCCVertexAttrib_Position, 3, GL_FLOAT, GL_FALSE, kQuadSize, (void*) (offset + diff));
 
