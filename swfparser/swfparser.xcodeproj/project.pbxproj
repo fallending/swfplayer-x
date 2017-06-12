@@ -1,0 +1,403 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		6A233DC91EE7FAFE00CE057C /* json_reader.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A233DC51EE7FAFE00CE057C /* json_reader.cpp */; };
+		6A233DCA1EE7FAFE00CE057C /* json_value.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A233DC71EE7FAFE00CE057C /* json_value.cpp */; };
+		6A233DCB1EE7FAFE00CE057C /* json_writer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 6A233DC81EE7FAFE00CE057C /* json_writer.cpp */; };
+		8DD76F650486A84900D96B5E /* main.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 08FB7796FE84155DC02AAC07 /* main.cpp */; settings = {ATTRIBUTES = (); }; };
+		AC49FB90120BEABE00FE2104 /* ActionHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC49FB8F120BEABE00FE2104 /* ActionHandler.cpp */; };
+		AC95C2FE11A54C90002309F7 /* Stream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC95C2FB11A54537002309F7 /* Stream.cpp */; };
+		AC95CC3B11AFDC0C002309F7 /* VObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC95CBF111AEFFD3002309F7 /* VObject.cpp */; };
+		AC95CD6D11B01673002309F7 /* VObject.cpp in Sources */ = {isa = PBXBuildFile; fileRef = AC95CBF111AEFFD3002309F7 /* VObject.cpp */; };
+		ACAC23E0119EBFD600A2300D /* SWFStream.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACAC23DC119EBFD600A2300D /* SWFStream.cpp */; };
+		ACAC23E1119EBFD600A2300D /* Util.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACAC23DE119EBFD600A2300D /* Util.cpp */; };
+		ACAC2401119F644700A2300D /* SWFParser.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACAC2400119F644700A2300D /* SWFParser.cpp */; };
+		ACFBA9A5119F8B340001782F /* TagHandler.cpp in Sources */ = {isa = PBXBuildFile; fileRef = ACAC241F119F7C7B00A2300D /* TagHandler.cpp */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8DD76F690486A84900D96B5E /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 8;
+			dstPath = /usr/share/man/man1/;
+			dstSubfolderSpec = 0;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 1;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		08FB7796FE84155DC02AAC07 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = main.cpp; sourceTree = "<group>"; };
+		6A233DB91EE7FAFE00CE057C /* allocator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = allocator.h; sourceTree = "<group>"; };
+		6A233DBA1EE7FAFE00CE057C /* assertions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = assertions.h; sourceTree = "<group>"; };
+		6A233DBB1EE7FAFE00CE057C /* autolink.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = autolink.h; sourceTree = "<group>"; };
+		6A233DBC1EE7FAFE00CE057C /* config.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = config.h; sourceTree = "<group>"; };
+		6A233DBD1EE7FAFE00CE057C /* features.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = features.h; sourceTree = "<group>"; };
+		6A233DBE1EE7FAFE00CE057C /* forwards.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = forwards.h; sourceTree = "<group>"; };
+		6A233DBF1EE7FAFE00CE057C /* json.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json.h; sourceTree = "<group>"; };
+		6A233DC01EE7FAFE00CE057C /* reader.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = reader.h; sourceTree = "<group>"; };
+		6A233DC11EE7FAFE00CE057C /* value.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = value.h; sourceTree = "<group>"; };
+		6A233DC21EE7FAFE00CE057C /* version.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = version.h; sourceTree = "<group>"; };
+		6A233DC31EE7FAFE00CE057C /* writer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = writer.h; sourceTree = "<group>"; };
+		6A233DC51EE7FAFE00CE057C /* json_reader.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_reader.cpp; sourceTree = "<group>"; };
+		6A233DC61EE7FAFE00CE057C /* json_tool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = json_tool.h; sourceTree = "<group>"; };
+		6A233DC71EE7FAFE00CE057C /* json_value.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_value.cpp; sourceTree = "<group>"; };
+		6A233DC81EE7FAFE00CE057C /* json_writer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = json_writer.cpp; sourceTree = "<group>"; };
+		8DD76F6C0486A84900D96B5E /* swfparser */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = swfparser; sourceTree = BUILT_PRODUCTS_DIR; };
+		AC49FB82120B85B300FE2104 /* ActionHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionHandler.h; sourceTree = "<group>"; };
+		AC49FB8F120BEABE00FE2104 /* ActionHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ActionHandler.cpp; sourceTree = "<group>"; };
+		AC49FBB3120CB73500FE2104 /* ActionDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ActionDefine.h; sourceTree = "<group>"; };
+		AC95C2FA11A54537002309F7 /* Stream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Stream.h; sourceTree = "<group>"; };
+		AC95C2FB11A54537002309F7 /* Stream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Stream.cpp; sourceTree = "<group>"; };
+		AC95CA9D11AE7685002309F7 /* TagDefine.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagDefine.h; sourceTree = "<group>"; };
+		AC95CBF011AEFFD3002309F7 /* VObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VObject.h; sourceTree = "<group>"; };
+		AC95CBF111AEFFD3002309F7 /* VObject.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = VObject.cpp; sourceTree = "<group>"; };
+		AC95CC3611AFDBC8002309F7 /* objtest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = objtest; sourceTree = BUILT_PRODUCTS_DIR; };
+		ACAC23DB119EBFD600A2300D /* common.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = common.h; sourceTree = "<group>"; };
+		ACAC23DC119EBFD600A2300D /* SWFStream.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SWFStream.cpp; sourceTree = "<group>"; };
+		ACAC23DD119EBFD600A2300D /* SWFStream.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFStream.h; sourceTree = "<group>"; };
+		ACAC23DE119EBFD600A2300D /* Util.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = Util.cpp; sourceTree = "<group>"; };
+		ACAC23DF119EBFD600A2300D /* Util.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Util.h; sourceTree = "<group>"; };
+		ACAC23FF119F644700A2300D /* SWFParser.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SWFParser.h; sourceTree = "<group>"; };
+		ACAC2400119F644700A2300D /* SWFParser.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SWFParser.cpp; sourceTree = "<group>"; };
+		ACAC241E119F7C7B00A2300D /* TagHandler.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TagHandler.h; sourceTree = "<group>"; };
+		ACAC241F119F7C7B00A2300D /* TagHandler.cpp */ = {isa = PBXFileReference; fileEncoding = 4; indentWidth = 4; lastKnownFileType = sourcecode.cpp.cpp; path = TagHandler.cpp; sourceTree = "<group>"; tabWidth = 4; usesTabs = 0; };
+		ACF7D38111B6E5B5009C3B9C /* debug.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = debug.h; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		8DD76F660486A84900D96B5E /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC95CC3411AFDBC8002309F7 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		08FB7794FE84155DC02AAC07 /* swfparser */ = {
+			isa = PBXGroup;
+			children = (
+				08FB7795FE84155DC02AAC07 /* Source */,
+				C6859E8C029090F304C91782 /* Documentation */,
+				1AB674ADFE9D54B511CA2CBB /* Products */,
+			);
+			name = swfparser;
+			sourceTree = "<group>";
+		};
+		08FB7795FE84155DC02AAC07 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				6A233DB81EE7FAFE00CE057C /* include */,
+				6A233DC41EE7FAFE00CE057C /* lib_json */,
+				AC49FBB3120CB73500FE2104 /* ActionDefine.h */,
+				AC49FB82120B85B300FE2104 /* ActionHandler.h */,
+				AC49FB8F120BEABE00FE2104 /* ActionHandler.cpp */,
+				ACAC23DB119EBFD600A2300D /* common.h */,
+				AC95CBF011AEFFD3002309F7 /* VObject.h */,
+				AC95CBF111AEFFD3002309F7 /* VObject.cpp */,
+				ACAC23DF119EBFD600A2300D /* Util.h */,
+				ACAC23DE119EBFD600A2300D /* Util.cpp */,
+				AC95C2FA11A54537002309F7 /* Stream.h */,
+				AC95C2FB11A54537002309F7 /* Stream.cpp */,
+				ACAC23DD119EBFD600A2300D /* SWFStream.h */,
+				ACAC23DC119EBFD600A2300D /* SWFStream.cpp */,
+				ACAC23FF119F644700A2300D /* SWFParser.h */,
+				ACAC2400119F644700A2300D /* SWFParser.cpp */,
+				ACF7D38111B6E5B5009C3B9C /* debug.h */,
+				08FB7796FE84155DC02AAC07 /* main.cpp */,
+				ACAC241E119F7C7B00A2300D /* TagHandler.h */,
+				ACAC241F119F7C7B00A2300D /* TagHandler.cpp */,
+				AC95CA9D11AE7685002309F7 /* TagDefine.h */,
+			);
+			name = Source;
+			sourceTree = "<group>";
+		};
+		1AB674ADFE9D54B511CA2CBB /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8DD76F6C0486A84900D96B5E /* swfparser */,
+				AC95CC3611AFDBC8002309F7 /* objtest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		6A233DB81EE7FAFE00CE057C /* include */ = {
+			isa = PBXGroup;
+			children = (
+				6A233DB91EE7FAFE00CE057C /* allocator.h */,
+				6A233DBA1EE7FAFE00CE057C /* assertions.h */,
+				6A233DBB1EE7FAFE00CE057C /* autolink.h */,
+				6A233DBC1EE7FAFE00CE057C /* config.h */,
+				6A233DBD1EE7FAFE00CE057C /* features.h */,
+				6A233DBE1EE7FAFE00CE057C /* forwards.h */,
+				6A233DBF1EE7FAFE00CE057C /* json.h */,
+				6A233DC01EE7FAFE00CE057C /* reader.h */,
+				6A233DC11EE7FAFE00CE057C /* value.h */,
+				6A233DC21EE7FAFE00CE057C /* version.h */,
+				6A233DC31EE7FAFE00CE057C /* writer.h */,
+			);
+			path = include;
+			sourceTree = "<group>";
+		};
+		6A233DC41EE7FAFE00CE057C /* lib_json */ = {
+			isa = PBXGroup;
+			children = (
+				6A233DC51EE7FAFE00CE057C /* json_reader.cpp */,
+				6A233DC61EE7FAFE00CE057C /* json_tool.h */,
+				6A233DC71EE7FAFE00CE057C /* json_value.cpp */,
+				6A233DC81EE7FAFE00CE057C /* json_writer.cpp */,
+			);
+			path = lib_json;
+			sourceTree = "<group>";
+		};
+		C6859E8C029090F304C91782 /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Documentation;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8DD76F620486A84900D96B5E /* swfparser */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "swfparser" */;
+			buildPhases = (
+				8DD76F640486A84900D96B5E /* Sources */,
+				8DD76F660486A84900D96B5E /* Frameworks */,
+				8DD76F690486A84900D96B5E /* CopyFiles */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = swfparser;
+			productInstallPath = "$(HOME)/bin";
+			productName = swfparser;
+			productReference = 8DD76F6C0486A84900D96B5E /* swfparser */;
+			productType = "com.apple.product-type.tool";
+		};
+		AC95CC3511AFDBC8002309F7 /* objtest */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC95CC3A11AFDBE7002309F7 /* Build configuration list for PBXNativeTarget "objtest" */;
+			buildPhases = (
+				AC95CC3311AFDBC8002309F7 /* Sources */,
+				AC95CC3411AFDBC8002309F7 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = objtest;
+			productName = objtest;
+			productReference = AC95CC3611AFDBC8002309F7 /* objtest */;
+			productType = "com.apple.product-type.tool";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		08FB7793FE84155DC02AAC07 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				ORGANIZATIONNAME = "http://rintarou.dyndns.org";
+			};
+			buildConfigurationList = 1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "swfparser" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 1;
+			knownRegions = (
+				English,
+				Japanese,
+				French,
+				German,
+			);
+			mainGroup = 08FB7794FE84155DC02AAC07 /* swfparser */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8DD76F620486A84900D96B5E /* swfparser */,
+				AC95CC3511AFDBC8002309F7 /* objtest */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8DD76F640486A84900D96B5E /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6A233DCB1EE7FAFE00CE057C /* json_writer.cpp in Sources */,
+				ACAC23E1119EBFD600A2300D /* Util.cpp in Sources */,
+				6A233DC91EE7FAFE00CE057C /* json_reader.cpp in Sources */,
+				AC95C2FE11A54C90002309F7 /* Stream.cpp in Sources */,
+				ACAC23E0119EBFD600A2300D /* SWFStream.cpp in Sources */,
+				ACAC2401119F644700A2300D /* SWFParser.cpp in Sources */,
+				ACFBA9A5119F8B340001782F /* TagHandler.cpp in Sources */,
+				AC95CD6D11B01673002309F7 /* VObject.cpp in Sources */,
+				6A233DCA1EE7FAFE00CE057C /* json_value.cpp in Sources */,
+				8DD76F650486A84900D96B5E /* main.cpp in Sources */,
+				AC49FB90120BEABE00FE2104 /* ActionHandler.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AC95CC3311AFDBC8002309F7 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AC95CC3B11AFDC0C002309F7 /* VObject.cpp in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		1DEB923208733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"_GLIBCXX_DEBUG=1",
+					"_GLIBCXX_DEBUG_PEDANTIC=1",
+				);
+				INSTALL_PATH = /usr/local/bin;
+				PRODUCT_NAME = swfparser;
+			};
+			name = Debug;
+		};
+		1DEB923308733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ARCHS = "$(NATIVE_ARCH)";
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				OTHER_CPLUSPLUSFLAGS = (
+					"$(OTHER_CFLAGS)",
+					"-I/Users/rintarou/wxWidgets-2.8.11/build-release/lib/wx/include/mac-unicode-release-static-2.8",
+					"-I/Users/rintarou/wxWidgets-2.8.11/include",
+					"-I/Users/rintarou/wxWidgets-2.8.11/contrib/include",
+					"-D_FILE_OFFSET_BITS=64",
+					"-D_LARGE_FILES",
+					"-D__WXMAC__",
+					"-I/Users/rintarou/swfparser/include",
+				);
+				OTHER_LDFLAGS = "-lz";
+				PRODUCT_NAME = swfparser;
+			};
+			name = Release;
+		};
+		1DEB923608733DC60010E9CD /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				OTHER_LDFLAGS = "-lz";
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Debug;
+		};
+		1DEB923708733DC60010E9CD /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_32_BIT)";
+				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				OTHER_LDFLAGS = "-lz";
+				PREBINDING = NO;
+				SDKROOT = macosx10.6;
+			};
+			name = Release;
+		};
+		AC95CC3811AFDBC9002309F7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = NO;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_ENABLE_FIX_AND_CONTINUE = YES;
+				GCC_MODEL_TUNING = G5;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = objtest;
+			};
+			name = Debug;
+		};
+		AC95CC3911AFDBC9002309F7 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				COPY_PHASE_STRIP = YES;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				GCC_ENABLE_FIX_AND_CONTINUE = NO;
+				GCC_MODEL_TUNING = G5;
+				INSTALL_PATH = /usr/local/bin;
+				PREBINDING = NO;
+				PRODUCT_NAME = objtest;
+				ZERO_LINK = NO;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		1DEB923108733DC60010E9CD /* Build configuration list for PBXNativeTarget "swfparser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923208733DC60010E9CD /* Debug */,
+				1DEB923308733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		1DEB923508733DC60010E9CD /* Build configuration list for PBXProject "swfparser" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1DEB923608733DC60010E9CD /* Debug */,
+				1DEB923708733DC60010E9CD /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC95CC3A11AFDBE7002309F7 /* Build configuration list for PBXNativeTarget "objtest" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC95CC3811AFDBC9002309F7 /* Debug */,
+				AC95CC3911AFDBC9002309F7 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 08FB7793FE84155DC02AAC07 /* Project object */;
+}

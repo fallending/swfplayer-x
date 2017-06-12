@@ -6,6 +6,14 @@
 	<array>
 		<dict>
 			<key>url</key>
+			<string>bundle:app_mashaladi.swf</string>
+			<key>name</key>
+			<string>app_mashaladi</string>
+			<key>author</key>
+			<string>ddddddd</string>
+		</dict>
+		<dict>
+			<key>url</key>
 			<string>bundle:ff1.swf</string>
 			<key>name</key>
 			<string>ff1 swf</string>

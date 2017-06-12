@@ -22,6 +22,7 @@
 		5574A09B145BFAAD00DA4FB7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5574A09A145BFAAD00DA4FB7 /* AudioToolbox.framework */; };
 		55BA68E9144B9C4B00D83AA8 /* DemoMovies.plist in Resources */ = {isa = PBXBuildFile; fileRef = 55BA68E8144B9C4B00D83AA8 /* DemoMovies.plist */; };
 		55BA68EC144BA50100D83AA8 /* DemoMovieController.m in Sources */ = {isa = PBXBuildFile; fileRef = 55BA68EB144BA50100D83AA8 /* DemoMovieController.m */; };
+		6A233DB71EE7F6DB00CE057C /* app_mashaladi.swf in Resources */ = {isa = PBXBuildFile; fileRef = 6A233DB61EE7F6DB00CE057C /* app_mashaladi.swf */; };
 		6AEF96191EC9983D00D7C561 /* Default-568h@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6AEF96181EC9983D00D7C561 /* Default-568h@2x.png */; };
 		6AEF96631EC9A30700D7C561 /* SwiffBitmapDefinition.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEF961F1EC9A30700D7C561 /* SwiffBitmapDefinition.m */; };
 		6AEF96641EC9A30700D7C561 /* SwiffDynamicTextAttributes.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEF96231EC9A30700D7C561 /* SwiffDynamicTextAttributes.m */; };
@@ -56,7 +57,6 @@
 		6AEF96811EC9A30700D7C561 /* SwiffUtils.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEF965E1EC9A30700D7C561 /* SwiffUtils.m */; };
 		6AEF96821EC9A30700D7C561 /* SwiffView.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEF96601EC9A30700D7C561 /* SwiffView.m */; };
 		6AEF96831EC9A30700D7C561 /* SwiffWriter.m in Sources */ = {isa = PBXBuildFile; fileRef = 6AEF96621EC9A30700D7C561 /* SwiffWriter.m */; };
-		6AEF96851EC9A87A00D7C561 /* ff1.swf in Resources */ = {isa = PBXBuildFile; fileRef = 6AEF96841EC9A87A00D7C561 /* ff1.swf */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -81,6 +81,7 @@
 		55BA68E8144B9C4B00D83AA8 /* DemoMovies.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = DemoMovies.plist; path = Resources/DemoMovies.plist; sourceTree = SOURCE_ROOT; };
 		55BA68EA144BA50100D83AA8 /* DemoMovieController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = DemoMovieController.h; path = Source/DemoMovieController.h; sourceTree = SOURCE_ROOT; };
 		55BA68EB144BA50100D83AA8 /* DemoMovieController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = DemoMovieController.m; path = Source/DemoMovieController.m; sourceTree = SOURCE_ROOT; };
+		6A233DB61EE7F6DB00CE057C /* app_mashaladi.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = app_mashaladi.swf; path = ../../../test/app_mashaladi.swf; sourceTree = "<group>"; };
 		6AEF96181EC9983D00D7C561 /* Default-568h@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Default-568h@2x.png"; sourceTree = "<group>"; };
 		6AEF961E1EC9A30700D7C561 /* SwiffBitmapDefinition.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiffBitmapDefinition.h; sourceTree = "<group>"; };
 		6AEF961F1EC9A30700D7C561 /* SwiffBitmapDefinition.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiffBitmapDefinition.m; sourceTree = "<group>"; };
@@ -151,7 +152,6 @@
 		6AEF96601EC9A30700D7C561 /* SwiffView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiffView.m; sourceTree = "<group>"; };
 		6AEF96611EC9A30700D7C561 /* SwiffWriter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SwiffWriter.h; sourceTree = "<group>"; };
 		6AEF96621EC9A30700D7C561 /* SwiffWriter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SwiffWriter.m; sourceTree = "<group>"; };
-		6AEF96841EC9A87A00D7C561 /* ff1.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = ff1.swf; path = ../../Tests/ff1.swf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -225,7 +225,7 @@
 		55BA68ED144BAC8A00D83AA8 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				6AEF96841EC9A87A00D7C561 /* ff1.swf */,
+				6A233DB61EE7F6DB00CE057C /* app_mashaladi.swf */,
 				558B13DF1446BB2C0054AF76 /* DemoInfo.plist */,
 				55BA68E8144B9C4B00D83AA8 /* DemoMovies.plist */,
 				553135B2153ED0D90028EFF7 /* Bitmaps.swf */,
@@ -367,10 +367,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6AEF96851EC9A87A00D7C561 /* ff1.swf in Resources */,
 				553135B5153ED1C00028EFF7 /* Bitmaps.swf in Resources */,
 				553135B6153ED1C00028EFF7 /* DynamicText.swf in Resources */,
 				553135B7153ED1C00028EFF7 /* TestSuite.swf in Resources */,
+				6A233DB71EE7F6DB00CE057C /* app_mashaladi.swf in Resources */,
 				6AEF96191EC9983D00D7C561 /* Default-568h@2x.png in Resources */,
 				55BA68E9144B9C4B00D83AA8 /* DemoMovies.plist in Resources */,
 			);
@@ -445,7 +445,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../Source";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -464,7 +464,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/../../Source";
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				OTHER_CFLAGS = "-DNS_BLOCK_ASSERTIONS=1";
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -483,9 +483,9 @@
 					"${SDK_DIR}/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = Resources/DemoInfo.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = Demo;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -501,9 +501,9 @@
 					"${SDK_DIR}/usr/include/libxml2",
 				);
 				INFOPLIST_FILE = Resources/DemoInfo.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				PRODUCT_NAME = Demo;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;

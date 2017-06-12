@@ -97,7 +97,7 @@ static tu_file*	file_opener(const char* url)
             NSData* fileContents = [NSData dataWithContentsOfURL:fileURL];
             if (fileContents)
             {
-                len = [fileContents length];
+                len = (int)[fileContents length];
                 data = [fileContents bytes];
             }
             else
@@ -289,7 +289,7 @@ static void	fs_callback(gameswf::character* movie, const char* command, const ch
     t_advance = tu_timer::get_ticks() - t_advance;
     
     Uint32 t_display = tu_timer::get_ticks();
-    m->display(); // 播放
+    m->display(NULL); // 播放
     t_display = tu_timer::get_ticks() - t_display;
 }
 

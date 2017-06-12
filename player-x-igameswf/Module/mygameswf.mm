@@ -483,7 +483,7 @@ void advance_gameswf(int w, int h, std::function<void()> handler_pre_play, std::
     handler_pre_play(); // fallenink add
     
 	Uint32 t_display = tu_timer::get_ticks();
-	m->display();
+	m->display(NULL);
 	t_display = tu_timer::get_ticks() - t_display;
     
     hanler_post_play(); // fallenink add

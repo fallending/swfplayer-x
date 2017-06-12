@@ -11,7 +11,6 @@
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
             <connections>
-                <outlet property="eaglView" destination="2uN-h4-xMb" id="Z9Z-21-luH"/>
                 <outlet property="playButton" destination="IDv-Cb-d0r" id="fFa-is-FuL"/>
                 <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
             </connections>
@@ -21,10 +20,6 @@
             <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
-                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2uN-h4-xMb" customClass="EAGLView">
-                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                    <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                </view>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDv-Cb-d0r">
                     <rect key="frame" x="154" y="300" width="66" height="66"/>
                     <constraints>
@@ -36,12 +31,8 @@
             </subviews>
             <color key="backgroundColor" red="0.80784313730000001" green="0.63529411759999999" blue="0.36470588240000001" alpha="1" colorSpace="calibratedRGB"/>
             <constraints>
-                <constraint firstAttribute="bottom" secondItem="2uN-h4-xMb" secondAttribute="bottom" id="Cgd-8t-ZAU"/>
-                <constraint firstAttribute="trailing" secondItem="2uN-h4-xMb" secondAttribute="trailing" id="FlT-2R-YOO"/>
                 <constraint firstItem="IDv-Cb-d0r" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="O2b-BL-t8R"/>
-                <constraint firstItem="2uN-h4-xMb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Sf0-1l-MYj"/>
                 <constraint firstItem="IDv-Cb-d0r" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YG7-RW-Ucl"/>
-                <constraint firstItem="2uN-h4-xMb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wMy-0L-mod"/>
             </constraints>
             <point key="canvasLocation" x="25.5" y="123.5"/>
         </view>
