@@ -550,13 +550,13 @@ void CCSprite::draw(void)
 
     CCAssert(!m_pobBatchNode, "If CCSprite is being rendered by CCSpriteBatchNode, CCSprite#draw SHOULD NOT be called");
 
-    CC_NODE_DRAW_SETUP();
+    CC_NODE_DRAW_SETUP(); // CC_NODE_DRAW_SETUP设置绘图环境。实际上设置了OpenGL服务器端的状态和着色器。OpenGL是C/S架构，因此客户端和服务器端都有状态需要维护。ccGLEnable在当前版本上什么都没有做，使用服务器端默认状态。着色器的设置，首先选择当前顶点或片段使用的着色器，然后检查同一着色器使用的Uniform数据是否有变化，有变化的话，重新设置着色器使用的Uniform数据
 
     // 设置混合函数
-    ccGLBlendFunc( m_sBlendFunc.src, m_sBlendFunc.dst );
+    ccGLBlendFunc( m_sBlendFunc.src, m_sBlendFunc.dst ); // 设置混合函数
 
     // 绑定纹理
-    if (m_pobTexture != NULL)
+    if (m_pobTexture != NULL) // 绑定纹理
     {
         ccGLBindTexture2D( m_pobTexture->getName() );
     }
@@ -567,7 +567,7 @@ void CCSprite::draw(void)
     
     //
     // Attributes
-    //
+    // 设置顶点数据，包括顶点坐标、顶点颜色和纹理坐标。因为使用的是顶点数组的方式绘图，所以调用glDrawArrays绘制
 
     ccGLEnableVertexAttribs( kCCVertexAttribFlag_PosColorTex );
 

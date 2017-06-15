@@ -16,7 +16,7 @@
 
 namespace gameswf 
 {
-	static render_handler* s_render_handler;
+	static render_handler* s_render_handler; // render_handler_ogles !!!!!!!!!!
 
 	void set_render_handler(render_handler* r)
 	{
@@ -91,7 +91,7 @@ namespace gameswf
 
 		void	end_display()
 		{
-			if (s_render_handler) s_render_handler->end_display();
+			if (s_render_handler) s_render_handler->end_display(); // s_render_handler is render_handler_ogles
 		}
 
 

@@ -174,6 +174,7 @@
 		6A234DA31EEEEA4A00CE057C /* wrppm.c in Sources */ = {isa = PBXBuildFile; fileRef = 6A234D031EEEEA4A00CE057C /* wrppm.c */; };
 		6A234DA41EEEEA4A00CE057C /* wrrle.c in Sources */ = {isa = PBXBuildFile; fileRef = 6A234D041EEEEA4A00CE057C /* wrrle.c */; };
 		6A234DA51EEEEA4A00CE057C /* wrtarga.c in Sources */ = {isa = PBXBuildFile; fileRef = 6A234D051EEEEA4A00CE057C /* wrtarga.c */; };
+		6A234DA81EEEEF0600CE057C /* EAGLView.mm in Sources */ = {isa = PBXBuildFile; fileRef = 6A234DA71EEEEF0600CE057C /* EAGLView.mm */; };
 		6A628B891ECB01BC00E6A2E5 /* play@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A628B871ECB01BC00E6A2E5 /* play@3x.png */; };
 		6A628B8A1ECB01BC00E6A2E5 /* stop@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 6A628B881ECB01BC00E6A2E5 /* stop@3x.png */; };
 		6A628B8C1ECBF3FA00E6A2E5 /* app_mashaladi.swf in Resources */ = {isa = PBXBuildFile; fileRef = 6A628B8B1ECBF3FA00E6A2E5 /* app_mashaladi.swf */; };
@@ -485,6 +486,8 @@
 		6A234D031EEEEA4A00CE057C /* wrppm.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrppm.c; sourceTree = "<group>"; };
 		6A234D041EEEEA4A00CE057C /* wrrle.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrrle.c; sourceTree = "<group>"; };
 		6A234D051EEEEA4A00CE057C /* wrtarga.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = wrtarga.c; sourceTree = "<group>"; };
+		6A234DA61EEEEF0600CE057C /* EAGLView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = EAGLView.h; sourceTree = "<group>"; };
+		6A234DA71EEEEF0600CE057C /* EAGLView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; path = EAGLView.mm; sourceTree = "<group>"; };
 		6A628B871ECB01BC00E6A2E5 /* play@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "play@3x.png"; sourceTree = "<group>"; };
 		6A628B881ECB01BC00E6A2E5 /* stop@3x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "stop@3x.png"; sourceTree = "<group>"; };
 		6A628B8B1ECBF3FA00E6A2E5 /* app_mashaladi.swf */ = {isa = PBXFileReference; lastKnownFileType = file; name = app_mashaladi.swf; path = ../test/app_mashaladi.swf; sourceTree = "<group>"; };
@@ -611,6 +614,8 @@
 		6A18EB371EE009AB00F39B95 /* libs */ = {
 			isa = PBXGroup;
 			children = (
+				6A234DA61EEEEF0600CE057C /* EAGLView.h */,
+				6A234DA71EEEEF0600CE057C /* EAGLView.mm */,
 				6A234BE91EEEEA4A00CE057C /* gameswf */,
 			);
 			path = libs;
@@ -1165,6 +1170,7 @@
 				6A234D4E1EEEEA4A00CE057C /* gameswf_function.cpp in Sources */,
 				6A234D3B1EEEEA4A00CE057C /* as_sound.cpp in Sources */,
 				6A234D931EEEEA4A00CE057C /* jidctred.c in Sources */,
+				6A234DA81EEEEF0600CE057C /* EAGLView.mm in Sources */,
 				6A234D2D1EEEEA4A00CE057C /* as_global.cpp in Sources */,
 				6A234D941EEEEA4A00CE057C /* jmemansi.c in Sources */,
 				6A234D1F1EEEEA4A00CE057C /* utility.cpp in Sources */,

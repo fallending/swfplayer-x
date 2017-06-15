@@ -802,7 +802,7 @@ void CCNode::visit()
     {
         return;
     }
-    kmGLPushMatrix();
+    kmGLPushMatrix(); // //该节点的转换矩阵入栈
 
      if (m_pGrid && m_pGrid->isActive())
      {
@@ -810,7 +810,7 @@ void CCNode::visit()
      }
 
     // CCNode::visit的核心是transform()。
-    this->transform();
+    this->transform(); // 计算出一个此节点相对于父节点的变换矩阵，然后把它转换为OpenGL格式的矩阵并右乘在当前绘图矩阵之上，从而得到此节点的世界变换矩阵， transform()根据当前节点的位置、旋转角度和缩放比例等属性计算出一个此节点相对于父节点的变换矩阵，然后把它转换为OpenGL格式的矩阵并右乘在当前绘图矩阵之上。transform()是负责CCSprite处理的各种变换的核心函数。
 
     CCNode* pNode = NULL;
     unsigned int i = 0;

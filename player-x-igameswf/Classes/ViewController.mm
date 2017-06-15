@@ -9,22 +9,17 @@
 #import "ViewController.h"
 #import "EAGLView.h"
 #import "SWFPlayer.h"
-#import "cocos2d.h"
-#import "EAGLView.h"
 #import "AppDelegate.h"
 
 @interface ViewController () {
     BOOL _isPlaying;
 }
 
-//@property (weak, nonatomic) IBOutlet EAGLView *eaglView;
+@property (weak, nonatomic) IBOutlet EAGLView *eaglView;
 
 @property (weak, nonatomic) IBOutlet UIButton *playButton;
 
 @end
-
-// cocos2d application instance
-static AppDelegate s_sharedApplication;
 
 @implementation ViewController
 
@@ -36,19 +31,10 @@ static AppDelegate s_sharedApplication;
     }
     
     {
-        EAGLView *glView = [EAGLView viewWithFrame: [[UIScreen mainScreen] bounds]
-                                         pixelFormat: kEAGLColorFormatRGBA8
-                                         depthFormat: GL_DEPTH_COMPONENT16
-                                  preserveBackbuffer: NO
-                                          sharegroup: nil
-                                       multiSampling: NO
-                                     numberOfSamples:0 ];
-        glView.frame = CGRectMake(0, 0, [UIScreen mainScreen].bounds.size.width, [UIScreen mainScreen].bounds.size.height);
-        glView.backgroundColor = [UIColor redColor];
+
+        _eaglView.backgroundColor = [UIColor redColor];
         
         [self.view addSubview:glView];
-        
-        cocos2d::CCApplication::sharedApplication()->run();
     }
     
     {

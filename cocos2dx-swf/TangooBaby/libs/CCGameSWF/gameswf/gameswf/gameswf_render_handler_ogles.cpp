@@ -852,47 +852,6 @@ struct render_handler_ogles : public gameswf::render_handler
         matrixProject = mat;
         m_currentProgram = -111000;//XXX:just make m_currentProgram invalid
         lineWidth = 0;
-        
-        //      glViewport(viewport_x0, viewport_y0, viewport_width, viewport_height);
-        
-        
-        
-        //      glEnable(GL_BLEND);
-        //      glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
-        
-        //      glTexEnvf(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);	// GL_MODULATE
-        
-        //      glDisable(GL_TEXTURE_2D);
-        
-        // Clear the background, if background color has alpha > 0.
-        //      if (background_color.m_a > 0)
-        //      {
-        //      // Draw a big quad.
-        //      apply_color(background_color);
-        //
-        //      //			glBegin(GL_QUADS);
-        //      //			glVertex2f(x0, y0);
-        //      //			glVertex2f(x1, y0);
-        //      //			glVertex2f(x1, y1);
-        //      //			glVertex2f(x0, y1);
-        //      //			glEnd();
-        //
-        //      GLfloat squareVertices[8];
-        //      squareVertices[0] = x0;
-        //      squareVertices[1] = y0;
-        //      squareVertices[2] = x1;
-        //      squareVertices[3] = y0;
-        //      squareVertices[4] = x0;
-        //      squareVertices[5] = y1;
-        //      squareVertices[6] = x1;
-        //      squareVertices[7] = y1;
-        //
-        //      glVertexPointer(2, GL_FLOAT, 0, squareVertices);
-        //      glEnableClientState(GL_VERTEX_ARRAY);
-        //      glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-        //
-        //      glDisableClientState(GL_VERTEX_ARRAY);
-        //      }
     }
     
 	void	end_display()
@@ -1073,6 +1032,7 @@ struct render_handler_ogles : public gameswf::render_handler
         //        apply_matrix(m_current_matrix);
         ApplyMatrix(m_current_matrix);
         
+//        该函数用来为顶点着色器中的输入参数配置合适的值。
         glVertexAttribPointer(kVertexAttrib_Position,2, GL_SHORT,GL_FALSE, 0, coords);
         //        float fcoords[8];
         //        short icoords[8];
@@ -1231,21 +1191,7 @@ struct render_handler_ogles : public gameswf::render_handler
 		squareTextureCoords[5] = uv_coords.m_y_max;
 		squareTextureCoords[6] = uv_coords.m_x_max;
 		squareTextureCoords[7] = uv_coords.m_y_max;
-        //chenee
-        //		glEnableClientState(GL_TEXTURE_COORD_ARRAY);
-        //		glTexCoordPointer(2, GL_FLOAT, 0, squareTextureCoords);
-        //
-        //		glEnableClientState(GL_VERTEX_ARRAY);
-        //		glVertexPointer(2, GL_FLOAT, 0, squareVertices);
-        //
-        //		glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-        //
-        //		glDisable(GL_TEXTURE_2D);
-        
-        //        ApplyOrtho(m_display_height, m_display_height);
-        //        ApplyOrtho(matrixProject);
-        
-        //        apply_matrix(m_current_matrix);
+
         ApplyMatrix(m_current_matrix);
         
         glVertexAttribPointer(kVertexAttrib_Position,2, GL_SHORT,GL_FALSE, 0, squareVertices);
@@ -1255,9 +1201,6 @@ struct render_handler_ogles : public gameswf::render_handler
         CHECK_GL_ERROR_DEBUG();
         
         glDrawArrays(GL_TRIANGLE_STRIP, 0, 4);
-        
-        
-        
 	}
 	
 	bool test_stencil_buffer(const gameswf::rect& bound, Uint8 pattern)
@@ -1689,7 +1632,7 @@ void bitmap_info_ogl::layout(GLuint uTextureSlot)
     //    return;
     //    glActiveTexture(GL_TEXTURE0);
     
-    if (m_texture_id == 0)
+    if (m_texture_id == 0) // lazy init!!!
 	{
 		assert(m_suspended_image);
         
@@ -1767,6 +1710,7 @@ void bitmap_info_ogl::layout(GLuint uTextureSlot)
 	}
 	else
 	{
+//        glEnable(GL_TEXTURE_2D);
 		glBindTexture(GL_TEXTURE_2D, m_texture_id);
         //		glEnable(GL_TEXTURE_2D);
 	}

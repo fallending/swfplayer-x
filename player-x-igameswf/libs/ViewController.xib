@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="12118" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12086"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="ViewController">
+            <connections>
+                <outlet property="eaglView" destination="2uN-h4-xMb" id="Z9Z-21-luH"/>
+                <outlet property="playButton" destination="IDv-Cb-d0r" id="fFa-is-FuL"/>
+                <outlet property="view" destination="i5M-Pr-FkT" id="sfx-zR-JGt"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" id="i5M-Pr-FkT">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="2uN-h4-xMb" customClass="EAGLView">
+                    <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                    <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                </view>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IDv-Cb-d0r">
+                    <rect key="frame" x="154" y="300" width="66" height="66"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="66" id="2Ma-o2-pUX"/>
+                        <constraint firstAttribute="height" constant="66" id="oZC-55-3v2"/>
+                    </constraints>
+                    <state key="normal" image="play.png"/>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="bottom" secondItem="2uN-h4-xMb" secondAttribute="bottom" id="Cgd-8t-ZAU"/>
+                <constraint firstAttribute="trailing" secondItem="2uN-h4-xMb" secondAttribute="trailing" id="FlT-2R-YOO"/>
+                <constraint firstItem="IDv-Cb-d0r" firstAttribute="centerY" secondItem="i5M-Pr-FkT" secondAttribute="centerY" id="O2b-BL-t8R"/>
+                <constraint firstItem="2uN-h4-xMb" firstAttribute="leading" secondItem="i5M-Pr-FkT" secondAttribute="leading" id="Sf0-1l-MYj"/>
+                <constraint firstItem="IDv-Cb-d0r" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="YG7-RW-Ucl"/>
+                <constraint firstItem="2uN-h4-xMb" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="top" id="wMy-0L-mod"/>
+            </constraints>
+            <point key="canvasLocation" x="25.5" y="123.5"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="play.png" width="16" height="16"/>
+    </resources>
+    <simulatedMetricsContainer key="defaultSimulatedMetrics">
+        <simulatedStatusBarMetrics key="statusBar"/>
+        <simulatedOrientationMetrics key="orientation"/>
+        <simulatedScreenMetrics key="destination" type="retina4_7.fullscreen"/>
+    </simulatedMetricsContainer>
+</document>

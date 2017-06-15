@@ -19,69 +19,20 @@
 
 using namespace cocos2d;
 
-//@interface CCSWFNode_touchContainer : NSObject
-//{
-//    CGPoint m_position;
-//    int m_state;
-//}
-//
-//@property (readonly) CGPoint position;
-//@property (readonly) int state;
-//
-//+(id) touchContainerWithPosition:(CGPoint)position andState:(int)state;
-//-(id) initWithPosition:(CGPoint)position andState:(int)state;
-//
-//@end
 class CCSWFNode_touchContainer : public cocos2d::CCNode
 {
     CCPoint m_position;
     int m_state;
+    
     CCSWFNode_touchContainer(CCPoint position,int state);
-//    bool touchContainerWithPosition(CCPoint position, int state);
-
 };
 
-
-//@implementation CCSWFNode_touchContainer
-
-//@synthesize position = m_position;
-//@synthesize state = m_state;
 CCSWFNode_touchContainer::CCSWFNode_touchContainer(CCPoint position, int state)
 {
     m_position = position;
     m_state = state;
 }
-//bool CCSWFNode_touchContainer::touchContainerWithPosition(CCPoint position, int state)
-//{
-////    return [[CCSWFNode_touchContainer alloc] initWithPosition:position andState:state];
-//    return true;
-//}
-//
-//void CCSWFNode_touchContainer::initWithPositionAndState(CCPoint position, int state)
-//{
-////    self = [super init];
-////    if (self)
-////    {
-//        m_position = position;
-//        m_state = state;
-////    }
-////    return self;
-//}
-//
-//@end
 
-
-
-//@interface CCSWFNode_imp : NSObject
-//{
-//@public
-//    gameswf::gc_ptr<gameswf::player> m_player;
-//    gameswf::gc_ptr<gameswf::root>	m_movie;
-//}
-//
-//-(id) initWithSWFFile:(NSString*)file;
-//
-//@end
 class CCSWFNode_imp : public cocos2d::CCNode
 {
 public:
@@ -622,9 +573,12 @@ void render()
 
 void CCSWFNode::draw()
 {
+//    CCSprite::draw();
+    
     if (! isRuning) {
         return;
     }
+    
     glEnable(GL_BLEND);
     glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
     
@@ -645,7 +599,7 @@ void CCSWFNode::draw()
 
 //    render();
     
-    glBlendFunc(CC_BLEND_SRC, CC_BLEND_DST);
+//    glBlendFunc(CC_BLEND_SRC, CC_BLEND_DST);
 
 }
 

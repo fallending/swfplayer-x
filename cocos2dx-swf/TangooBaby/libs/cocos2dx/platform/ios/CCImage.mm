@@ -282,10 +282,12 @@ static bool _initWithString(const char * pText, cocos2d::CCImage::ETextAlign eAl
         memset(data, 0, (int)(dim.width * dim.height * 4));
         
         // draw text
-        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();    
-        CGContextRef context = CGBitmapContextCreate(data, dim.width, dim.height, 8, dim.width * 4, colorSpace, kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
-        CGColorSpaceRelease(colorSpace);
-        
+        const int _width  = dim.width;
+        const int _height = dim.height;
+        // draw text
+        CGColorSpaceRef colorSpace = CGColorSpaceCreateDeviceRGB();
+        CGContextRef context =CGBitmapContextCreate(data, _width, _height, 8, _width * 4, colorSpace, kCGImageAlphaPremultipliedLast | kCGBitmapByteOrder32Big);
+
         if (! context)
         {
             delete[] data;

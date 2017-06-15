@@ -1,6 +1,8 @@
 # swfplayer-x
 Try to run swf player on iOS
 
+[Flash(Swf)文件结构中文说明](http://www.docin.com/p-550684150.html)
+
 ## Reference
 
 1. [gameswf](http://tulrich.com/geekstuff/gameswf.html), 可以找到macOS、win32版本，不过win32的我还没编译通过，优先macOS，如[链接](https://sourceforge.net/projects/tu-testbed/files/demos/gameswf-2009-08-08/), 该页面 igameswf.tar.gz 是macOS版本；gameswf-2009-08-08.zip 是win32版本。

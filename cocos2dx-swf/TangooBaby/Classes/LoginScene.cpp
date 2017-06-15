@@ -2,7 +2,6 @@
 #include "SimpleAudioEngine.h"
 #include "DrawView.h"
 #include "CCSWFNode.h"
-#include "CCSwfSprite.h"
 
 USING_NS_CC;
 USING_NS_CC_EXT;
@@ -23,32 +22,15 @@ bool LoginScene::init()
     {
         return false;
     }
-
-//    //mssages
-//    CCLabelTTF* pLabel = CCLabelTTF::create("Hello World", "Thonburi", 34);
-    CCSize size = CCDirector::sharedDirector()->getWinSize();
-//    pLabel->setPosition( ccp(size.width / 2, size.height - 20) );
-//    this->addChild(pLabel, 1);
     
+    CCSize size = CCDirector::sharedDirector()->getWinSize();
+
     CCSWFNode *swfBg = CCSWFNode::create("wkszLogin/app_mashaladi.swf");
     swfBg->setPosition(ccp(size.width/2+30, size.height/2-100));
     swfBg->setScale(0.8f);
     swfBg->runAction();
     swfBg->setRepeat(true);
-    this->addChild(swfBg,-9);
-    
-//    CCSwfSprite *swfBg = CCSwfSprite::create("wkszLogin/app_mashaladi.swf");
-//    swfBg->setPosition(ccp(size.width/2+30, size.height/2-100));
-//    swfBg->setScale(0.8f);
-//    swfBg->runAction();
-//    swfBg->setRepeat(true);
-//    this->addChild(swfBg,-9);
-    
-//    swfWK = CCSWFNode::create("wkszLogin/swfWK.swf");
-//    swfWK->setPosition(ccp(800, 280));
-//    swfWK->runAction();
-//    swfWK->setRepeat(true);
-//    this->addChild(swfWK,-8);
+    this->addChild(swfBg,1000);
 
     // fallenink: 为什么这里一定需要一个其他精灵，才能让动画放得出来？？？
     CCSprite *sptmp = CCSprite::create("wkszLogin/tree.png");

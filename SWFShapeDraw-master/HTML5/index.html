@@ -1,0 +1,34 @@
+<html>
+	<title>HTML5绘制SWF矢量图</title>
+	<head>
+		<meta charset="UTF-8">
+		<script type="text/javascript" src="./jquery-1.11.3.js"></script>
+		<script type="text/javascript" src="./shape-redraw.js"></script>
+	</head>
+	<body>
+		<canvas id="shapeCanvas"></canvas>
+		<script type="text/javascript">
+			var canvas = document.getElementById('shapeCanvas')
+			canvas.height = document.body.clientHeight
+			canvas.width = document.body.clientWidth
+			
+			var context = canvas.getContext('2d')
+			$.getJSON("./graph.json", function(steps)
+			{
+				window.shape = SWFShape.init(context, steps)
+				shape.begin()			
+				window.timer = setInterval(function()
+				{
+					if (shape.stepsAvailable())
+					{
+						shape.drawNextRound()
+					}
+					else
+					{
+						clearInterval(timer)
+					}
+				}, 1000/25)
+			})
+		</script>
+	</body>
+</html>
